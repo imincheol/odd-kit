@@ -7,24 +7,42 @@ AI와의 협업 시 컨텍스트 유실을 방지하고, 명확한 요구사항 
 
 ## 📂 Directory Structure
 
-### 1. Task Archive (작업 공간)
+작업은 **'진행 중(Active)'**과 **'완료(Archived)'** 상태로 물리적으로 분리하여 관리합니다.
 
-작업 상태는 `docs/odd/tasks/YYYY/MM/DD/` 내의 **파일 확장자 조합**으로 식별합니다.
+### 1. Active Tasks (`docs/odd/tasks/`)
+
+현재 진행 중인 작업들이 위치하는 공간입니다. **날짜별 폴더를 생성하지 않고 Flat하게 관리합니다.**
+
+* **파일명 규칙**: `YYYYMMDD_SEQ_TaskName_Type.json`
+  * 예: `20251220_01_login_feature_order.json`
 
 ```text
-docs/odd/tasks/YYYY/MM/DD/
-├── 01_login_order.json      # [필수] 요청서 (Start)
-├── 01_login_progress.json   # [임시] 진행 중 (Working...)
-└── 01_login_report.json     # [완료] 결과물 (Done)
+docs/odd/tasks/
+├── 20251220_01_login_order.json      # [Pending] 승인 대기
+├── 20251220_01_login_progress.json   # [In Progress] 작업 중
+└── 20251220_02_bugfix_order.json     # [Pending] 다른 작업
 
 ```
 
-### 2. Status Rules (상태 판별 규칙)
+### 2. Archived Tasks (`docs/odd/archive/`)
 
-1. **Pending (승인 대기)**: `Order` 파일만 존재함.
-2. **In Progress (작업 중)**: `Order`와 `Progress` 파일이 공존함.
+완료된 작업(`Order` + `Report`)은 이 폴더로 이동하여 보관합니다.
+
+```text
+docs/odd/archive/
+├── 20251219_01_init_order.json       # [Done] 완료된 오더
+└── 20251219_01_init_report.json      # [Done] 완료 보고서
+
+```
+
+---
+
+## 🚦 Status Rules (상태 판별 규칙)
+
+1. **Pending (승인 대기)**: `tasks/` 폴더에 `Order` 파일만 존재함.
+2. **In Progress (작업 중)**: `tasks/` 폴더에 `Order`와 `Progress` 파일이 공존함.
 3. **Review Required (검토 대기)**: `Progress` 파일 내 `status`가 `"REVIEW_REQUIRED"`임.
-4. **Done (완료)**: `Order`와 `Report` 파일이 공존함. (**Progress 파일은 삭제됨**)
+4. **Done (완료)**: `tasks/` 폴더의 파일들이 **`archive/` 폴더로 이동됨.**
 
 ---
 
@@ -68,7 +86,8 @@ Order가 확정되지 않았다면, 스펙 문서 수정이나 코드 작성 등
 
 2. **Draft Order (작성 및 정지)**:
 
-* `_templates/order.json`을 복사하여 생성합니다.
+* `_templates/order.json`을 복사하여 `docs/odd/tasks/`에 생성합니다.
+* **파일명 준수**: `YYYYMMDD_SEQ_TaskName_order.json`
 * `status`는 반드시 **"DRAFT"**로 설정합니다.
 * **🚨 STOP**: AI는 파일을 생성한 후 작업을 멈추고 **"오더를 작성했으니 확인해주세요"**라고 보고해야 합니다. (자동 진행 금지)
 
@@ -84,6 +103,7 @@ Order가 확정되지 않았다면, 스펙 문서 수정이나 코드 작성 등
 
 1. **Create Progress**: 작업 착수 시 `_templates/progress.json`을 복사하여 생성합니다.
 
+* 파일명: `YYYYMMDD_SEQ_TaskName_progress.json`
 * `order.json`의 핵심 요구사항을 `constraints_mirror` 필드에 복사하여 작업 내내 참고합니다.
 
 2. **Spec First Update**:
@@ -119,22 +139,30 @@ Order가 확정되지 않았다면, 스펙 문서 수정이나 코드 작성 등
 
 3. **Generate Report (최종 완료)**:
 
-* 사용자의 승인이 떨어진 후에만 `_templates/report.json`을 기반으로 리포트를 생성합니다.
-* **Cleanup**: `..._progress.json` 파일을 **삭제**하여 Task를 종료합니다.
+* 사용자의 승인이 떨어진 후에만 `_templates/report.json`을 기반으로 `..._report.json`을 생성합니다.
+* `progress.json` 파일을 **삭제**합니다.
+
+4. **Archive (아카이빙)**:
+
+* 최종 완료된 `..._order.json`과 `..._report.json` 파일을 **`docs/odd/archive/` 폴더로 이동**시킵니다.
+* `docs/odd/tasks/` 폴더는 항상 **현재 진행 중인 작업**만 남겨둡니다.
 
 ---
 
 ## 📝 Usage Example
 
-**상황**: 오늘(2025-12-19) '다크 모드 지원 로그인 폼' 구현 요청.
+**상황**: 2025년 12월 20일 '다크 모드' 구현 요청.
 
-1. **Strategy**: "단일 작업이므로 1개의 Order로 진행하겠습니다."
-2. **Draft**: `01_login_order.json` 생성 (Status: DRAFT) -> **STOP**.
-3. **Approval**: 사용자 승인 -> (Status: APPROVED).
-4. **Progress**: `01_login_progress.json` 생성.
+1. **Draft**: `tasks/20251220_01_darkmode_order.json` 생성 (DRAFT) -> **STOP**.
+2. **Approval**: 사용자 승인 (APPROVED).
+3. **Progress**: `tasks/20251220_01_darkmode_progress.json` 생성.
 
-* 스펙 문서(`ui_ux.md`, `theme_system.md`) 업데이트.
-* 코드 구현 및 테스트.
+* 스펙 업데이트 -> 코드 구현 -> 테스트.
 
-5. **Review Request**: 구현 완료 -> `progress` 상태를 `REVIEW_REQUIRED`로 변경 -> **STOP**.
-6. **Completion**: 사용자 최종 승인 -> `01_login_report.json` 생성 및 `progress` 삭제 -> **Done**.
+4. **Review Request**: `progress` 상태 `REVIEW_REQUIRED` 변경 -> **STOP**.
+5. **Completion**: 사용자 최종 승인.
+
+* `tasks/20251220_01_darkmode_report.json` 생성.
+* `tasks/20251220_01_darkmode_progress.json` 삭제.
+
+6. **Archive**: `order`와 `report` 파일을 `docs/odd/archive/`로 이동. -> **Done**.

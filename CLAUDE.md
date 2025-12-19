@@ -28,10 +28,11 @@
 
 ## 🚨 Core Rules
 
-### 1. Workflow Rules
+### 1. Workflow Rules (Active vs Archive)
 
-- **No Order, No Work**: `docs/odd/tasks/` 경로에 **승인된(APPROVED)** Order 파일 없이는 코드나 스펙을 절대 수정하지 마십시오.
-- **Strategy First**: 요청이 복잡하면 즉시 오더를 만들지 말고, 작업을 병합(Merge)하거나 분할(Split)하여 최적의 **'Order 구조(포트폴리오)'**를 먼저 제안하십시오.
+- **Active Workspace**: 모든 신규 작업(`Order`, `Progress`)은 날짜별 하위 폴더 없이 **`docs/odd/tasks/`** 폴더 바로 아래에 생성하십시오.
+- **Naming Convention**: 파일명은 반드시 `YYYYMMDD_SEQ_TaskName_Type.json` 형식을 엄수하여 정렬이 용이하게 하십시오.
+- **No Order, No Work**: `docs/odd/tasks/` 내에 승인된 Order가 없다면 작업을 시작하지 마십시오.
 
 ### 2. Specs Handling Rules (5-Layer Architecture)
 
@@ -43,13 +44,17 @@
     4. `4_development` (구현/데이터)
 - **Spec First**: 코드를 작성하기 전에 반드시 관련 스펙 문서를 먼저 현행화하십시오.
 
-### 3. Loop Workflow
+### 3. Loop Workflow & Archiving
 
-- **Progress**: 작업 중에는 `progress.json`에 로그와 피드백을 기록하십시오. (`order.json` 내용은 `constraints_mirror`에 복사하여 참고)
-- **Report**: 작업 완료 시 `report.json`을 생성하고 `progress.json`은 삭제하십시오.
+- **Progress**: `docs/odd/tasks/` 내에서 `progress.json`을 운용하며 로그를 기록하십시오.
+- **Completion & Archive**:
+    1. 사용자 승인 시 `report.json`을 생성하고 `progress.json`을 삭제하십시오.
+    2. **Archive**: 최종 완료된 `..._order.json`과 `..._report.json` 파일을 **`docs/odd/archive/` 폴더로 이동**시켜 `tasks` 폴더를 비우십시오.
 
 ## 📁 Reference Paths
 
+- **Active Tasks**: `docs/odd/tasks/` (현재 진행 중인 작업)
+- **Task Archive**: `docs/odd/archive/` (완료된 작업 보관소)
 - **ODD 가이드**: `docs/odd/README.md`
 - **템플릿**: `docs/odd/_templates/`
 - **스펙 문서**: `docs/specs/`
