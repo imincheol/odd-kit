@@ -1,0 +1,17 @@
+{
+    "order_id": "YYYYMMDD_SEQ",
+    "status": "DONE",
+    "completed_at": "YYYY-MM-DD HH:mm:ss",
+    "summary": "",
+    "changes": {
+        "spec_updated": [],
+        "code_updated": []
+    },
+    "review_validation": {
+        "1_planning": "YES",
+        "2_design": "YES",
+        "3_markup": "YES",
+        "4_development": "YES"
+    },
+    "next_steps": []
+}

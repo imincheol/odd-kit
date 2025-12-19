@@ -1,0 +1,13 @@
+{
+    "status": "IN_PROGRESS",
+    "current_step": "Initializing",
+    "last_updated": "YYYY-MM-DD HH:mm:ss",
+    "todo_list": [],
+    "logs": [
+        {
+            "timestamp": "HH:mm:ss",
+            "type": "INFO",
+            "message": "Task started"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+  "order_id": "YYYYMMDD_SEQ",
+  "title": "Task Title",
+  "type": "FEATURE | BUGFIX | REFACTOR | DOCS",
+  "status": "DRAFT",
+  "created_at": "YYYY-MM-DD HH:mm:ss",
+  "context": {
+    "request_summary": "",
+    "related_docs": ["docs/specs/1_planning/features.md"]
+  },
+  "reviews": {
+    "1_planning": {
+      "check": "docs/specs/1_planning 참조",
+      "comment": "기획 의도 및 정책 분석"
+    },
+    "2_design": {
+      "check": "docs/specs/2_design 참조",
+      "comment": "UI/UX 레이아웃 및 디자인 자산 분석"
+    },
+    "3_markup": {
+      "check": "docs/specs/3_markup 참조",
+      "comment": "HTML 구조, 접근성, 테마(CSS) 전략"
+    },
+    "4_development": {
+      "check": "docs/specs/4_development 참조",
+      "comment": "API, 상태 관리, 컴포넌트 로직 분석"
+    }
+  },
+  "plan_specs": [
+    "작업 전 업데이트할 문서 목록"
+  ],
+  "requirements": []
+}
