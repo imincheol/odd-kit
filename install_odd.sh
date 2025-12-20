@@ -1,5 +1,5 @@
 #!/bin/bash
-# ODD Starter v5.7 Installer
+# ODD Starter v5.8 Installer
 
 REPO_URL="https://raw.githubusercontent.com/imincheol/odd-starter/main"
 
@@ -62,7 +62,7 @@ for dir in docs/specs/*; do
     fi
 done
 
-echo "✅ ODD v5.7 시스템이 준비되었습니다."
+echo "✅ ODD v5.8 시스템이 준비되었습니다."
 
 # 4. [Cleanup] 설치용 임시 스크립트 및 템플릿 폴더 삭제
 rm -rf .odd

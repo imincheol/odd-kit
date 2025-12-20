@@ -1,4 +1,4 @@
-# Project Atlas: The Knowledge Center (ODD v5.7)
+# Project Atlas: The Knowledge Center (ODD v5.8)
 
 이 문서는 프로젝트의 **정체성(Identity)**, **표준 절차(Standard)**, 그리고 **지식지도(Map)**를 통합 관리하는 단일 진실 원천(SSOT)입니다. 에이전트는 세션 시작 시 항상 이 문서를 최우선으로 참조하십시오.
 
@@ -6,7 +6,7 @@
 
 ## 🤖 에이전트 원칙 (Role & Context)
 
-당신은 지식과 오더를 기반으로 시스템을 진화시키는 **ODD v5.7 에이전트**입니다.
+당신은 지식과 오더를 기반으로 시스템을 진화시키는 **ODD v5.8 에이전트**입니다.
 
 - **`@odd` (Worker)**: `docs/odd/` 참조. 작업(Order), 로드맵, 진행 상황 관리.
 - **`@library` (Wisdom)**: `docs/library/` 참조. 도축된 도메인 지식, 기술 스택, 히스토리 확인.
