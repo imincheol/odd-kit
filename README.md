@@ -1,111 +1,129 @@
-# 🚀 ODD Starter Kit (v5.5 Distributed Synapse Edition)
+# 🚀 ODD Starter Kit (v5.6 Standard Edition)
 
-> **"AI 개발의 기억 상실증을 치료하다."**
-> Order Driven Development (ODD) v5.5: Distributed Synapse System
-
-**ODD Starter**는 LLM(Large Language Model)과의 협업 시 발생하는 컨텍스트 유실, 환각(Hallucination), 그리고 히스토리 부재 문제를 해결하기 위한 **구조적 개발 방법론(Framework)**입니다.
-
-단순히 프롬프트를 던지는 것을 넘어, **도서관(Library)**과 **지도(Atlas)**, 그리고 **분산된 시냅스(Synapses)** 시스템을 통해 AI가 인간의 뇌처럼 연상 작용을 하며 "지속 가능한 개발"을 할 수 있도록 돕습니다.
+> **"AI 개발의 기억 상실증을 치료하라."**  
+> Order Driven Development (ODD) v5.6: Library & Atlas Framework
 
 ---
 
-## 🌟 Why ODD v5.5?
+## 🛠️ 1. 설치하기 (One-step Installation)
 
-AI 코딩 툴(Cursor, Claude, ChatGPT 등)을 사용할 때 이런 문제를 겪지 않으셨나요?
+어떠한 환경에서도 터미널에서 아래 명령어를 실행하면, 즉시 ODD 시스템이 구축됩니다.
 
-* 😫 *"어제 고친 건데 오늘 또 틀리네?"* (기억력 부재)
-* 😵‍💫 *"파일이 너무 많아서 뭘 참고해야 할지 모르겠어."* (컨텍스트 과부하)
-* 😡 *"시키지도 않은 일을 멋대로 해버렸어!"* (통제 불가능)
-
-ODD v5.5는 **인간의 지식 경영 방식(도서관과 관장)**과 **뇌의 연상 구조(시냅스)**를 차용하여 이 문제들을 해결합니다.
-
-### Key Features
-
-1. **🧠 Distributed Synapse (분산된 시냅스)**
-
-* 거대한 중앙 인덱스 대신, 각 지식(Book)들이 스스로 **연관된 지식(Synapse)** 정보를 가집니다.
-* AI는 **`ATLAS.md`**로 진입하여, 책 속에 연결된 시냅스를 타고 필요한 지식을 스스로 찾아갑니다.
-
-2. **👥 Dual Agent Personas (이원화된 역할)**
-
-* **👨‍🎓 Student Agent (실행가)**: 도서관에서 책을 빌려 정해진 `Order`만 수행하고 빠집니다.
-* **📚 Librarian Agent (관리자)**: 작업이 끝나면 결과를 분석해 도서관의 **책(Book)**을 업데이트하고 **연결(Synapse)**을 강화합니다.
-
-3. **🛡️ "No Order, No Work" Protocol**
-
-* 철저한 **주문(Order) 기반 개발**입니다.
-* **Draft & Stop**: 승인되지 않은 오더는 절대 실행되지 않습니다.
+```bash
+curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/install.sh | bash
+```
+*(설치 후에는 `.odd/`, `docs/` 폴더가 생성됩니다. 사용자의 기존 데이터는 안전하게 보존됩니다.)*
 
 ---
 
-## 📂 Directory Structure
+## 📖 2. 사용자 가이드 (User Guide)
 
-이 프로젝트는 **진실(Specs)**, **과정(Process)**, **지혜(Library)**가 물리적으로 분리되어 있습니다.
+프로젝트 상황에 맞는 가이드를 선택하여 진행하세요.
 
-```text
-.
-├── AGENTS.md                 # [SYSTEM] 에이전트의 뇌 (행동 강령 & 페르소나)
-└── docs/
-    ├── library/              # [WISDOM] 지식 도서관 (RAG 저장소)
-    │   ├── ATLAS.md          # 🗺️ 거시적 지도 (Macro Topology)
-    │   ├── domains/          # 도메인 지식 (예: Player, Editor)
-    │   └── tech/             # 기술 지식 (예: DB, Deploy)
-    │
-    ├── odd/                  # [PROCESS] 업무 처리 공간
-    │   ├── roadmap.md        # 📅 전체 계획 (Single Source of Truth)
-    │   ├── history.md        # 📜 의사결정 로그 (태그 기반 인덱스)
-    │   ├── tasks/            # 📝 현재 진행 중인 오더 (Workspace)
-    │   └── archive/          # 🗄️ 완료된 오더 보관소
-    │
-    └── specs/                # [TRUTH] 5-Layer 스펙 (불변의 규칙)
-        ├── 1_planning/       # 기획
-        ├── 2_design/         # 디자인
-        └── ...
+### 🆕 A. 신규 프로젝트 (New Project)
 
+```mermaid
+flowchart LR
+    A[Start] --> B(1. Initial Setup)
+    B --> C{2. Execution}
+    C -->|New Task| D[Order]
+    C -->|Resume| E[Context]
+    D --> F(Progress)
+    E --> F
+    F --> G[Report & Archive]
+    G --> H(3. Wrap-up / Library)
+    H --> C
 ```
 
+#### 1️⃣ 초기 구축 (BOOTSTRAP)
+아무것도 없는 상태에서 시작할 때, 기획안을 기준으로 시스템을 구축합니다.
+
+> **💬 초기 구축 프롬프트:**  
+> "내가 가진 기획안들을 `docs/specs/` 하위의 단계별 `README.md`로 옮겨서 정리해줘. 그리고 이 스펙을 분석해서 `docs/odd/roadmap.md`에 우선순위대로 등록해줘."
+
+#### 2️⃣ 실전 개발 (EXECUTION)
+
+**Situation 1: 신규 작업을 시작할 때**
+새로운 기능을 개발하거나 작업을 시작하는 단계입니다.
+
+> **💬 1. 주문 생성:**  
+> "`@odd` 로드맵 1순위 작업을 위해 `@specs`를 확인하고 오더(Order) 초안을 작성해줘."
+>
+> **💬 2. 주문 진행:**  
+> "(사용자 승인 후) 승인했어. 오더에 따라 `progress.json`을 업데이트하면서 작업을 진행해줘."
+>
+> **💬 3. 주문 완료:**  
+> "작업이 끝났으니 `report.json`을 작성하고 태스크를 아카이브해줘."
+
+**Situation 2: 이전 작업을 이어서 할 때 (Resume)**
+세션이 끊겼거나 다음 날 작업을 재개하는 단계입니다.
+
+> **💬 1. 맥락 파악:**  
+> "`@odd` 현재 `roadmap.md`의 진행 상태와 `tasks/` 폴더에 있는 오더를 확인해서 상황을 파악해줘."
+>
+> **💬 2. 주문 진행:**  
+> "파악된 오더의 `progress.json`을 보고 이어서 작업을 진행해줘."
+>
+> **💬 3. 주문 완료:**  
+> "작업이 끝났으니 리포트를 작성하고 아카이브해줘."
+
+#### 3️⃣ 개발 정리 (WRAP-UP)
+작업이 어느 정도 쌓였을 때, 도서관(지식)을 정리합니다.
+
+> **💬 라이브러리 정리 프롬프트:**  
+> "지금까지 `@odd` 아카이브에 쌓인 리포트들을 분석해서, `@library`의 도메인 지식을 보강해줘. 그리고 **책들 간의 시냅스 연결**을 강화해줘."
+
 ---
 
-## 🚀 Workflow (How it works)
+### 🏙️ B. 기존 프로젝트 (Existing Project)
 
-ODD의 사이클은 **계획(Roadmap) → 주문(Order) → 실행(Progress) → 기록(Library)**으로 순환합니다.
+```mermaid
+flowchart LR
+    A[Existing Code] --> B{Migration}
+    B -->|Task & Log| C[1. Order Organization]
+    B -->|Docs & Comments| D[2. Library Organization]
+    C --> E(Roadmap & Tasks)
+    D --> F(Atlas & Library)
+    E --> G[Ready to ODD]
+    F --> G
+```
 
-### Step 1. Start & Traverse (Atlas)
+#### 1️⃣ 오더 정리 (MIGRATION - ORDER)
+현재 진행 중인 작업 목록을 시스템화합니다.
 
-AI 세션을 시작할 때, **`ATLAS.md`** 파일 하나만 참조시킵니다. AI는 지도를 보고 영역(Cluster)에 진입한 뒤, 책 속의 **시냅스(Synapses)**를 따라 필요한 지식을 스스로 로드합니다.
+> **💬 오더 정리 프롬프트:**  
+> "현재 진행 중인 작업들과 커밋 로그를 분석해서 `docs/odd/roadmap.md`를 구성하고, 미완료된 작업들은 `docs/odd/tasks/`에 오더(Order)로 만들어줘."
 
-### Step 2. Draft Order (Student Agent)
+#### 2️⃣ 라이브러리 정리 (MIGRATION - LIBRARY)
+기존의 파편화된 정보를 지식으로 변환합니다.
 
-AI는 사용자의 요청을 바탕으로 **`docs/odd/tasks/`** 에 `_order.json` 파일을 **초안(DRAFT)** 상태로 작성하고 멈춥니다.
-
-> *"오더를 작성했습니다. 승인해 주시겠습니까?"*
-
-### Step 3. Execute & Report (Student Agent)
-
-사용자가 승인하면, AI는 `progress.json`에 로그를 남기며 코드를 작성합니다. 완료 후 `report.json`을 제출합니다.
-
-### Step 4. Update Wisdom (Librarian Agent)
-
-작업이 끝나면 **관장(Librarian)** 모드로 전환하여, 이번 작업에서 얻은 경험을 **`docs/library/`** 의 책들에 기록하고, 새로운 지식의 **연결(Synapse)**을 정의합니다.
-
-> *"이번 싱크 로직 변경 사항을 `sync_logic.md` 책에 기록하고, `player_ui.md`와 연결했습니다."*
-
----
-
-## 🛠️ Getting Started
-
-1. **Clone & Copy**: 이 저장소를 복제하거나, 폴더 구조를 당신의 프로젝트에 복사하세요.
-2. **Initialize Atlas**: `docs/library/ATLAS.md` 파일을 열어 당신의 프로젝트 구조에 맞게 수정하세요.
-3. **Set Roadmap**: `docs/odd/roadmap.md`에 현재 프로젝트의 단계와 할 일을 적으세요.
-4. **Inject Persona**: `AGENTS.md`의 내용을 당신의 AI(Cursor, Claude Project 등)의 시스템 프롬프트에 입력하세요.
-5. **Start!**: "아틀라스 확인하고 첫 번째 오더 시작해"라고 명령하면 됩니다.
+> **💬 라이브러리 정리 프롬프트:**  
+> "기존의 기획서나 코드 주석을 분석해서 `docs/library/`에 도메인별 지식으로 정리해줘. 그리고 `ATLAS.md`에 **새로운 도메인 목록만** 등록해줘."
 
 ---
 
-## 📜 Philosophy
+## 🧭 3. 참조 가이드 (Reference Context)
 
-> **"지능은 언어 간의 거리(Distance)를 파악하는 능력이다."**
+```mermaid
+graph TD
+    User((User)) -->|Command| Agent[AI Agent]
+    Agent -->|Order / Work| Odd[@odd\n(Worker)]
+    Agent -->|Ask / Learn| Lib[@library\n(Wisdom)]
+    Agent -->|Check| Specs[@specs\n(Truth)]
+```
 
-ODD v5.5는 단순한 자동화를 거부합니다. 우리는 AI가 인간의 뇌처럼 **지식의 거리를 이해하고**, 과거의 경험을 통해 **스스로 성장하는 시스템**을 지향합니다.
+효율적인 협업을 위해, AI를 부를 때 **역할(@Context)**을 지정해 주세요.
 
-**Welcome to the Future of Collaboration.**
+| 참조 대상 | 역할 (메타포) | 언제 사용하나요? |
+| :--- | :--- | :--- |
+| **`@odd`** | **일꾼 (Worker)** | "이 기능 만들어줘", "버그 고쳐줘", "진행 상황 알려줘" |
+| **`@library`** | **현자 (Wisdom)** | "이 개념이 뭐야?", "우리 기술 스택이 뭐지?", "과거엔 어떻게 했어?" |
+| **`@specs`** | **판사 (Truth)** | "기획 의도가 뭐야?", "이 기능 스펙이 어떻게 돼?" |
+
+---
+
+## 💡 팁 (Pro Tips)
+
+*   **세션 시작 시**: 항상 `ATLAS.md`와 `roadmap.md`를 먼저 공유하여 맥락을 동기화하세요.
+*   **승인(Approve)**: AI가 작성한 `order.json`을 보고 **"승인"**해야 실제 코딩이 시작됩니다.
+*   **시냅스(Synapse)**: 아틀라스는 도메인의 목록만 관리(불변)하고, 실제 지식의 연결은 각 도메인 문서 내부에서 시냅스로 연결합니다.
