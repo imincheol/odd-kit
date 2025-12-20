@@ -1,15 +1,15 @@
-# 🚀 ODD Starter Kit (v5.0 Atlas Edition)
+# 🚀 ODD Starter Kit (v5.5 Distributed Synapse Edition)
 
 > **"AI 개발의 기억 상실증을 치료하다."**
-> Order Driven Development (ODD) v5.0: Atlas & Agent System
+> Order Driven Development (ODD) v5.5: Distributed Synapse System
 
 **ODD Starter**는 LLM(Large Language Model)과의 협업 시 발생하는 컨텍스트 유실, 환각(Hallucination), 그리고 히스토리 부재 문제를 해결하기 위한 **구조적 개발 방법론(Framework)**입니다.
 
-단순히 프롬프트를 던지는 것을 넘어, **도서관(Library)**과 **지도(Atlas)**, 그리고 **전문 에이전트(Agents)** 시스템을 통해 AI가 프로젝트의 맥락을 완벽하게 이해하고 "지속 가능한 개발"을 할 수 있도록 돕습니다.
+단순히 프롬프트를 던지는 것을 넘어, **도서관(Library)**과 **지도(Atlas)**, 그리고 **분산된 시냅스(Synapses)** 시스템을 통해 AI가 인간의 뇌처럼 연상 작용을 하며 "지속 가능한 개발"을 할 수 있도록 돕습니다.
 
 ---
 
-## 🌟 Why ODD v5.0?
+## 🌟 Why ODD v5.5?
 
 AI 코딩 툴(Cursor, Claude, ChatGPT 등)을 사용할 때 이런 문제를 겪지 않으셨나요?
 
@@ -17,25 +17,24 @@ AI 코딩 툴(Cursor, Claude, ChatGPT 등)을 사용할 때 이런 문제를 겪
 * 😵‍💫 *"파일이 너무 많아서 뭘 참고해야 할지 모르겠어."* (컨텍스트 과부하)
 * 😡 *"시키지도 않은 일을 멋대로 해버렸어!"* (통제 불가능)
 
-ODD v5.0은 **인간의 지식 경영 방식(도서관과 관장)**을 차용하여 이 문제들을 해결합니다.
+ODD v5.5는 **인간의 지식 경영 방식(도서관과 관장)**과 **뇌의 연상 구조(시냅스)**를 차용하여 이 문제들을 해결합니다.
 
 ### Key Features
 
-1. **🗺️ Atlas System (지식의 지도)**
-* AI에게 수백 개의 파일을 던지는 대신, 단 하나의 진입점 **`ATLAS.md`**를 제공합니다.
-* 지식 간의 **거리(Distance)**와 **위상(Topology)**을 정의하여 AI가 필요한 정보만 정확히 찾아냅니다.
+1. **🧠 Distributed Synapse (분산된 시냅스)**
 
+* 거대한 중앙 인덱스 대신, 각 지식(Book)들이 스스로 **연관된 지식(Synapse)** 정보를 가집니다.
+* AI는 **`ATLAS.md`**로 진입하여, 책 속에 연결된 시냅스를 타고 필요한 지식을 스스로 찾아갑니다.
 
 2. **👥 Dual Agent Personas (이원화된 역할)**
-* **👨‍🎓 Student Agent (실행가)**: 도서관에서 책을 빌려 정해진 `Order`만 수행하고 빠집니다.
-* **📚 Librarian Agent (관리자)**: 작업이 끝나면 결과를 분석해 도서관의 **책(Book)**을 업데이트하고 지식을 축적합니다.
 
+* **👨‍🎓 Student Agent (실행가)**: 도서관에서 책을 빌려 정해진 `Order`만 수행하고 빠집니다.
+* **📚 Librarian Agent (관리자)**: 작업이 끝나면 결과를 분석해 도서관의 **책(Book)**을 업데이트하고 **연결(Synapse)**을 강화합니다.
 
 3. **🛡️ "No Order, No Work" Protocol**
+
 * 철저한 **주문(Order) 기반 개발**입니다.
 * **Draft & Stop**: 승인되지 않은 오더는 절대 실행되지 않습니다.
-
-
 
 ---
 
@@ -45,12 +44,12 @@ ODD v5.0은 **인간의 지식 경영 방식(도서관과 관장)**을 차용하
 
 ```text
 .
-├── CLAUDE.md                 # [SYSTEM] 에이전트의 뇌 (프롬프트 & 행동 강령)
+├── AGENTS.md                 # [SYSTEM] 에이전트의 뇌 (행동 강령 & 페르소나)
 └── docs/
     ├── library/              # [WISDOM] 지식 도서관 (RAG 저장소)
-    │   ├── ATLAS.md          # 🗺️ 프로젝트의 대문 (Entry Point)
-    │   ├── domains/          # 도메인 지식 (예: Sync, UI, Payment)
-    │   └── tech/             # 기술 지식 (예: DB Schema, Deploy)
+    │   ├── ATLAS.md          # 🗺️ 거시적 지도 (Macro Topology)
+    │   ├── domains/          # 도메인 지식 (예: Player, Editor)
+    │   └── tech/             # 기술 지식 (예: DB, Deploy)
     │
     ├── odd/                  # [PROCESS] 업무 처리 공간
     │   ├── roadmap.md        # 📅 전체 계획 (Single Source of Truth)
@@ -71,9 +70,9 @@ ODD v5.0은 **인간의 지식 경영 방식(도서관과 관장)**을 차용하
 
 ODD의 사이클은 **계획(Roadmap) → 주문(Order) → 실행(Progress) → 기록(Library)**으로 순환합니다.
 
-### Step 1. Start with Atlas
+### Step 1. Start & Traverse (Atlas)
 
-AI 세션을 시작할 때, **`ATLAS.md`** 파일 하나만 참조시킵니다. AI는 지도를 보고 현재 위치(Roadmap)와 필요한 지식(Library)을 스스로 로드합니다.
+AI 세션을 시작할 때, **`ATLAS.md`** 파일 하나만 참조시킵니다. AI는 지도를 보고 영역(Cluster)에 진입한 뒤, 책 속의 **시냅스(Synapses)**를 따라 필요한 지식을 스스로 로드합니다.
 
 ### Step 2. Draft Order (Student Agent)
 
@@ -87,9 +86,9 @@ AI는 사용자의 요청을 바탕으로 **`docs/odd/tasks/`** 에 `_order.json
 
 ### Step 4. Update Wisdom (Librarian Agent)
 
-작업이 끝나면 **관장(Librarian)** 모드로 전환하여, 이번 작업에서 얻은 경험(버그, 노하우)을 **`docs/library/`** 의 책들에 업데이트합니다.
+작업이 끝나면 **관장(Librarian)** 모드로 전환하여, 이번 작업에서 얻은 경험을 **`docs/library/`** 의 책들에 기록하고, 새로운 지식의 **연결(Synapse)**을 정의합니다.
 
-> *"이번 싱크 로직 변경 사항을 `sync_logic.md` 책에 기록했습니다."*
+> *"이번 싱크 로직 변경 사항을 `sync_logic.md` 책에 기록하고, `player_ui.md`와 연결했습니다."*
 
 ---
 
@@ -98,7 +97,7 @@ AI는 사용자의 요청을 바탕으로 **`docs/odd/tasks/`** 에 `_order.json
 1. **Clone & Copy**: 이 저장소를 복제하거나, 폴더 구조를 당신의 프로젝트에 복사하세요.
 2. **Initialize Atlas**: `docs/library/ATLAS.md` 파일을 열어 당신의 프로젝트 구조에 맞게 수정하세요.
 3. **Set Roadmap**: `docs/odd/roadmap.md`에 현재 프로젝트의 단계와 할 일을 적으세요.
-4. **Inject Persona**: `CLAUDE.md`의 내용을 당신의 AI(Cursor, Claude Project 등)의 시스템 프롬프트에 입력하세요.
+4. **Inject Persona**: `AGENTS.md`의 내용을 당신의 AI(Cursor, Claude Project 등)의 시스템 프롬프트에 입력하세요.
 5. **Start!**: "아틀라스 확인하고 첫 번째 오더 시작해"라고 명령하면 됩니다.
 
 ---
@@ -107,6 +106,6 @@ AI는 사용자의 요청을 바탕으로 **`docs/odd/tasks/`** 에 `_order.json
 
 > **"지능은 언어 간의 거리(Distance)를 파악하는 능력이다."**
 
-ODD v5.0은 단순한 자동화를 거부합니다. 우리는 AI가 인간의 뇌처럼 **지식의 거리를 이해하고**, 과거의 경험을 통해 **스스로 성장하는 시스템**을 지향합니다.
+ODD v5.5는 단순한 자동화를 거부합니다. 우리는 AI가 인간의 뇌처럼 **지식의 거리를 이해하고**, 과거의 경험을 통해 **스스로 성장하는 시스템**을 지향합니다.
 
 **Welcome to the Future of Collaboration.**
