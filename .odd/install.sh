@@ -22,8 +22,7 @@ fetch_system_file() {
 }
 
 # 주요 시스템 파일 강제 대조 (항상 최신 버전 유지)
-# fetch_system_file "AGENTS.md" --update # 직접 복사
-fetch_system_file "install.sh" --update
+fetch_system_file ".odd/install.sh" --update
 fetch_system_file ".odd/_templates/ATLAS.md" --update
 fetch_system_file ".odd/_templates/history.md" --update
 fetch_system_file ".odd/_templates/roadmap.md" --update
