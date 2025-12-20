@@ -1,7 +1,7 @@
-# 🚀 ODD Starter Kit (v5.8 Standard Edition)
+# 🚀 ODD Starter Kit (v0.7.0 Standard Edition)
 
 > **"AI 개발의 기억 상실증을 치료하라."**  
-> Order Driven Development (ODD) v5.8: Library & Atlas Framework
+> Order Driven Development (ODD) v0.7.0: Library & Atlas Framework
 
 ---
 
@@ -15,7 +15,7 @@ curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/install_od
 *(설치 후에는 `docs/` 폴더가 생성되며, 사용자의 기존 데이터는 안전하게 보존됩니다.)*
 
 ### ⚠️ 필수 설정 (Required Setup)
-프로젝트 루트에 있는 **`docs/library/ATLAS.md`** 파일의 내용을 복약하여, 사용 중인 AI(ChatGPT, Claude, Cursor 등)의 **System Prompt(Custom Instructions)**에 붙여넣으세요.
+프로젝트 루트에 있는 **`docs/odd/ATLAS.md`** 파일의 내용을 복약하여, 사용 중인 AI(ChatGPT, Claude, Cursor 등)의 **System Prompt(Custom Instructions)**에 붙여넣으세요.
 이 설정이 되어야 AI가 프로젝트의 정체성과 ODD 프로세스를 이해하고 올바르게 동작합니다.
 
 ---
@@ -98,11 +98,11 @@ flowchart LR
 > **💬 오더 정리 프롬프트:**  
 > "현재 진행 중인 작업들과 커밋 로그를 분석해서 `docs/odd/roadmap.md`를 구성하고, 미완료된 작업들은 `docs/odd/tasks/`에 오더(Order)로 만들어줘."
 
-#### 2️⃣ 라이브러리 정리 (MIGRATION - LIBRARY)
+#### 2️⃣ 지식 정리 (MIGRATION - LIBRARY)
 기존의 파편화된 정보를 지식으로 변환합니다.
 
-> **💬 라이브러리 정리 프롬프트:**  
-> "기존의 기획서나 코드 주석을 분석해서 `docs/library/`에 도메인별 지식으로 정리해줘. 그리고 `ATLAS.md`에 **새로운 도메인 목록만** 등록해줘."
+> **💬 지식 정리 프롬프트:**  
+> "기존의 기획서나 코드 주석을 분석해서 `docs/odd/books/`에 도메인별 지식으로 정리해줘. 그리고 `ATLAS.md`에 **새로운 책(Book) 목록만** 등록해줘."
 
 ---
 
@@ -120,9 +120,9 @@ graph TD
 
 | 참조 대상 | 역할 (메타포) | 언제 사용하나요? |
 | :--- | :--- | :--- |
-| **`@odd`** | **일꾼 (Worker)** | "이 기능 만들어줘", "버그 고쳐줘", "진행 상황 알려줘" |
-| **`@library`** | **현자 (Wisdom)** | "이 개념이 뭐야?", "우리 기술 스택이 뭐지?", "과거엔 어떻게 했어?" |
-| **`@specs`** | **판사 (Truth)** | "기획 의도가 뭐야?", "이 기능 스펙이 어떻게 돼?" |
+| **`@odd`** | **워커 (Worker)** | "작업 시작해줘", "진행 상황 알려줘" (Tasks, Roadmap, History) |
+| **`books`** | **지식 (Wisdom)** | "이 개념이 뭐야?", "기술 스택 확인해줘" (Domain, Tech) |
+| **`specs`** | **기준 (Truth)** | "기획 의도가 뭐야?", "스펙 확인해줘" (Specifications) |
 
 ---
 

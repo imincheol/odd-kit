@@ -1,5 +1,5 @@
 #!/bin/bash
-# ODD Starter v7.0 Installer
+# ODD Starter v0.7.0 Installer
 
 REPO_URL="https://raw.githubusercontent.com/imincheol/odd-starter/main"
 
@@ -20,15 +20,13 @@ fetch_system_file() {
     fi
 }
 
-# 주요 시스템 파일 강제 동기화 (Source -> Local)
-# Note: GitHub raw doesn't support recursive directory download easily with curl.
-# We will download specific files to recreate the structure.
-
 # Root
 fetch_system_file ".odd/ATLAS.md" --update
 
 # Books
 fetch_system_file ".odd/books/_template/book.md" --update
+# (선택) 책 스키마가 있다면 추가
+# fetch_system_file ".odd/books/_template/book_schema.yaml" --update 
 
 # Tasks
 fetch_system_file ".odd/tasks/_template/order.json" --update
@@ -40,6 +38,9 @@ fetch_system_file ".odd/tasks/roadmap.md" --update
 # History
 fetch_system_file ".odd/history/_template/history.md" --update
 
+# Specs Template (추가됨!)
+fetch_system_file ".odd/specs/README.md" --update
+
 
 # 2. [System Deploy] .odd 내용을 docs/odd로 배포
 echo "📦 시스템 파일 배치 중..."
@@ -47,23 +48,24 @@ echo "📦 시스템 파일 배치 중..."
 mkdir -p docs/odd
 mkdir -p docs/specs
 
-# Recursive copy of the structured .odd folder to docs/odd
-# But we need to be careful not to overwrite user data blindly.
-# We will use rsync-like logic with cp.
-
 # 2-1. System Folders (Ensure they exist)
 mkdir -p docs/odd/books/_template
 mkdir -p docs/odd/books/domain
 mkdir -p docs/odd/books/tech
 mkdir -p docs/odd/tasks/_template
+mkdir -p docs/odd/tasks/active  # (추가됨! 작업 중 파일 공간)
 mkdir -p docs/odd/history/_template
 mkdir -p docs/odd/archive
 
+# Specs Standard Folders (추가됨! 스펙 표준 폴더)
+mkdir -p docs/specs/{0_origin,1_planning,2_design,3_markup,4_development}
+
 # 2-2. Deploy Templates & System Files (Force Overwrite)
 cp .odd/ATLAS.md docs/odd/ATLAS.md
-cp .odd/books/_template/book.md docs/odd/books/_template/book.md
+cp .odd/books/_template/* docs/odd/books/_template/
 cp .odd/tasks/_template/* docs/odd/tasks/_template/
 cp .odd/history/_template/history.md docs/odd/history/_template/history.md
+
 
 # 3. [User Data] 초기화 (파일이 없는 경우에만 템플릿에서 복사)
 safe_copy() {
@@ -81,11 +83,20 @@ echo "📂 사용자 데이터 초기화 중..."
 # Roadmap (Snapshot)
 safe_copy ".odd/tasks/roadmap.md" "docs/odd/tasks/roadmap.md"
 
+# Specs Init (추가됨! 각 스펙 폴더에 README 생성)
+if [ -f ".odd/specs/README.md" ]; then
+    for dir in docs/specs/*; do
+        if [ -d "$dir" ]; then
+            safe_copy ".odd/specs/README.md" "$dir/README.md"
+        fi
+    done
+fi
+
 # History Init
 CURRENT_YM=$(date +"%Y/%m")
 mkdir -p "docs/odd/history/$CURRENT_YM"
 
-echo "✅ ODD v7.0 시스템이 준비되었습니다."
+echo "✅ ODD v0.7.0 시스템이 준비되었습니다."
 echo "👉 docs/odd/ATLAS.md 를 열어 새로운 가이드를 확인하세요."
 
 # 4. [Cleanup] 설치용 임시 폴더 삭제

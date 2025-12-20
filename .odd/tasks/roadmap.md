@@ -1,4 +1,4 @@
-# Project Roadmap (ODD v7.0)
+# Project Roadmap (ODD v0.7.0)
 
 ## 📍 Current Status
 - **Phase**: MVP

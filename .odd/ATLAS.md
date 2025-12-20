@@ -1,4 +1,4 @@
-# Project Atlas: The ODD System (v7.0)
+# Project Atlas: The Single Source of Truth
 
 이 문서는 **ODD(Order-Driven Development) 시스템의 유일한 나침반(Map)**입니다.
 모든 에이전트는 작업 시작 시 이 문서를 먼저 참조하여 현재 위치와 규칙을 확인하십시오.
@@ -8,8 +8,8 @@
 ## 🏛️ System Architecture (ODD Space)
 
 ### 1. 📍 Tasks (Working Memory) -> `odd/tasks/`
-- **`roadmap.md`**: 프로젝트의 현재 상태 스냅샷. 작업 전후 반드시 확인 및 업데이트.
-- **`_template/`**: Order, Progress, Report 생성용 JSON 템플릿 및 Roadmap 규칙.
+- **`roadmap.md`**: 프로젝트의 현재 상태 스냅샷. 작업 전후 반드시 확인 및 업데이트. (최초 생성 시 기본 파일 복사)
+- **`_template/`**: Order, Progress, Report 생성용 템플릿.
 - **Active Tasks**: 현재 진행 중인 JSON 파일들이 위치함.
 
 ### 2. 🧠 Books (Long-term Memory) -> `odd/books/`

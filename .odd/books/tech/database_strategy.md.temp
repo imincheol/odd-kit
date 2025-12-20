@@ -1,0 +1,31 @@
+---
+type: book
+domain: Database
+reference_count: 12
+last_updated: 2025-12-20
+---
+
+# Database: PostgreSQL 운영 전략
+
+## 1. 개요 (Overview)
+- **목적**: 데이터의 영속성 보장 및 고성능 쿼리 처리
+- **Rule**: 모든 테이블에는 `created_at`, `updated_at` 타임스탬프 필수 포함.
+- **Tech Stack**: PostgreSQL 16, Supabase, Prisma ORM
+
+## 2. 지식 클러스터 (Knowledge Cluster)
+- **[RLS (Row Level Security)]**: Supabase의 RLS를 사용하여 애플리케이션 레벨이 아닌 DB 레벨에서 보안 적용.
+- **[Indexing]**: 조회 빈도가 높은 `user_id` 등의 외래키에는 반드시 인덱스 적용.
+
+## 3. 의사결정 (Key Decisions)
+- **[2024-11-10] Prisma 도입 결정**: 
+  - **Problem**: Raw SQL 사용 시 타입 안전성 부족 및 생산성 저하
+  - **Solution**: Prisma ORM 도입 및 스키마 관리 일원화
+  - **Reason**: 팀 내 TypeScript 숙련도가 높고, 자동완성 지원으로 개발 속도 향상 기대
+
+## 4. 주의사항 (Cautions)
+- **N+1 Problem**: Prisma 사용 시 `include`를 남발하지 말고, 필요한 경우 명시적 조인이나 로직 최적화 수행.
+- **Migration**: 프로덕션 DB 마이그레이션 전 반드시 스테이징 환경에서 데이터 손실 여부 테스트.
+
+## 5. 연결 (Synapse)
+- Related Books: [ Backend API ]
+- Related Specs: [ specs/2_design/db_schema.md ]
