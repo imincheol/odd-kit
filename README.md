@@ -107,9 +107,9 @@ flowchart LR
 ```mermaid
 graph TD
     User((User)) -->|Command| Agent[AI Agent]
-    Agent -->|Order / Work| Odd[@odd\n(Worker)]
-    Agent -->|Ask / Learn| Lib[@library\n(Wisdom)]
-    Agent -->|Check| Specs[@specs\n(Truth)]
+    Agent -->|Order / Work| Odd["@odd\n(Worker)"]
+    Agent -->|Ask / Learn| Lib["@library\n(Wisdom)"]
+    Agent -->|Check| Specs["@specs\n(Truth)"]
 ```
 
 효율적인 협업을 위해, AI를 부를 때 **역할(@Context)**을 지정해 주세요.
