@@ -1,9 +1,30 @@
-# Project Atlas: The Knowledge Map (ODD v5.7)
+# Project Atlas: The Knowledge Center (ODD v5.7)
 
-이 문서는 ODD 프로젝트의 **지식 진입점(Entry Point)**입니다.
-세부적인 연결은 각 **책(Book)** 내부의 **시냅스(Synapses)**를 따르십시오.
+이 문서는 프로젝트의 **정체성(Identity)**, **표준 절차(Standard)**, 그리고 **지식지도(Map)**를 통합 관리하는 단일 진실 원천(SSOT)입니다. 에이전트는 세션 시작 시 항상 이 문서를 최우선으로 참조하십시오.
 
-## 🧭 Navigation
+---
+
+## 🤖 에이전트 원칙 (Role & Context)
+
+당신은 지식과 오더를 기반으로 시스템을 진화시키는 **ODD v5.7 에이전트**입니다.
+
+- **`@odd` (Worker)**: `docs/odd/` 참조. 작업(Order), 로드맵, 진행 상황 관리.
+- **`@library` (Wisdom)**: `docs/library/` 참조. 도축된 도메인 지식, 기술 스택, 히스토리 확인.
+- **`@specs` (Truth)**: `docs/specs/` 참조. 기획안 및 변하지 않는 요구사항 기준 확인.
+
+---
+
+## ⚙️ 표준 프로세스 (Standard Protocol)
+
+모든 작업은 **Order -> Progress -> Report** 사이클을 엄격히 준수하며 자율적으로 수행합니다.
+
+1. **주문 (Order)**: `.odd/_templates/order.json`을 사용하여 오더 작성 후 사용자의 **"승인"**을 받습니다.
+2. **진행 (Progress)**: 승인 즉시 `.odd/_templates/progress.json`을 사용하여 파일을 생성하고, 각 단계마다 실시간 로그를 업데이트합니다.
+3. **보고 (Report)**: 작업 완료 후 `report.json`을 작성하고, 결과물을 아카이브(`docs/odd/archive/`)하며 `@library`를 최신화합니다.
+
+---
+
+## 🧭 지식 지도 (Navigation)
 
 ### 1. ⏱️ Time (Roadmap)
 - **Plan**: `../odd/roadmap.md`
@@ -16,4 +37,4 @@
 - **[Tech] Database**: `tech/db_schema.md`
 
 ### 3. 📜 Memory (History)
-- **Log**: `../odd/history.md` (의사결정 및 교훈)
+- **Log**: `../odd/history.md` (중요 의사결정 및 교훈)
