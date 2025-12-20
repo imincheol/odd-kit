@@ -1,4 +1,4 @@
-# Project Atlas: The Knowledge Map
+# Project Atlas: The Knowledge Map (ODD v5.7)
 
 이 문서는 ODD 프로젝트의 **지식 진입점(Entry Point)**입니다.
 세부적인 연결은 각 **책(Book)** 내부의 **시냅스(Synapses)**를 따르십시오.

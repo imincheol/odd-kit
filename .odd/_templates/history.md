@@ -1,4 +1,4 @@
-# Project History & Decision Log
+# Project History & Decision Log (ODD v5.7)
 
 이곳은 프로젝트의 **기술적 의사결정(Decision)**과 **교훈(Lesson)**을 기록하는 곳입니다.
 작업(Task) 완료 후, **"미래의 나에게 남길 핵심 한 줄"**을 적으십시오.

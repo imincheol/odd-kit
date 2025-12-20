@@ -1,5 +1,5 @@
 #!/bin/bash
-# ODD Starter v5.6 Installer
+# ODD Starter v5.7 Installer
 
 REPO_URL="https://raw.githubusercontent.com/imincheol/odd-starter/main"
 
@@ -62,4 +62,4 @@ for dir in docs/specs/*; do
     fi
 done
 
-echo "✅ ODD v5.6 시스템이 준비되었습니다."
+echo "✅ ODD v5.7 시스템이 준비되었습니다."

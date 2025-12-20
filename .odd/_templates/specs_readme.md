@@ -1,4 +1,4 @@
-# Specification
+# Specification (ODD v5.7)
 
 이 문서는 해당 단계의 **스펙(Specification)**을 정의합니다.
 
