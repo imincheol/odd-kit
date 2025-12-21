@@ -1,4 +1,4 @@
-# Specification (ODD v0.7.3)
+# Specification (ODD v0.8.0)
 
 ## 1. 개요 (Overview)
 - **Goal**: (이 스펙이 달성하고자 하는 목표)

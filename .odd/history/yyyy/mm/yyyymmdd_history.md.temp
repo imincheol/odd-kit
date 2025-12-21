@@ -1,4 +1,4 @@
-<!-- ODD v0.7.3 -->
+<!-- ODD v0.8.0 -->
 # History: YYYY-MM
 
 ## [YYYY-MM-DD]
