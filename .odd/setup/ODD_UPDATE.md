@@ -1,16 +1,27 @@
-# 🔄 ODD Migration Protocol (마이그레이션 가이드)
+# 🔄 ODD 시스템 업데이트 프로토콜 (System Update Guide)
 
 > **ODD Standard Protocol v0.7.3**
 >
 > **For AI Agent:**
 > 사용자가 이 문서를 제공하면, 당신은 **"ODD 시스템 관리자"**로서 기존 프로젝트를 ODD 체계에 맞게 정리(Refactoring/Organizing)해야 합니다.
-> 아래 절차를 **순서대로** 수행하십시오.
+> 모든 작업은 **Order(명령서)와 Progress(진행상황)**에 기반하여 기록되어야 합니다.
 
 ---
 
+## **Phase 0: 질서 부여 (Self-Registration)**
+
+가장 먼저, 이 마이그레이션 작업 자체를 시스템에 등록하여 추적 가능하게 만드십시오.
+
+1. **오더 생성**: `docs/odd/tasks/active/000_migration.json` 파일을 생성하십시오.
+   - **Type**: `setup`
+   - **Goal**: "기존 프로젝트 분석 및 ODD 시스템으로의 이관"
+   - **Plan**: 1. 현황 분석, 2. 지식 이관, 3. 업무 동기화
+2. **진행 상황 초기화**: `docs/odd/tasks/active/000_migration_progress.json`을 생성하고 상태를 `IN_PROGRESS`로 설정하십시오.
+3. **로드맵 등록**: `docs/odd/roadmap.md` 최상단에 `### [Phase 0] Migration` 섹션을 만들고, 이 태스크(`000_migration`)를 최우선 순위로 체크박스(`[ ]`)와 함께 등록하십시오.
+
 ## **Phase 1: 현황 분석 (Analysis)**
 
-현재 프로젝트의 상태를 파악해야 합니다.
+이제 오더가 생성되었으니, 공식적으로 작업을 시작합니다. `progress.json`에 로그를 남기며 진행하세요.
 
 1. **파일 구조 스캔**: 프로젝트의 전체 파일 구조를 읽고 핵심 디렉토리와 파일을 파악하십시오. (예: `src`, `components`, `api` 등)
 2. **기술 스택 식별**: `package.json`, `requirements.txt` 등의 의존성 파일을 분석하여 사용 중인 기술 스택을 파악하십시오.

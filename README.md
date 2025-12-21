@@ -61,11 +61,11 @@ flowchart LR
     H --> C
 ```
 
-#### 1️⃣ 초기 구축 (BOOTSTRAP)
+#### 1️⃣ 초기 설정 (Initial Setup)
 아무것도 없는 상태에서 시작할 때, 기획안을 기준으로 시스템을 구축합니다.
 
 > **💡 Smart Start:**  
-> **`docs/odd/setup/ODD_BOOTSTRAP.md`** 파일을 현재 채팅창에 업로드하거나 내용을 복사해서 AI에게 건네주세요.  
+> **`docs/odd/setup/ODD_INIT.md`** 파일을 현재 채팅창에 업로드하거나 내용을 복사해서 AI에게 건네주세요.  
 > AI가 프로젝트 인터뷰부터 스펙 정리, 로드맵 수립까지 자동으로 진행해줍니다.
 
 #### 2️⃣ 실전 개발 (EXECUTION)
@@ -106,7 +106,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A[Existing Code] --> B{Migration}
+    A[Existing Code] --> B{Update}
     B -->|Task & Log| C[1. Order Organization]
     B -->|Docs & Comments| D[2. Library Organization]
     C --> E(Roadmap & Tasks)
@@ -115,11 +115,11 @@ flowchart LR
     F --> G
 ```
 
-#### 1️⃣ 자동 마이그레이션 (Auto Migration)
-기존의 복잡한 코드와 문서를 한번에 ODD 시스템으로 변환합니다.
+#### 1️⃣ 시스템 업데이트 (System Update)
+기존 프로젝트를 ODD 시스템으로 변환하거나 현행화합니다.
 
-> **💡 Smart Migration:**  
-> **`docs/odd/setup/ODD_MIGRATION.md`** 파일을 현재 채팅창에 업로드하거나 내용을 복사해서 AI에게 건네주세요.  
+> **💡 Smart Update:**  
+> **`docs/odd/setup/ODD_UPDATE.md`** 파일을 현재 채팅창에 업로드하거나 내용을 복사해서 AI에게 건네주세요.  
 > AI가 현재 프로젝트의 **코드 분석, 기술 스택 파악, 로드맵 현행화**를 일괄적으로 수행합니다.
 
 ---

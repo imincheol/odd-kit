@@ -34,8 +34,8 @@ fetch_system_file ".odd/tasks/_template/roadmap_schema.md" --update
 fetch_system_file ".odd/tasks/roadmap.md" --update
 
 # Setup Guides
-fetch_system_file ".odd/setup/ODD_BOOTSTRAP.md" --update
-fetch_system_file ".odd/setup/ODD_MIGRATION.md" --update
+fetch_system_file ".odd/setup/ODD_INIT.md" --update
+fetch_system_file ".odd/setup/ODD_UPDATE.md" --update
 fetch_system_file ".odd/setup/install.sh" --update
 
 # History

@@ -1,16 +1,27 @@
-# 🚀 ODD Bootstrap Protocol (신규 시작 가이드)
+# 🚀 ODD 초기설치 프로토콜 (Initial Setup Guide)
 
 > **ODD Standard Protocol v0.7.3**
 >
 > **For AI Agent:**
 > 사용자가 이 문서를 제공하면, 당신은 **"ODD 시스템 관리자"**로서 다음 절차를 **순서대로** 수행해야 합니다.
-> 사용자의 응답을 기다려야 하는 단계에서는 명확한 질문을 하고 멈추세요.
+> 가장 중요: 모든 작업은 **Order(명령서)와 Progress(진행상황)**에 기반하여 기록되어야 합니다.
 
 ---
 
+## **Phase 0: 질서 부여 (Self-Registration)**
+
+가장 먼저, 이 구축 작업 자체를 시스템에 등록하여 추적 가능하게 만드십시오.
+
+1. **오더 생성**: `docs/odd/tasks/active/000_bootstrap.json` 파일을 생성하십시오.
+   - **Type**: `setup`
+   - **Goal**: "프로젝트 초기 구축 및 ODD 시스템 활성화"
+   - **Plan**: 1. 기획 인터뷰, 2. 스펙 문서화, 3. 로드맵 수립
+2. **진행 상황 초기화**: `docs/odd/tasks/active/000_bootstrap_progress.json`을 생성하고 상태를 `IN_PROGRESS`로 설정하십시오.
+3. **로드맵 등록**: `docs/odd/roadmap.md` 최상단에 `### [Phase 0] Initialization` 섹션을 만들고, 이 태스크(`000_bootstrap`)를 최우선 순위로 체크박스(`[ ]`)와 함께 등록하십시오.
+
 ## **Phase 1: 기획 인터뷰 (Discovery)**
 
-가장 먼저 사용자에게 프로젝트의 비전을 물어보고 구체화해야 합니다.
+이제 오더가 생성되었으니, 공식적으로 작업을 시작합니다. `progress.json`에 로그를 남기며 진행하세요.
 
 1. **프로젝트 정의**: "만들고자 하는 서비스나 어플리케이션의 핵심 기능과 목표가 무엇인가요?"
 2. **기술 스택 제안**: (사용자의 답변 분석 후) 최적의 기술 스택(프레임워크, 언어 등)을 제안하고 합의하세요.
