@@ -45,6 +45,12 @@ fetch_system_file ".odd/history/_template/history.md" --update
 # Specs Template
 fetch_system_file ".odd/specs/README.md" --update
 
+# Empty Dirs (Gitkeep) - Only for repo structure, not for install
+# fetch_system_file ".odd/tasks/active/.gitkeep" --update
+# fetch_system_file ".odd/books/domain/.gitkeep" --update
+# fetch_system_file ".odd/books/tech/.gitkeep" --update
+# fetch_system_file ".odd/history/_template/.gitkeep" --update
+
 
 # 2. [System Deploy] .odd 내용을 docs/odd로 배포
 echo "📦 시스템 파일 배치 중..."
@@ -71,6 +77,12 @@ cp .odd/books/_template/* docs/odd/books/_template/
 cp .odd/tasks/_template/* docs/odd/tasks/_template/
 cp .odd/setup/* docs/odd/setup/
 cp .odd/history/_template/history.md docs/odd/history/_template/history.md
+
+# Copy .gitkeep to preserve structure (Removed based on user request)
+# cp .odd/tasks/active/.gitkeep docs/odd/tasks/active/.gitkeep
+# cp .odd/books/domain/.gitkeep docs/odd/books/domain/.gitkeep
+# cp .odd/books/tech/.gitkeep docs/odd/books/tech/.gitkeep
+# cp .odd/history/_template/.gitkeep docs/odd/history/_template/.gitkeep
 
 
 # 3. [User Data] 초기화 (파일이 없는 경우에만 템플릿에서 복사)
