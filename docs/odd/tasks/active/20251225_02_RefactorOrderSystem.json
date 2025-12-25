@@ -1,0 +1,22 @@
+{
+    "odd_version": "v0.9.0",
+    "order_id": "20251225_02_RefactorOrderSystem",
+    "type": "system_upgrade",
+    "priority": "high",
+    "goal": "ODD 시스템의 문서 포맷을 JSON에서 Frontmatter가 포함된 Markdown으로 개선하여 가독성과 작성 편의성을 최적화한다.",
+    "context": {
+        "problem": "현재 JSON 포맷은 줄바꿈, 긴 텍스트 작성, 주석 추가가 어려워 복잡한 요구사항이나 계획을 서술하기에 한계가 있음.",
+        "solution": "Markdown의 표현력과 YAML Frontmatter의 데이터 구조를 결합하여 '사람이 읽기 좋고 기계도 이해할 수 있는' 형식을 도입함."
+    },
+    "requirements": [
+        "Order와 Progress 문서의 템플릿을 Markdown + YAML Frontmatter 형식으로 재정의한다.",
+        "새로운 포맷은 기존 JSON의 모든 메타데이터 필드를 수용해야 한다.",
+        "ATLAS.md의 워크플로우 설명을 새로운 포맷에 맞게 업데이트한다."
+    ],
+    "plan": [
+        "1. `odd/tasks/_template/order.md` 템플릿 작성",
+        "2. `odd/tasks/_template/progress.md` 템플릿 작성",
+        "3. `odd/ATLAS.md` 규칙 업데이트 (파일 확장자 및 작성법 변경)",
+        "4. (선택사항) 기존 템플릿 폴더에서 json 템플릿 제거 여부 결정"
+    ]
+}

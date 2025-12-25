@@ -1,0 +1,29 @@
+{
+    "odd_version": "v0.9.0",
+    "order_id": "20251225_00_Dogfooding_ODD",
+    "type": "setup",
+    "priority": "critical",
+    "goal": "ODD Starter 프로젝트 자체를 ODD 시스템으로 관리(Dogfooding)하며, 이를 본보기(Example)로 공개한다.",
+    "context": {
+        "related_files": [
+            "docs/odd/",
+            "docs/specs/",
+            "odd/setup/install.sh"
+        ],
+        "references": [
+            "User Request: ODD 또한 ODD로 관리하여 외부 공개"
+        ]
+    },
+    "requirements": [
+        "1. 로컬에 ODD 시스템을 설치한다. (docs/odd 생성)",
+        "2. 생성된 docs/odd를 프로젝트의 관리 주체로 삼는다.",
+        "3. docs/odd 폴더를 커밋에 포함시켜, ODD로 관리되는 과정을 투명하게 공개한다.",
+        "4. 로드맵(roadmap.md)에 현재 진행 중인 작업(시스템 구축, v0.9.0 릴리즈 등)을 반영한다."
+    ],
+    "plan": [
+        "1. [Completed] `./odd/setup/install.sh` 실행하여 시스템 구축",
+        "2. `docs/odd/tasks/roadmap.md` 초기화 및 현행화",
+        "3. `docs/odd/ATLAS.md` 커스터마이징 (Project: ODD Starter)",
+        "4. Git에 `docs/` 폴더 추가 및 커밋"
+    ]
+}
