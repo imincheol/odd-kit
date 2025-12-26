@@ -12,12 +12,12 @@
 
 가장 먼저, 이 마이그레이션 작업 자체를 시스템에 등록하여 추적 가능하게 만드십시오.
 
-1. **오더 생성**: `docs/odd/tasks/active/000_migration.json` 파일을 생성하십시오.
+1. **오더 생성**: `docs/odd/tasks/active/000_migration.md` 파일을 생성하십시오.
    - **Type**: `setup`
    - **Goal**: "기존 프로젝트 분석 및 ODD 시스템으로의 이관"
    - **Plan**: 1. 현황 분석, 2. 지식 이관, 3. 업무 동기화
-2. **진행 상황 초기화**: `docs/odd/tasks/active/000_migration_progress.json`을 생성하고 상태를 `IN_PROGRESS`로 설정하십시오.
-3. **로드맵 등록**: `docs/odd/roadmap.md` 최상단에 `### [Phase 0] Migration` 섹션을 만들고, 이 태스크(`000_migration`)를 최우선 순위로 체크박스(`[ ]`)와 함께 등록하십시오.
+2. **진행 상황 초기화**: `docs/odd/tasks/active/000_migration_progress.md`를 생성하고 상태를 `IN_PROGRESS`로 설정하십시오.
+3. **로드맵 등록**: `docs/odd/tasks/roadmap.md` 최상단에 `### [Phase 0] Migration` 섹션을 만들고, 이 태스크(`000_migration`)를 최우선 순위로 체크박스(`[ ]`)와 함께 등록하십시오.
 
 ## **Phase 1: 시스템 정제 및 현황 분석 (Cleanup & Analysis)**
 이제 오더가 생성되었으니, 공식적으로 작업을 시작합니다. `progress.json`에 로그를 남기며 진행하세요.
@@ -62,8 +62,8 @@
 
 진행 중인 업무를 시스템에 등록합니다.
 
-1. **Roadmap 현행화**: 분석된 현재 진행 상황을 바탕으로 `docs/odd/roadmap.md`의 현황을 업데이트하십시오. 이미 완료된 기능은 체크하고, 예정된 기능은 목록화하십시오.
-2. **Pending Task 생성**: 만약 개발이나 수정이 진행 중인 상태라면, 이를 `docs/odd/tasks/active/` 에 새로운 Order로 작성하여 작업을 이어갈 수 있게 하십시오.
+1. **Roadmap 현행화**: 분석된 현재 진행 상황을 바탕으로 `docs/odd/tasks/roadmap.md`의 현황을 업데이트하십시오. 이미 완료된 기능은 체크하고, 예정된 기능은 목록화하십시오.
+2. **Pending Task 생성**: 만약 개발이나 수정이 진행 중인 상태라면, 이를 `docs/odd/tasks/active/` 에 새로운 Order로 작성(md)하여 작업을 이어갈 수 있게 하십시오.
 
 ## **Phase 4: 완료 보고 (Report)**
 

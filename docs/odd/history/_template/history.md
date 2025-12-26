@@ -1,12 +1,6 @@
-<!-- ODD v0.9.0 -->
-# History: YYYY-MM
+# 📜 History: YYYY/MM
 
-## [YYYY-MM-DD]
-- **Time**: HH:MM
-- **Tags**: #Tag1 #Tag2
-- **Content**: 
-  - (Log content here)
-- **Insight**: 
-  - (Lesson learned or decision made)
-
----
+## YYYY-MM-DD
+- **[태그]** 작업 내용 요약 (Order ID: `YYYYMMDD_00_TaskName`)
+    - 세부 변경 사항 1
+    - 세부 변경 사항 2
