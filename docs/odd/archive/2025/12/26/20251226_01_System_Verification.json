@@ -1,0 +1,30 @@
+{
+    "order_id": "20251226_01_System_Verification",
+    "type": "refactor",
+    "priority": "normal",
+    "status": "pending",
+    "goal": "ODD v0.9.1 업데이트 후 남은 잔재(Tasks)를 정리하고, 설치 스크립트(install.sh)가 업데이트된 템플릿과 경로 구조를 로컬 환경에 올바르게 반영하는지 최종 검증한다.",
+    "context": {
+        "problem": "v0.9.1 업데이트 작업은 완료되었으나, 완료된 과거 오더(Dogfooding)가 잔존해 있으며, 변경된 install.sh를 실제 로컬 환경에 돌려보지 않아 잠재적 오류 가능성이 있음.",
+        "solution": "Active Task 정리(아카이빙) 후 install.sh를 실행하여 템플릿 동기화 상태와 디렉터리 구조를 확인한다.",
+        "related_lines": [],
+        "references": [
+            "docs/odd/tasks/active/20251225_00_Dogfooding_ODD.json",
+            "odd/setup/install.sh",
+            "docs/odd/history/CHANGELOG.md"
+        ]
+    },
+    "requirements": [
+        "1. **Cleanup**: `active/`에 남아있는 완료된 오더(`20251225_00`)를 아카이빙한다.",
+        "2. **Verify Installation**: `install.sh`를 실행하여 다음 사항을 확인한다.",
+        "   - `docs/odd/ATLAS.md`가 보존되는지 (덮어쓰기 방지)",
+        "   - `docs/odd/tasks/_template/*.json` 파일이 생성되는지",
+        "   - `docs/odd/specs` 폴더 구조가 올바른지"
+    ],
+    "plan": [
+        "Step 1: `docs/odd/tasks/active/` 정리 (Archive)",
+        "Step 2: `odd/setup/install.sh` 실행 (Dry Run 혹은 실제 실행)",
+        "Step 3: 생성된 파일 및 디렉터리 구조 검증",
+        "Step 4: 검증 완료 리포트 작성 및 오더 종료"
+    ]
+}

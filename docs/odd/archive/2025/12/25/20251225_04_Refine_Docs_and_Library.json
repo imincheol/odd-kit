@@ -1,0 +1,35 @@
+{
+    "odd_version": "v0.9.1",
+    "order_id": "20251225_04_Refine_Docs_and_Library",
+    "type": "documentation",
+    "priority": "normal",
+    "goal": "ODD Starter 프로젝트의 문서(README, ATLAS) 정합성을 맞추고, Library(Specs, Books, History)를 초기화하여 Dogfooding의 완성도를 높인다.",
+    "context": {
+        "related_files": [
+            "docs/odd/ATLAS.md",
+            "README.md",
+            "docs/specs/",
+            "docs/odd/books/",
+            "docs/odd/history/"
+        ],
+        "references": [
+            "User Request: 리드미에 Dogfooding 사실 명시",
+            "User Request: Specs 및 Book/History 초기화 필요성 제기"
+        ]
+    },
+    "requirements": [
+        "1. `docs/odd/ATLAS.md`의 내용을 `odd/ATLAS.md` 원본(JSON 기반)과 일치시킨다.",
+        "2. `README.md`에 이 프로젝트가 ODD로 관리되고 있음을 알리는 안내를 추가한다.",
+        "3. `docs/specs/`에 기본적인 기획 문서 예시를 추가한다.",
+        "4. `docs/odd/books/`에 ODD 개념 관련 도메인 지식을 추가한다.",
+        "5. `docs/odd/history/`에 v0.9.0 릴리즈까지의 역사를 요약하여 기록한다."
+    ],
+    "plan": [
+        "1. [Fix] ATLAS.md 동기화 (md -> json)",
+        "2. [Update] README.md (Dogfooding Badge & Notice)",
+        "3. [Init] Specs (Planning/Requirements)",
+        "4. [Init] Books (Domain/ODD Concept)",
+        "5. [Init] History (v0.9.0 Release Log)",
+        "6. [Finish] Report & Archive"
+    ]
+}

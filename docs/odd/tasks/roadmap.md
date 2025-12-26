@@ -1,24 +1,28 @@
-# Project Roadmap (ODD Starter Kit)
+# 프로젝트 로드맵 (ODD Starter Kit)
 
-## 📍 Current Status
-- **Phase**: Setup & Release (Completed)
-- **State**: Maintenance
-- **Last Updated**: 2025-12-25
+## 📍 현재 상태 (Current Status)
+- **단계**: 릴리즈 후속 조치 (Phase 1)
+- **상태**: 검증 및 안정화 (Verification & Stabilization)
+- **최종 업데이트**: 2025-12-26
 
-## 📅 Active Phases
+## 📅 마일스톤 (Milestones)
 
-### [Phase 0] Dogfooding (System Bootstrap)
-- [x] ODD System Install (Local)
-- [x] ODD Project Management Setup (docs/odd) <!-- 20251225_00_Dogfooding_ODD -->
+### [Milestone 1] ODD 기초 시스템 구축 (Foundation)
+**현재 상태**: 진행 중 (In Progress)
+- [x] ODD 시스템 로컬 설치 및 프로젝트 관리 설정 <!-- 20251225_00_Dogfooding_ODD -->
+- [x] 리팩토링: ATLAS 템플릿, JSON/Markdown 포맷 정비 <!-- 20251225_06_System_Update_v0.9.1 -->
+- [x] 리팩토링: Markdown 오더 시스템 도입 및 라이브러리 정의 <!-- 20251226_02_RefineODDStructure -->
+- [x] 정책: 언어 정책(Bilingual) 수립 및 적용 (ATLAS, README) <!-- 20251226_03_ProjectIdentity -->
+- [x] 콘텐츠: 아카이브 기반 라이브러리 채우기 <!-- 20251226_04_PopulateLibrary -->
 
-### [Phase 1] Release v0.9.0 (Foundations)
-- [x] Refactor: .odd -> odd renaming
-- [x] Version Bump: v0.8.0 -> v0.9.0
-- [x] Fix: Maintain Empty Directores (.gitkeep) <!-- 20251225_03_Maintain_Empty_Dirs -->
-- [x] Deploy: Git Push <!-- 20251225_01_Release_v0.9.0 -->
+### [Milestone 2] 시스템 완전성 검증 및 고도화 (Integrity & Evolution)
+**목표**: 각 서브시스템의 동작 검증 및 로드맵의 시계열 관리 체계 도입.
+- [ ] **검증**: ODD 서브시스템 개별 검증 (Tasks, Books, History, Archive) <!-- 20251226_05_VerifySubsystems -->
+- [ ] **기능**: 로드맵 히스토리 관리 시스템 (Archive Previous Roadmaps) <!-- MS2_02_RoadmapHistory -->
+    - 로드맵 변경 시 과거 버전을 `history/roadmaps/` 등에 자동/수동 아카이빙하는 체계 구축. (현재 단일 파일의 한계 극복)
 
-### [Phase 2] Expansion (Features)
-- [x] Enhancement: Improve Context Retention <!-- 20251225_02_ImproveContextRetention -->
+### [Milestone X] 확장 (Expansion)
+- [x] 개선: 맥락(Context) 유지력 강화 <!-- 20251225_02_ImproveContextRetention -->
 
-## 🧊 Backlog (Frozen Ideas)
-- Spec as a Book (Dual Structure Analysis)
+## 🧊 백로그 (Frozen Ideas)
+- (비어있음)

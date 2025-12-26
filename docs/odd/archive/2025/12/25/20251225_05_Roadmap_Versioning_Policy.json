@@ -1,0 +1,29 @@
+{
+    "odd_version": "v0.9.1",
+    "order_id": "20251225_05_Roadmap_Versioning_Policy",
+    "type": "process_improvement",
+    "priority": "high",
+    "goal": "비대해지는 Roadmap의 가독성을 높이기 위해, 중요 마일스톤(버전 업 등) 달성 시 로드맵을 아카이빙하고 새 로드맵을 작성하는 '로드맵 관리 정책'을 수립하고 적용한다.",
+    "context": {
+        "related_files": [
+            "docs/odd/ATLAS.md",
+            "docs/odd/tasks/roadmap.md",
+            "docs/odd/history/"
+        ],
+        "references": [
+            "User Request: 로드맵이 덕지덕지 붙는 느낌 해결 필요",
+            "User Request: 버전 업 시 로드맵 아카이빙 및 갱신 제안"
+        ]
+    },
+    "requirements": [
+        "1. `ATLAS.md`에 '로드맵 관리(Roadmap Lifecycle)' 관련 규칙을 추가한다.",
+        "   - 버전 업(Major/Minor) 또는 대규모 페이즈 완료 시 기존 로드맵을 `history/{yyyy}/{mm}/roadmap_{version}.md` 등으로 아카이빙.",
+        "   - `tasks/roadmap.md`는 현재 진행 중인 페이즈 위주로 내용을 간소화(Refresh)한다.",
+        "2. 실제로 현재 로드맵(`v0.9.0 Release` 완료 상태)을 아카이빙하고, 새로운 v0.9.1+ 용 로드맵으로 갱신한다."
+    ],
+    "plan": [
+        "1. [Policy] Review & Update `ATLAS.md` (Roadmap Lifecycle)",
+        "2. [Archive] Move current `roadmap.md` to `history/2025/12/roadmap_v0.9.0.md`",
+        "3. [Refresh] Create new `roadmap.md` (Focus on v0.9.1 & Dogfooding/Polishing)"
+    ]
+}

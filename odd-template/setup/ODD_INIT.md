@@ -12,12 +12,12 @@
 
 가장 먼저, 이 구축 작업 자체를 시스템에 등록하여 추적 가능하게 만드십시오.
 
-1. **오더 생성**: `docs/odd/tasks/active/000_bootstrap.json` 파일을 생성하십시오.
+1. **오더 생성**: `docs/odd/tasks/active/000_bootstrap.md` 파일을 생성하십시오.
    - **Type**: `setup`
    - **Goal**: "프로젝트 초기 구축 및 ODD 시스템 활성화"
    - **Plan**: 1. 기획 인터뷰, 2. 스펙 문서화, 3. 로드맵 수립
-2. **진행 상황 초기화**: `docs/odd/tasks/active/000_bootstrap_progress.json`을 생성하고 상태를 `IN_PROGRESS`로 설정하십시오.
-3. **로드맵 등록**: `docs/odd/roadmap.md` 최상단에 `### [Phase 0] Initialization` 섹션을 만들고, 이 태스크(`000_bootstrap`)를 최우선 순위로 체크박스(`[ ]`)와 함께 등록하십시오.
+2. **진행 상황 초기화**: `docs/odd/tasks/active/000_bootstrap_progress.md`를 생성하고 상태를 `IN_PROGRESS`로 설정하십시오.
+3. **로드맵 등록**: `docs/odd/tasks/roadmap.md` 최상단에 `### [Phase 0] Initialization` 섹션을 만들고, 이 태스크(`000_bootstrap`)를 최우선 순위로 체크박스(`[ ]`)와 함께 등록하십시오.
 
 ## **Phase 1: 기획 인터뷰 (Discovery)**
 
@@ -40,14 +40,14 @@
 
 구체화된 스펙을 실행 가능한 단위로 쪼개야 합니다.
 
-1. **`docs/odd/roadmap.md` 업데이트**:
+1. **`docs/odd/tasks/roadmap.md` 업데이트**:
    - 전체 개발 과정을 마일스톤 단위로 나누십시오.
    - 당장 시작해야 할 작업들을 구체적인 Task로 정의하십시오.
    - 각 Task의 우선순위를 정하십시오.
 
 ## **Phase 4: 첫 번째 오더 생성 (First Order)**
 
-1. **오더 작성**: 로드맵의 첫 번째 Task를 수행하기 위한 `docs/odd/tasks/active/001_init_project_order.json` 을 작성하십시오.
+1. **오더 작성**: 로드맵의 첫 번째 Task를 수행하기 위한 `docs/odd/tasks/active/001_init_project_order.md` 를 작성하십시오.
 2. **승인 요청**: 사용자에게 오더 내용을 보여주고 **"승인(Approve)"**을 요청하십시오.
 
 ---
