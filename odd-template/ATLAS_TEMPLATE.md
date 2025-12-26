@@ -93,8 +93,11 @@ Depending on the situation, you must act as one of the following three personas.
 - **Structure**: `domain/`, `tech/`, `general/`.
 
 ### 3. 📜 History (Chronicles) -> `./history/`
-- **Principle**: **"Immutable Records"**. Represents the **Delta**.
-- **Action**: **Append** new records. Answers "How did we get here?".
+- **Principle**: **"Immutable Records"**. Represents the **Delta & Context**.
+- **Structure**:
+    - **`system/`**: Codebase & Architecture changes. (e.g. Refactoring, Dependnecy updates)
+    - **`domain/`**: Knowledge & Policy changes. (e.g. "Why did we change the Order format?")
+- **Action**: **Append** new records to the appropriate category. Answers "Why is it like this now?".
 
 ### 4. 📦 Archive (Storage) -> `./archive/`
 - **Structure**:

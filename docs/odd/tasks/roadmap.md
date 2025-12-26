@@ -9,8 +9,8 @@
 
 ### [Milestone 3] 아키텍처 및 관리 체계 정비 (Refinement)
 **현재 상태**: 진행 중 (In Progress)
-- [ ] **구조**: 아카이브 및 로드맵 관리 체계 개선 (Tasks/Roadmaps 분리) <!-- 20251226_07_RefineArchitecture -->
-- [ ] **정책**: 모듈화된 히스토리 관리 방안 수립 (System vs Domain)
+- [ ] **구조**: 아카이브 및 로드맵 관리 체계 개선 (Tasks/Roadmaps 분리) <!-- 20251226_07_RefineArchitecture_DONE -->
+- [ ] **정책**: 모듈화된 히스토리 관리 방안 수립 (System vs Domain) <!-- 20251226_08_HistoryStrategy_DOING -->
 - [ ] **동기화**: `odd-template`과 현행 시스템(`docs/odd`) 일치화
 
 ### [Milestone X] 확장 (Expansion)
