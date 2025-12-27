@@ -16,6 +16,6 @@ context:
 ODD 시스템이 v0.9.4로 업데이트되었습니다. 최신 규칙과 구조를 프로젝트에 반영해야 합니다.
 
 ## 2. Todo List (할 일)
-- [ ] docs/odd/setup/ODD_UPDATE.md 프로토콜 정독
-- [ ] ATLAS.md 및 Roadmap.md 현행화 (v0.9.4 기준)
-- [ ] 구버전 레거시 파일 정리 및 지식 이관(Books) 확인
+- [x] docs/odd/setup/ODD_UPDATE.md 프로토콜 정독
+- [x] ATLAS.md 및 Roadmap.md 현행화 (v0.9.4 기준)
+- [x] 구버전 레거시 파일 정리 및 지식 이관(Books) 확인

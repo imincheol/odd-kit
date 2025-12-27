@@ -12,6 +12,7 @@
 - [x] **구조**: 아카이브 및 로드맵 관리 체계 개선 (Tasks/Roadmaps 분리) <!-- 20251226_07_RefineArchitecture_DONE -->
 - [x] **정책**: 모듈화된 히스토리 관리 방안 수립 (System vs Domain) <!-- 20251226_08_HistoryStrategy_DONE -->
 - [x] **동기화**: `odd-template`과 현행 시스템(`docs/odd`) 일치화 <!-- 20251226_09_SyncAndVersionBump_DONE -->
+- [x] **정리**: 레거시 JSON 파일 및 아틀라스 잔재 정리 <!-- 20251227_01_CleanupLegacyDocs_DONE -->
 
 ### [Milestone X] 확장 (Expansion)
 - [ ] 개선: 맥락(Context) 유지력 강화 <!-- 20251225_02_ImproveContextRetention -->
