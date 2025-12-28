@@ -1,3 +1,7 @@
+---
+odd_version: "v1.0.0"
+---
+
 # 📜 History: YYYY/MM
 
 ## YYYY-MM-DD

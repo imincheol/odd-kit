@@ -14,8 +14,9 @@
 - [x] **동기화**: `odd-template`과 현행 시스템(`docs/odd`) 일치화 <!-- 20251226_09_SyncAndVersionBump_DONE -->
 - [x] **정리**: 레거시 JSON 파일 및 아틀라스 잔재 정리 <!-- 20251227_01_CleanupLegacyDocs_DONE -->
 
-### [Milestone X] 확장 (Expansion)
-- [ ] 개선: 맥락(Context) 유지력 강화 <!-- 20251225_02_ImproveContextRetention -->
+### [Milestone 4] 확장성 및 유연성 강화 (Flexibility)
+**현재 상태**: 대기 중 (Pending)
+- [ ] **정책**: 프로젝트 구조에 따른 ODD 설치 유연성 확보 (docs 혼용, 모노레포 대응) <!-- 20251227_02_FlexibleOddInstallationPolicy -->
 
 ## 🧊 백로그 (Frozen Ideas)
 - (비어있음)

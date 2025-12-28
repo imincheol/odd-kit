@@ -1,9 +1,9 @@
 ---
 type: book
+revision: "v1.0.0"
+odd_version: "v1.0.0"
 domain: [Domain Name]
-reference_count: 0
 last_updated: YYYY-MM-DD
-odd_version: "v0.9.0"
 ---
 
 # [Domain Name]: [Sub-title]

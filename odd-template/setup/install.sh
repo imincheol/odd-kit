@@ -1,173 +1,135 @@
 #!/bin/bash
-# ODD Starter v0.9.4 Installer
+# ODD Starter v1.0.0 Installer (The Context-Order-Archive System)
 
 # GitHub Repository Base URL
-# 'odd-template' 디렉토리에서 원본 파일을 가져옵니다.
 REPO_URL="https://raw.githubusercontent.com/imincheol/odd-starter/main"
 TEMPLATE_DIR="odd-template"
+CONFIG_FILENAME=".odd_config"
 
-# 0. [Check Environment] 신규 설치인지 업데이트인지 확인
-IS_UPDATE=false
-if [ -f "docs/odd/ATLAS.md" ]; then
-    IS_UPDATE=true
-fi
-
-echo "🚀 ODD 시스템 동기화 (v0.9.4)를 시작합니다..."
-
-# 1. [System] 필수 시스템 파일 존재 확인 및 원격 다운로드
-fetch_system_file() {
-    LOCAL_PATH=$1      # 설치될 로컬 경로 (예: docs/odd/ATLAS.md)
-    REMOTE_REL_PATH=$2 # 원격지 상대 경로 (예: odd-template/ATLAS_TEMPLATE.md)
-    REMOTE_URL="$REPO_URL/$REMOTE_REL_PATH"
-
-    # --update 플래그가 있거나, 파일이 없으면 다운로드
-    if [ ! -f "$LOCAL_PATH" ] || [[ "$*" == *"--update"* ]]; then
-        echo "📥 [시스템] $LOCAL_PATH 동기화 중..."
-        mkdir -p "$(dirname "$LOCAL_PATH")"
-        
-        if curl -sL "$REMOTE_URL" -o "${LOCAL_PATH}.tmp"; then
-            if grep -q "404: Not Found" "${LOCAL_PATH}.tmp"; then
-                echo "⚠️  [경고] 원격 파일($REMOTE_REL_PATH)을 찾을 수 없습니다. (Skip)"
-                rm -f "${LOCAL_PATH}.tmp"
-            else
-                mv "${LOCAL_PATH}.tmp" "$LOCAL_PATH"
-            fi
-        else
-            echo "⚠️  [경고] 다운로드 실패. 네트워크를 확인하세요."
-            rm -f "${LOCAL_PATH}.tmp"
-        fi
-    fi
-}
-
-# --- Core System (The Brain) ---
-fetch_system_file "docs/odd/ATLAS.md" "$TEMPLATE_DIR/ATLAS_TEMPLATE.md" --update
-# Roadmap은 프로젝트마다 다르므로 템플릿(초기 상태)을 제공하거나, 기존 것을 유지해야 함.
-# 여기서는 초기 설치 시 기본 템플릿을 제공한다고 가정. (없으면 생성)
-# 하지만 사용자는 update 시 덮어쓰기를 원치 않을 수 있음. (조건부 로직 필요하나 일단 fetch)
-
-# --- Tasks (Working Memory) ---
-fetch_system_file "docs/odd/tasks/_template/order.md" "$TEMPLATE_DIR/tasks/_template/order.md" --update
-fetch_system_file "docs/odd/tasks/_template/progress.md" "$TEMPLATE_DIR/tasks/_template/progress.md" --update
-fetch_system_file "docs/odd/tasks/_template/report.md" "$TEMPLATE_DIR/tasks/_template/report.md" --update
-
-# --- Books (Library) ---
-fetch_system_file "docs/odd/books/README.md" "$TEMPLATE_DIR/books/README.md" --update
-fetch_system_file "docs/odd/books/general/policy-language.md" "$TEMPLATE_DIR/books/general/policy-language.md" --update
-fetch_system_file "docs/odd/books/general/structure.md" "$TEMPLATE_DIR/books/general/structure.md" --update
-fetch_system_file "docs/odd/books/general/overview.md" "$TEMPLATE_DIR/books/general/overview.md" --update
-fetch_system_file "docs/odd/books/domain/order-system.md" "$TEMPLATE_DIR/books/domain/order-system.md" --update
-fetch_system_file "docs/odd/books/domain/memory-model.md" "$TEMPLATE_DIR/books/domain/memory-model.md" --update
-fetch_system_file "docs/odd/books/tech/stack.md" "$TEMPLATE_DIR/books/tech/stack.md" --update
-
-# --- History & Setup ---
-fetch_system_file "docs/odd/history/_template/history.md" "$TEMPLATE_DIR/history/_template/history.md" --update
-fetch_system_file "docs/odd/setup/ODD_INIT.md" "$TEMPLATE_DIR/setup/ODD_INIT.md" --update
-fetch_system_file "docs/odd/setup/ODD_UPDATE.md" "$TEMPLATE_DIR/setup/ODD_UPDATE.md" --update
-# 자기 자신(install.sh)도 업데이트
-fetch_system_file "docs/odd/setup/install.sh" "$TEMPLATE_DIR/setup/install.sh" --update
-
-# --- Specs (Templates) ---
-fetch_system_file "docs/specs/README.md" "$TEMPLATE_DIR/specs/README.md" --update
-
-
-# 2. [System Deploy] 폴더 구조 확인 및 권한 설정
-echo "📦 폴더 구조 정비 중..."
-
-# Ensure Directories Exist
-mkdir -p docs/odd/books/{general,domain,tech}
-mkdir -p docs/odd/books/_template
-mkdir -p docs/odd/tasks/{active,_template}
-mkdir -p docs/odd/history/_template
-mkdir -p docs/odd/archive
-mkdir -p docs/odd/setup
-mkdir -p docs/specs/{0_origin,1_planning,2_design,3_markup,4_development}
-
-# 3. [User Data] 초기화 가이드
-echo "✅ ODD v0.9.4 시스템이 준비되었습니다."
-
-# History Init
-CURRENT_YM=$(date +"%Y/%m")
-mkdir -p "docs/odd/history/$CURRENT_YM"
-
-# 4. [Execution] 설치 스크립트 실행 권한 부여
-if [ -f "docs/odd/setup/install.sh" ]; then
-    chmod +x "docs/odd/setup/install.sh"
-fi
-
-# 5. [Auto-Order] 초기 오더 생성 (AI 에이전트 가이드용)
-create_initial_order() {
-    ORDER_DATE=$(date +"%Y-%m-%d")
+# --- 1. [Initialization] 기존 설정 로드 또는 신규 설정 ---
+load_config() {
+    echo "🔍 기존 ODD 시스템을 검색 중..."
     
-    if [ "$IS_UPDATE" = true ]; then
-        ORDER_FILE="docs/odd/tasks/active/000_migration_v0.9.4.md"
-        if [ ! -f "$ORDER_FILE" ]; then
-            cat <<EOF > "$ORDER_FILE"
----
-id: "000_migration_v0.9.4"
-type: "setup"
-status: "approved"
-priority: "high"
-created_at: "$ORDER_DATE"
-summary: "ODD 시스템 v0.9.4 업데이트 및 마이그레이션 수행"
-context:
-  - "docs/odd/ATLAS.md"
-  - "docs/odd/setup/ODD_UPDATE.md"
----
-
-# 📋 Order: 시스템 마이그레이션 (v0.9.4)
-
-## 1. Context & Objective (배경 및 목표)
-ODD 시스템이 v0.9.4로 업데이트되었습니다. 최신 규칙과 구조를 프로젝트에 반영해야 합니다.
-
-## 2. Todo List (할 일)
-- [ ] docs/odd/setup/ODD_UPDATE.md 프로토콜 정독
-- [ ] ATLAS.md 및 Roadmap.md 현행화 (v0.9.4 기준)
-- [ ] 구버전 레거시 파일 정리 및 지식 이관(Books) 확인
-EOF
-            echo "📝 업데이트 마이그레이션 오더가 생성되었습니다: $ORDER_FILE"
+    # 후보군 검색
+    CONFIG_CANDIDATES=()
+    [ -f "$CONFIG_FILENAME" ] && CONFIG_CANDIDATES+=("./$CONFIG_FILENAME")
+    [ -f ".odd/$CONFIG_FILENAME" ] && CONFIG_CANDIDATES+=(".odd/$CONFIG_FILENAME")
+    
+    if [ ${#CONFIG_CANDIDATES[@]} -gt 0 ]; then
+        echo "💡 발견된 ODD 설정:"
+        for i in "${!CONFIG_CANDIDATES[@]}"; do
+            echo "  [$((i+1))] ${CONFIG_CANDIDATES[$i]}"
+        done
+        echo "  [n] 새로운 경로에 신규 설치"
+        
+        read -p "❓ 사용할 설정을 선택하세요 (1-${#CONFIG_CANDIDATES[@]} 또는 n): " choice
+        
+        if [[ "$choice" =~ ^[0-9]+$ ]] && [ "$choice" -le "${#CONFIG_CANDIDATES[@]}" ]; then
+            SELECTED_CONFIG="${CONFIG_CANDIDATES[$((choice-1))]}"
+            echo "✅ $SELECTED_CONFIG 설정을 로드합니다."
+            source "$SELECTED_CONFIG"
+            IS_UPDATE=true
+            return
         fi
+    fi
+
+    echo "🆕 신규 설치를 진행합니다."
+    IS_UPDATE=false
+}
+
+save_config() {
+    mkdir -p "$ODD_DIR"
+    cat <<EOF > "$ODD_DIR/$CONFIG_FILENAME"
+ODD_PROJECT_NAME="$ODD_PROJECT_NAME"
+ODD_PROJECT_GOAL="$ODD_PROJECT_GOAL"
+ODD_DIR="$ODD_DIR"
+SPECS_DIR="$SPECS_DIR"
+INSTALL_TEMPLATES="$INSTALL_TEMPLATES"
+ODD_VERSION="v1.0.0"
+ATLAS_NAME="$ATLAS_NAME"
+INSTALL_NAME="$INSTALL_NAME"
+EOF
+}
+
+# --- 2. [Interactive Setup] 사용자 입력 ---
+interactive_setup() {
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "   🚀 ODD (Order-Driven Development) System v1.0.0"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+    [ -z "$ODD_PROJECT_NAME" ] && read -p "❓ 프로젝트명 (예: core, fe...): " ODD_PROJECT_NAME
+    [ -z "$ODD_PROJECT_GOAL" ] && read -p "❓ 핵심 목표: " ODD_PROJECT_GOAL
+    ODD_PROJECT_GOAL=${ODD_PROJECT_GOAL:-"지속 가능한 개발 기억을 만드는 것"}
+
+    if [ -n "$ODD_PROJECT_NAME" ]; then
+        DEFAULT_ODD_DIR=".odd-$ODD_PROJECT_NAME"
+        ATLAS_NAME="atlas-$ODD_PROJECT_NAME.md"
+        INSTALL_NAME="install-$ODD_PROJECT_NAME.sh"
     else
-        ORDER_FILE="docs/odd/tasks/active/000_bootstrap.md"
-        if [ ! -f "$ORDER_FILE" ]; then
-            cat <<EOF > "$ORDER_FILE"
----
-id: "000_bootstrap"
-type: "setup"
-status: "approved"
-priority: "high"
-created_at: "$ORDER_DATE"
-summary: "ODD 시스템 초기 구축 및 프로젝트 활성화"
-context:
-  - "docs/odd/ATLAS.md"
-  - "docs/odd/setup/ODD_INIT.md"
----
+        DEFAULT_ODD_DIR=".odd"
+        ATLAS_NAME="ATLAS.md"
+        INSTALL_NAME="install.sh"
+    fi
 
-# 📋 Order: 시스템 초기화 및 부트스트랩
+    [ -z "$ODD_DIR" ] && read -p "❓ ODD 폴더 경로 ($DEFAULT_ODD_DIR): " input_dir && ODD_DIR=${input_dir:-$DEFAULT_ODD_DIR}
+    [ -z "$SPECS_DIR" ] && read -p "❓ Specs 폴더 경로 (docs/specs): " input_specs && SPECS_DIR=${input_specs:-"docs/specs"}
+    [ -z "$INSTALL_TEMPLATES" ] && INSTALL_TEMPLATES=true
 
-## 1. Context & Objective (배경 및 목표)
-ODD 시스템이 신규 설치되었습니다. 프로젝트의 목표를 정의하고 개발 체계를 가동해야 합니다.
+    save_config
+}
 
-## 2. Todo List (할 일)
-- [ ] docs/odd/setup/ODD_INIT.md 프로토콜 정독
-- [ ] 기획 인터뷰 및 스펙 문서화 (docs/specs/)
-- [ ] 프로젝트 로드맵 수립 및 첫 번째 개발 오더 준비
-EOF
-            echo "📝 초기 구축 부트스트랩 오더가 생성되었습니다: $ORDER_FILE"
-        fi
+# --- 3. [Execution] 파일 동기화 및 구조 생성 ---
+fetch_system_file() {
+    LOCAL_PATH=$1; REMOTE_REL_PATH=$2; FORCE_UPDATE=$3
+    REMOTE_URL="$REPO_URL/$REMOTE_REL_PATH"
+    if [ "$FORCE_UPDATE" = true ] || [ ! -f "$LOCAL_PATH" ]; then
+        echo "📥 [Sync] $LOCAL_PATH ..."
+        mkdir -p "$(dirname "$LOCAL_PATH")"
+        curl -sL "$REMOTE_URL" -o "$LOCAL_PATH"
     fi
 }
 
-create_initial_order
+apply_placeholders() {
+    FILE_PATH=$1
+    if [ -f "$FILE_PATH" ]; then
+        sed -i.bak "s|{{PROJECT_NAME}}|$ODD_PROJECT_NAME|g" "$FILE_PATH"
+        sed -i.bak "s|{{PROJECT_GOAL}}|$ODD_PROJECT_GOAL|g" "$FILE_PATH"
+        sed -i.bak "s|{{ODD_DIR}}|$ODD_DIR|g" "$FILE_PATH"
+        sed -i.bak "s|{{SPECS_DIR}}|$SPECS_DIR|g" "$FILE_PATH"
+        sed -i.bak "s|{{ATLAS_NAME}}|$ATLAS_NAME|g" "$FILE_PATH"
+        rm -f "${FILE_PATH}.bak"
+    fi
+}
 
-echo "✨ 설치 및 업데이트가 완료되었습니다."
+load_config
+interactive_setup
 
-if [ "$IS_UPDATE" = true ]; then
-    echo "🔄 [업데이트 완료] 시스템이 최신 버전(v0.9.4)으로 상향되었습니다."
-    echo "👉 변경 사항을 프로젝트에 반영하려면 docs/odd/setup/ODD_UPDATE.md 의 내용을 AI에게 전달하세요."
-else
-    echo "🆕 [신규 설치 완료] ODD 시스템이 성공적으로 구축되었습니다."
-    echo "👉 프로젝트를 시작하려면 docs/odd/setup/ODD_INIT.md 의 내용을 AI에게 전달하세요."
-fi
+# Sync Files
+fetch_system_file "$ODD_DIR/$ATLAS_NAME" "$TEMPLATE_DIR/ATLAS_TEMPLATE.md" true
+fetch_system_file "$ODD_DIR/tasks/_template/order_template.md" "$TEMPLATE_DIR/tasks/_template/order_template.md" true
+fetch_system_file "$ODD_DIR/tasks/_template/progress_template.md" "$TEMPLATE_DIR/tasks/_template/progress_template.md" true
+fetch_system_file "$ODD_DIR/tasks/_template/report_template.md" "$TEMPLATE_DIR/tasks/_template/report_template.md" true
+fetch_system_file "$ODD_DIR/tasks/roadmap.md" "$TEMPLATE_DIR/tasks/roadmap.md" false
+fetch_system_file "$ODD_DIR/context/README.md" "$TEMPLATE_DIR/context/README.md" true
+fetch_system_file "$ODD_DIR/context/_template/logic_template.md" "$TEMPLATE_DIR/context/_template/logic_template.md" true
+fetch_system_file "$ODD_DIR/context/_template/history_template.md" "$TEMPLATE_DIR/context/_template/history_template.md" true
+fetch_system_file "$ODD_DIR/context/protocols/odd-system.md" "$TEMPLATE_DIR/context/protocols/odd-system.md" true
+fetch_system_file "$ODD_DIR/setup/ODD_INIT.md" "$TEMPLATE_DIR/setup/ODD_INIT_TEMPLATE.md" true
+fetch_system_file "$ODD_DIR/setup/ODD_UPDATE.md" "$TEMPLATE_DIR/setup/ODD_UPDATE_TEMPLATE.md" true
+fetch_system_file "$ODD_DIR/setup/$INSTALL_NAME" "$TEMPLATE_DIR/setup/install.sh" true
 
-echo ""
-echo "💡 Tip: docs/odd/ATLAS.md 를 열어 새로운 규칙(v0.9.4)을 확인할 수도 있습니다."
+# Apply
+apply_placeholders "$ODD_DIR/$ATLAS_NAME"
+apply_placeholders "$ODD_DIR/tasks/_template/order_template.md"
+apply_placeholders "$ODD_DIR/tasks/roadmap.md"
+
+# Directories
+mkdir -p "$ODD_DIR"/context/{general,history,protocols,logic}
+mkdir -p "$ODD_DIR"/tasks/active
+mkdir -p "$ODD_DIR"/archive/tasks/$(date +"%Y/%m")
+mkdir -p "$ODD_DIR"/archive/context/revision
+mkdir -p "$SPECS_DIR"/{0_origin,1_planning,2_design,3_markup,4_development}
+
+chmod +x "$ODD_DIR/setup/$INSTALL_NAME"
+echo "✅ ODD-$ODD_PROJECT_NAME 가동 준비 완료!"
+echo "👉 초기 가이드: $ODD_DIR/setup/$(if [ "$IS_UPDATE" = true ]; then echo "ODD_UPDATE.md"; else echo "ODD_INIT.md"; fi)"

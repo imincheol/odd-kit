@@ -1,5 +1,6 @@
 ---
 id: "{{YYYYMMDD}}_{{NN}}_{{CamelCaseTitle}}"
+odd_version: "v1.0.0"
 type: "report"
 status: "completed"
 created_at: "{{YYYY-MM-DD}}"
@@ -20,5 +21,5 @@ linked_order: "{{Order_File_Name}}.md"
 - 
 
 ## 4. Updates to Library (지식 현행화)
-- [ ] `docs/books/xxx.md` (New/Updated)
-- [ ] `docs/history/yyyy-mm-dd.md` (Log Added)
+- [ ] `{{ODD_DIR}}/books/xxx.md` (New/Updated)
+- [ ] `{{ODD_DIR}}/history/yyyy-mm-dd.md` (Log Added)
