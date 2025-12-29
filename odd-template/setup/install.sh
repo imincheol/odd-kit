@@ -85,7 +85,7 @@ fetch_system_file() {
     if [ "$FORCE_UPDATE" = true ] || [ ! -f "$LOCAL_PATH" ]; then
         echo "📥 [Sync] $LOCAL_PATH ..."
         mkdir -p "$(dirname "$LOCAL_PATH")"
-        curl -sL "$REMOTE_URL" -o "$LOCAL_PATH"
+        curl -sL "${REMOTE_URL}?t=$(date +%s)" -o "$LOCAL_PATH"
     fi
 }
 
