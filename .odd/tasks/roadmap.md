@@ -12,6 +12,7 @@
 - [x] **Standardization**: `odd-template` 정교화 및 프로젝트 ODD 폴더 표준화 (`docs/odd` -> `.odd`) <!-- 20251229_00_Standardization_v1.0.0 -->
 - [x] **Context Modernization**: 지식 서가(Logic/General) 내용을 신규 COA 체계 및 용어로 현행화 <!-- 20251229_01_ContextModernization_v1.0.0 -->
 - [x] **Specs Abstraction**: 스펙(Specs) 폴더 구조를 보편적/추상적 3단계로 단순화 <!-- 20251229_02_SpecsAbstraction_v1.0.0 -->
+- [ ] **Context Refinement**: 맥락(Context) 구조 정제 및 ODD 메타데이터 통합 <!-- 20251229_03_ContextRefinement_v1.0.0 -->
 
 ### [Milestone 3] 아키텍처 및 관리 체계 정비 (Refinement)
 **현재 상태**: 진행 중 (In Progress)
