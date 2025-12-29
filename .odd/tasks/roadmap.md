@@ -10,6 +10,7 @@
 ### [Phase 0] v1.0.0 COA 마이그레이션 (Migration)
 - [x] **System**: 기존 3원칙(Task/Library/Archive)을 신규 COA(Context/Order/Archive) 체계로 이관 <!-- 20251228_00_Migration_v1.0.0 -->
 - [x] **Standardization**: `odd-template` 정교화 및 프로젝트 ODD 폴더 표준화 (`docs/odd` -> `.odd`) <!-- 20251229_00_Standardization_v1.0.0 -->
+- [x] **Context Modernization**: 지식 서가(Logic/General) 내용을 신규 COA 체계 및 용어로 현행화 <!-- 20251229_01_ContextModernization_v1.0.0 -->
 
 ### [Milestone 3] 아키텍처 및 관리 체계 정비 (Refinement)
 **현재 상태**: 진행 중 (In Progress)

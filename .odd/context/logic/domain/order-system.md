@@ -9,14 +9,14 @@
 
 ## 2. The Artifacts (3대 문서)
 
-### 📋 Order (주문서)
+### 📋 Order (명령서)
 - **파일명**: `order.md`
-- **역할**: "무엇을 할 것인가?" (기획서 + 작업지시서)
+- **역할**: "무엇을 할 것인가?" (맥락 참조 + 실행 명령)
 - **필수 항목**:
-    - `id`: 고유 식별자 (예: `20251226_01_FixBug`)
-    - `context`: 참고해야 할 책이나 문서 링크
-    - `todo`: 체크리스트 형태의 세부 작업 목록
-- **승인 절차**: `draft` 상태로 작성 -> User 승인 -> `inprogress` 변경 -> 작업 시작.
+    - `id`: 고유 식별자
+    - `context`: 명령의 근거가 되는 `Context` 및 `Specs` 문서 링크 (필수)
+    - `todo`: 실수를 방지하기 위한 세부 작업 목록
+- **승인 절차**: `draft` 상태로 작성 -> User 승인 -> `status: active` 변경 -> 작업 시작.
 
 ### 🚀 Progress (진행 일지)
 - **파일명**: `progress.md`
@@ -30,11 +30,11 @@
 ### 🏁 Report (결과 보고서)
 - **파일명**: `report.md`
 - **역할**: "결과는 무엇인가?" (최종 산출물 + 회고)
-- **후속 조치**: 작업이 끝나면 사서(Librarian)가 이 리포트를 기반으로 **지식을 갱신**하고 **기록을 아카이빙**합니다.
+- **후속 조치**: 작업이 끝나면 **감찰관(Auditor)**이 리포트와 증거를 분석하여 `Context`(Logic, History)를 정제하고 현행화합니다.
 
 ## 3. The Lifecycle (생명주기)
-1.  **Draft**: `tasks/_template/order.md` 복사 및 작성.
-2.  **Order**: User 승인 (`status: inprogress`).
-3.  **Work**: 코드 작성 및 `progress.md` 기록.
-4.  **Review**: 결과물 확인 및 `report.md` 작성.
-5.  **Archive**: `docs/odd/archive/`로 이동. (Task 종료)
+1.  **Context**: 관련 `Context` 및 `Specs` 정독.
+2.  **Order**: `tasks/_template/order.md` 복사 및 작성.
+3.  **Active**: User 승인 및 작업 수행.
+4.  **Audit**: 작업 완료 후 결과 보고 및 `Context` 업데이트.
+5.  **Archive**: 증거 자료를 `archive/tasks/`로 이동.
