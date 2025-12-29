@@ -117,6 +117,7 @@ fetch_system_file "$ODD_DIR/context/protocols/odd-system.md" "$TEMPLATE_DIR/cont
 fetch_system_file "$ODD_DIR/setup/ODD_INIT.md" "$TEMPLATE_DIR/setup/ODD_INIT_TEMPLATE.md" true
 fetch_system_file "$ODD_DIR/setup/ODD_UPDATE.md" "$TEMPLATE_DIR/setup/ODD_UPDATE_TEMPLATE.md" true
 fetch_system_file "$ODD_DIR/setup/$INSTALL_NAME" "$TEMPLATE_DIR/setup/install.sh" true
+fetch_system_file "$SPECS_DIR/README.md" "$TEMPLATE_DIR/specs/README.md" false
 
 # Apply
 apply_placeholders "$ODD_DIR/$ATLAS_NAME"
@@ -128,7 +129,7 @@ mkdir -p "$ODD_DIR"/context/{general,history,protocols,logic/domain,logic/tech}
 mkdir -p "$ODD_DIR"/tasks/active
 mkdir -p "$ODD_DIR"/archive/tasks/$(date +"%Y/%m")
 mkdir -p "$ODD_DIR"/archive/context/revision
-mkdir -p "$SPECS_DIR"/{0_origin,1_planning,2_design,3_markup,4_development}
+mkdir -p "$SPECS_DIR"/{1_planning,2_design,3_development}
 
 chmod +x "$ODD_DIR/setup/$INSTALL_NAME"
 echo "✅ ODD-$ODD_PROJECT_NAME 가동 준비 완료!"
