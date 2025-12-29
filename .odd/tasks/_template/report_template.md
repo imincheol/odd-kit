@@ -21,5 +21,5 @@ linked_order: "{{Order_File_Name}}.md"
 - 
 
 ## 4. Updates to Context (지식 현행화)
-- [ ] `{{ODD_DIR}}/context/logic/xxx.md` (New/Updated)
-- [ ] `{{ODD_DIR}}/context/history/yyyy-mm-dd.md` (Log Added)
+- [ ] `.odd/context/logic/xxx.md` (New/Updated)
+- [ ] `.odd/context/history/yyyy-mm-dd.md` (Log Added)
