@@ -20,6 +20,6 @@ linked_order: "{{Order_File_Name}}.md"
 ## 3. Lessons Learned (교훈 & 회고)
 - 
 
-## 4. Updates to Context (지식 현행화)
-- [ ] `{{ODD_DIR}}/context/logic/xxx.md` (New/Updated)
-- [ ] `{{ODD_DIR}}/context/history/yyyy-mm-dd.md` (Log Added)
+## 4. Updates to Library (지식 현행화)
+- [ ] `{{ODD_DIR}}/books/xxx.md` (New/Updated)
+- [ ] `{{ODD_DIR}}/history/yyyy-mm-dd.md` (Log Added)

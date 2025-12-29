@@ -1,3 +1,9 @@
+---
+type: documentation
+version: "v1.0.0"
+category: Context
+---
+
 # 🧠 ODD Context (v1.0.0)
 
 > **"지능은 맥락 속에서만 발현됩니다."**

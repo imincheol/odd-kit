@@ -33,6 +33,7 @@ graph TD
     subgraph "Product Specifications (Single Truth)"
         Specs --> Planning[1_planning]
         Specs --> Design[2_design]
+        Specs --> Dev[3_development]
     end
     
     subgraph "ODD Memory: COA Pillars"
@@ -74,8 +75,9 @@ ODD v1.0.0은 **"무엇을 만드는가(Specs)"**와 **"어떻게/왜 만들었�
 ```
 [Project Root]
  ├── docs/specs/          # 🏛️ Product Specs (무엇을 만드는가)
- │   ├── 1_planning/      #    - 기획 및 요구사항
- │   └── 2_design/        #    - 설계 및 마크업
+ │   ├── 1_planning/      #    - 기구축 요구사항 및 정책
+ │   ├── 2_design/        #    - UI/UX 설계
+ │   └── 3_development/   #    - 기술 아키텍처 및 DB 설계
  │
  └── .odd-project/        # 🧠 ODD Memory: COA Pillars
      ├── ATLAS.md         #    - 프로젝트 헌법 (The Constitution)

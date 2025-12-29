@@ -7,10 +7,10 @@ priority: "medium" # high, medium, low
 created_at: "{{YYYY-MM-DD}}"
 summary: "{{One Line Summary}}"
 context:
-  - ".odd/atlas-odd-starter.md"
-  - ".odd/context/protocols/"
-  - ".odd/context/logic/"
-  - ".odd/tasks/roadmap.md"
+  - "docs/specs/atlas-Curing AI Amnesia with COA Architecture.md"
+  - "docs/specs/context/protocols/"
+  - "docs/specs/context/logic/"
+  - "docs/specs/tasks/roadmap.md"
 ---
 
 # 📋 Order: {{Title}}

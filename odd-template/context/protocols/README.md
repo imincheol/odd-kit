@@ -1,2 +1,8 @@
-# General Context
-프로젝트의 정체성, 비정, 팀 문화 등 포괄적인 맥락을 보관합니다.
+---
+type: documentation
+version: "v1.0.0"
+category: Protocols
+---
+
+# Protocol Context
+에이전트와 사용자가 준수해야 할 운영 규약을 보관합니다.
