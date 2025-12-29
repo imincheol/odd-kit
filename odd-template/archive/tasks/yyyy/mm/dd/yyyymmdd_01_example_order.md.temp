@@ -1,0 +1,11 @@
+---
+id: "yyyymmdd_01_example_order"
+type: "feat"
+status: "done"
+priority: "medium"
+created_at: "yyyy-mm-dd"
+summary: "This is a placeholder example of a completed order."
+---
+
+# 📋 Order: Example Task (v1.0.0)
+... (content)
