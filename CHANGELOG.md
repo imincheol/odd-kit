@@ -5,14 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.0.0] - 2025-12-27
+## [v1.0.0] - 2025-12-29
 
 ### Added
+- **COA (Context-Order-Archive) Architecture**: Established the core 3-pillar structure for definitive knowledge management.
+- **Auditor Persona**: Renamed 'Librarian' to 'Auditor' and standardized the person-led context refinement protocol.
 - **Interactive Multi-Project Support**: The installer now supports custom ODD directory names (e.g., `.odd-fe`, `.odd-be`) and project-specific Atlas files.
 - **Auto-Discovery & Migration**: Intelligent scanning for existing ODD configurations (`.odd_config`, `.env`) with an interactive selection menu for migration.
-- **Flexible Path Policy**: Users can now specify installation paths for both ODD system and Specs folder, defaulting to hidden folders (e.g., `.odd/`) to maintain a clean root.
-- **Template Naming Standard**: Source templates now explicitly use the `_TEMPLATE.md` suffix (e.g., `ODD_INIT_TEMPLATE.md`) to clearly distinguish them from active system files.
-- **Dynamic Configuration**: All templates now support dynamic placeholders for paths and project names, which are automatically resolved during installation.
+- **3-Tier Specs Structure**: Simplified specification folders into `1_planning`, `2_design`, and `3_development`.
+- **Cache-Busting Installer**: Integrated timestamp-based `curl` requests to ensure fetch reliability from GitHub Raw.
+- **Self-Purging Auditor Protocol**: Moved legacy cleanup responsibility from the installer script to the AI Auditor's intelligence.
 
 ## [v0.9.4] - 2025-12-26
 
