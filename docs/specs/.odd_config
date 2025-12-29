@@ -1,8 +1,0 @@
-ODD_PROJECT_NAME="Curing AI Amnesia with COA Architecture"
-ODD_PROJECT_GOAL=".odd"
-ODD_DIR="docs/specs"
-SPECS_DIR=""
-INSTALL_TEMPLATES="true"
-ODD_VERSION="v1.0.0"
-ATLAS_NAME="atlas-Curing AI Amnesia with COA Architecture.md"
-INSTALL_NAME="install-Curing AI Amnesia with COA Architecture.sh"
