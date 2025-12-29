@@ -109,7 +109,7 @@ fetch_system_file "$ODD_DIR/$ATLAS_NAME" "$TEMPLATE_DIR/ATLAS_TEMPLATE.md" true
 fetch_system_file "$ODD_DIR/tasks/_template/order_template.md" "$TEMPLATE_DIR/tasks/_template/order_template.md" true
 fetch_system_file "$ODD_DIR/tasks/_template/progress_template.md" "$TEMPLATE_DIR/tasks/_template/progress_template.md" true
 fetch_system_file "$ODD_DIR/tasks/_template/report_template.md" "$TEMPLATE_DIR/tasks/_template/report_template.md" true
-fetch_system_file "$ODD_DIR/tasks/roadmap.md" "$TEMPLATE_DIR/tasks/roadmap.md" false
+fetch_system_file "$ODD_DIR/tasks/roadmap.md" "$TEMPLATE_DIR/tasks/roadmap_template.md" false
 fetch_system_file "$ODD_DIR/context/README.md" "$TEMPLATE_DIR/context/README.md" true
 fetch_system_file "$ODD_DIR/context/_template/logic_template.md" "$TEMPLATE_DIR/context/_template/logic_template.md" true
 fetch_system_file "$ODD_DIR/context/_template/history_template.md" "$TEMPLATE_DIR/context/_template/history_template.md" true
