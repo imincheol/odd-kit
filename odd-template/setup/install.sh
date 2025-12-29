@@ -101,21 +101,8 @@ apply_placeholders() {
     fi
 }
 
-cleanup_legacy() {
-    echo "🧹 구버전 레거시 파일 정리 중..."
-    # 1. 구버전 템플릿 제거 (v1.0.0에서 *_template.md로 변경됨)
-    rm -f "$ODD_DIR/tasks/_template/order.md"
-    rm -f "$ODD_DIR/tasks/_template/progress.md"
-    rm -f "$ODD_DIR/tasks/_template/report.md"
-    rm -f "$ODD_DIR/context/history/_template/history.md"
-    
-    # 2. 구버전 설정 파일 제거
-    [ -f "$ODD_DIR/setup/install-odd.sh" ] && rm -f "$ODD_DIR/setup/install-odd.sh"
-    [ -f "$ODD_DIR/setup/install-v1.0.0 Standard Dogfooding.sh" ] && rm -f "$ODD_DIR/setup/install-v1.0.0 Standard Dogfooding.sh"
-}
 
 load_config
-cleanup_legacy
 interactive_setup
 
 # Sync Files
