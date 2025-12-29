@@ -14,6 +14,7 @@
 - [x] **Specs Abstraction**: 스펙 폴더 구조를 추상적 3단계로 단순화 <!-- 20251229_02_SpecsAbstraction_v1.0.0 -->
 - [x] **Context Refinement**: 맥락 구조 정제 및 메타 지식 통합 <!-- 20251229_03_ContextRefinement_v1.0.0 -->
 - [x] **Integrity Check**: 전 서가 버전(v1.0.0) 명시 및 용어 일관성 최종 검토 <!-- 20251229_04_SystemIntegrityCheck_v1.0.0 -->
+- [x] **Specs Organization**: `docs/specs/` 내 ODD 잔재 청소 및 3단 구조 정비 <!-- 20251229_05_SpecsOrganization_v1.0.0 -->
 
 ### [Milestone 3] 아키텍처 및 관리 체계 정비 (Refinement)
 **현재 상태**: 완료 (Done)
