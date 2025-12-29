@@ -85,7 +85,7 @@ fetch_system_file() {
     if [ "$FORCE_UPDATE" = true ] || [ ! -f "$LOCAL_PATH" ]; then
         echo "📥 [Sync] $LOCAL_PATH ..."
         mkdir -p "$(dirname "$LOCAL_PATH")"
-        curl -sL "$REMOTE_URL" -o "$LOCAL_PATH"
+        curl -sL "${REMOTE_URL}?t=$(date +%s)" -o "$LOCAL_PATH"
     fi
 }
 
@@ -120,9 +120,13 @@ fetch_system_file "$ODD_DIR/setup/$INSTALL_NAME" "$TEMPLATE_DIR/setup/install.sh
 fetch_system_file "$SPECS_DIR/README.md" "$TEMPLATE_DIR/specs/README.md" false
 
 # Apply
+# Apply
 apply_placeholders "$ODD_DIR/$ATLAS_NAME"
 apply_placeholders "$ODD_DIR/tasks/_template/order_template.md"
 apply_placeholders "$ODD_DIR/tasks/roadmap.md"
+apply_placeholders "$ODD_DIR/context/protocols/odd-system.md"
+apply_placeholders "$ODD_DIR/setup/ODD_INIT.md"
+apply_placeholders "$ODD_DIR/setup/ODD_UPDATE.md"
 
 # Directories
 mkdir -p "$ODD_DIR"/context/{general,history,protocols,logic/domain,logic/tech}

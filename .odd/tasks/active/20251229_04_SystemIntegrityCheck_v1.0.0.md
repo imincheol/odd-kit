@@ -1,7 +1,7 @@
 ---
 id: "20251229_04_SystemIntegrityCheck_v1.0.0"
 type: "quality"
-status: "active"
+status: "done"
 priority: "high"
 created_at: "2025-12-29"
 summary: "v1.0.0 릴리즈 전 모든 템플릿과 문서의 버전 명시, 용어 일관성, 작동 무결성 최종 검수"
