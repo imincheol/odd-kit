@@ -61,7 +61,7 @@ interactive_setup() {
     [ -z "$ODD_PROJECT_GOAL" ] && read -p "❓ 핵심 목표: " ODD_PROJECT_GOAL
     ODD_PROJECT_GOAL=${ODD_PROJECT_GOAL:-"지속 가능한 개발 기억을 만드는 것"}
 
-    if [ -n "$ODD_PROJECT_NAME" ] && [ "$ODD_PROJECT_NAME" != "odd" ]; then
+    if [ -n "$ODD_PROJECT_NAME" ]; then
         DEFAULT_ODD_DIR=".odd-$ODD_PROJECT_NAME"
         ATLAS_NAME="atlas-$ODD_PROJECT_NAME.md"
         INSTALL_NAME="install-$ODD_PROJECT_NAME.sh"
@@ -124,7 +124,7 @@ apply_placeholders "$ODD_DIR/tasks/_template/order_template.md"
 apply_placeholders "$ODD_DIR/tasks/roadmap.md"
 
 # Directories
-mkdir -p "$ODD_DIR"/context/{general,history,protocols,logic/domain,logic/tech}
+mkdir -p "$ODD_DIR"/context/{general,history,protocols,logic}
 mkdir -p "$ODD_DIR"/tasks/active
 mkdir -p "$ODD_DIR"/archive/tasks/$(date +"%Y/%m")
 mkdir -p "$ODD_DIR"/archive/context/revision

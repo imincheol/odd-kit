@@ -7,6 +7,10 @@
 
 ## 📅 마일스톤 (Milestones)
 
+### [Phase 0] v1.0.0 COA 마이그레이션 (Migration)
+- [x] **System**: 기존 3원칙(Task/Library/Archive)을 신규 COA(Context/Order/Archive) 체계로 이관 <!-- 20251228_00_Migration_v1.0.0 -->
+- [x] **Standardization**: `odd-template` 정교화 및 프로젝트 ODD 폴더 표준화 (`docs/odd` -> `.odd`) <!-- 20251229_00_Standardization_v1.0.0 -->
+
 ### [Milestone 3] 아키텍처 및 관리 체계 정비 (Refinement)
 **현재 상태**: 진행 중 (In Progress)
 - [x] **구조**: 아카이브 및 로드맵 관리 체계 개선 (Tasks/Roadmaps 분리) <!-- 20251226_07_RefineArchitecture_DONE -->
@@ -15,8 +19,8 @@
 - [x] **정리**: 레거시 JSON 파일 및 아틀라스 잔재 정리 <!-- 20251227_01_CleanupLegacyDocs_DONE -->
 
 ### [Milestone 4] 확장성 및 유연성 강화 (Flexibility)
-**현재 상태**: 대기 중 (Pending)
-- [ ] **정책**: 프로젝트 구조에 따른 ODD 설치 유연성 확보 (docs 혼용, 모노레포 대응) <!-- 20251227_02_FlexibleOddInstallationPolicy -->
+**현재 상태**: 완료 (Done)
+- [x] **정책**: 프로젝트 구조에 따른 ODD 설치 유연성 확보 (docs 혼용, 모노레포 대응) <!-- 20251227_02_FlexibleOddInstallationPolicy -->
 
 ## 🧊 백로그 (Frozen Ideas)
 - (비어있음)

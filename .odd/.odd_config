@@ -1,0 +1,8 @@
+ODD_PROJECT_NAME="odd-starter"
+ODD_PROJECT_GOAL="Curing AI Amnesia with COA Architecture"
+ODD_DIR=".odd"
+SPECS_DIR="docs/specs"
+INSTALL_TEMPLATES="true"
+ODD_VERSION="v1.0.0"
+ATLAS_NAME="atlas-odd-starter.md"
+INSTALL_NAME="install-odd-starter.sh"

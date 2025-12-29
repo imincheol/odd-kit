@@ -1,0 +1,8 @@
+ODD_PROJECT_NAME="v1.0.0 Standard Dogfooding"
+ODD_PROJECT_GOAL=".odd"
+ODD_DIR="docs/specs"
+SPECS_DIR=""
+INSTALL_TEMPLATES="true"
+ODD_VERSION="v1.0.0"
+ATLAS_NAME="atlas-v1.0.0 Standard Dogfooding.md"
+INSTALL_NAME="install-v1.0.0 Standard Dogfooding.sh"
