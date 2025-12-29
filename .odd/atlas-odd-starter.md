@@ -49,19 +49,24 @@ ODD의 핵심 임무는 **"구조화된 맥락(Context)을 제공하여 AI의 �
 ### 1. 🧠 Context (The Brain) -> `./context/`
 - **Principle**: **"Living Knowledge"**. Represents the project's current mental model.
 - **Contents**:
-    - **`protocols/`**: Operational rules and Agent behaviors. (The 'How')
-    - **`logic/`**: Business logic and technical architecture. (The 'What we know')
-    - **`history/`**: **History Books**. Interpretations of past decisions. (The 'Why')
+    - **`protocols/`**: Operational rules and Agent behaviors.
+        - [`odd-system.md`](.odd/context/protocols/odd-system.md): ODD v1.0.0 핵심 운영 규약
+    - **`logic/`**: Business logic and technical architecture.
+        - `domain/`: 프로젝트 비즈니스 도메인 지식
+        - `tech/`: 기술 스택 및 구현 상세
+    - **`history/`**: Major decisions and project evolution.
 
 ### 2. ⚡ Orders (The Action) -> `./tasks/`
 - **Principle**: **"The Directive"**. Clear instructions for change.
-- **Contents**: `roadmap.md`, `active/` (Orders and Progress logs).
+- **Contents**: 
+    - [`roadmap.md`](.odd/tasks/roadmap.md): 전체 마일스톤 및 계획
+    - `active/`: 현재 수행 중인 오더와 진행 일지
 
 ### 3. 📦 Archive (The Evidence) -> `./archive/`
 - **Principle**: **"The Raw Data"**. Immutable proof of past work.
 - **Contents**: 
-    - `tasks/`: Completed Order/Progress/Report files.
-    - `context/`: Snapshots of legacy context revisions.
+    - `tasks/`: 완료된 Task 기록 (`yyyy/mm/dd/`)
+    - `context/revision/`: 맥락 수정 이력 스냅샷
 
 ---
 
