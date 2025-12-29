@@ -7,7 +7,8 @@
 
 ## 📅 마일스톤 (Milestones)
 
-### [Phase 0] v1.0.0 COA 마이그레이션 및 정교화
+### [Phase 0] v1.0.0 마이그레이션 및 정교화
+- [x] **Update/Migration**: v1.0.0 마이그레이션 시뮬레이션 및 데이터 무결성 검증 <!-- 000_update_v1_0_0 -->
 - [x] **System**: 기존 3원칙을 신규 COA(Context/Order/Archive) 체계로 이관 <!-- 20251228_00_Migration_v1.0.0 -->
 - [x] **Standardization**: `odd-template` 정교화 및 ODD 폴더 표준화 (`.odd`) <!-- 20251229_00_Standardization_v1.0.0 -->
 - [x] **Context Modernization**: 지식 서가 내용을 신규 COA 체계로 현행화 <!-- 20251229_01_ContextModernization_v1.0.0 -->

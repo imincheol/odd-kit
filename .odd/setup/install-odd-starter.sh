@@ -101,6 +101,7 @@ apply_placeholders() {
     fi
 }
 
+
 load_config
 interactive_setup
 
@@ -123,6 +124,8 @@ fetch_system_file "$SPECS_DIR/README.md" "$TEMPLATE_DIR/specs/README.md" false
 # Apply
 apply_placeholders "$ODD_DIR/$ATLAS_NAME"
 apply_placeholders "$ODD_DIR/tasks/_template/order_template.md"
+apply_placeholders "$ODD_DIR/tasks/_template/progress_template.md"
+apply_placeholders "$ODD_DIR/tasks/_template/report_template.md"
 apply_placeholders "$ODD_DIR/tasks/roadmap.md"
 apply_placeholders "$ODD_DIR/context/protocols/odd-system.md"
 apply_placeholders "$ODD_DIR/setup/ODD_INIT.md"
