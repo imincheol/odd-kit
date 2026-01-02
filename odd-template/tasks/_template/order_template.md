@@ -1,15 +1,15 @@
 ---
 id: "{{YYYYMMDD}}_{{NN}}_{{CamelCaseTitle}}"
-odd_version: "v1.0.0"
+odd_version: "v1.1.0"
 type: "feat" # feat, fix, refactor, docs, chore, test
 status: "draft"
 priority: "medium" # high, medium, low
 created_at: "{{YYYY-MM-DD}}"
 summary: "{{One Line Summary}}"
 context:
-  - "{{ODD_DIR}}/{{ATLAS_NAME}}"
-  - "{{ODD_DIR}}/context/protocols/"
-  - "{{ODD_DIR}}/context/logic/"
+  - "{{ODD_DIR}}/{{ODD_PROMPT_NAME}}"
+  - "{{ODD_DIR}}/reference/rules/"
+  - "{{ODD_DIR}}/reference/summaries/"
   - "{{ODD_DIR}}/tasks/roadmap.md"
 ---
 

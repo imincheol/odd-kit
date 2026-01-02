@@ -1,18 +1,20 @@
-# Project Roadmap (ODD v1.0.0)
+# Project Roadmap (ODD v1.1.0)
 
 ## 📍 Current Status
-- **Phase**: MVP
-- **State**: Planning / Development / Stabilization
-- **Last Updated**: YYYY-MM-DD
+- **Phase**: MVP / Initial Setup
+- **State**: Planning 
+- **Last Updated**: {{YYYY-MM-DD}}
 
 ## 📅 Active Phases
 
-### [Phase 1] Foundation
-- [ ] Setup Environment
-- [ ] Core Architecture
+### [Phase 0] ODD Bootstrap
+- [ ] Initial Interview & Goal Definition
+- [ ] Technical Specification & Design
+- [ ] First Feature Order Implementation
 
-### [Phase 2] Expansion
-- [ ] Feature A
+### [Phase 1] Core Features
+- [ ] Component 1 Implementation
+- [ ] Database Schema Design
 
 ## 🧊 Backlog (Frozen Ideas)
-- Future Feature B
+- (Upcoming Ideas)

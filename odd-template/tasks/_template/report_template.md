@@ -1,6 +1,6 @@
 ---
 id: "{{YYYYMMDD}}_{{NN}}_{{CamelCaseTitle}}"
-odd_version: "v1.0.0"
+odd_version: "v1.1.0"
 type: "report"
 status: "completed"
 created_at: "{{YYYY-MM-DD}}"
@@ -20,6 +20,6 @@ linked_order: "{{Order_File_Name}}.md"
 ## 3. Lessons Learned (교훈 & 회고)
 - 
 
-## 4. Updates to Context (지식 현행화)
-- [ ] `{{ODD_DIR}}/context/logic/xxx.md` (New/Updated)
-- [ ] `{{ODD_DIR}}/context/history/yyyy-mm-dd.md` (Log Added)
+## 4. Updates to Reference (지식 현행화)
+- [ ] `{{ODD_DIR}}/reference/summaries/xxx.md` (New/Updated)
+- [ ] `{{ODD_DIR}}/reference/records/yyyy-mm-dd.md` (Log Added)

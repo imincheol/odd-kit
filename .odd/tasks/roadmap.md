@@ -1,13 +1,23 @@
 # 프로젝트 로드맵 (ODD Starter Kit)
 
 ## 📍 현재 상태 (Current Status)
-- **단계**: v1.0.0 공식 릴리즈 준비 완료 (Final Polish Done)
+- **단계**: v1.1.0 기능 중심 아키텍처(Functional Arch) 개편 완료
 - **상태**: 완료 (Completed)
-- **최종 업데이트**: 2025-12-29
+- **최종 업데이트**: 2026-01-02
 
 ## 📅 마일스톤 (Milestones)
 
-### [Phase 0] v1.0.0 마이그레이션 및 정교화
+### [Phase 1.1] v1.1.0 기능 중심 아키텍처 (Functional)
+- [x] **Restructuring**: 메타포 제거 및 폴더 구조 개편 (Reference, History...) <!-- 20260102_01_RefactorToFunctionalV3 -->
+- [x] **Cleanup**: 레거시(Metaphor) 폴더 및 중복 구조 정리 <!-- 20260102_02_CleanupLegacyStructure -->
+- [x] **Prompt Engine**: `ODD_PROMPT.md` 기반 진입점 강화
+- [x] **Standardization**: 모든 템플릿 및 가이드라인 용어 통일
+- [x] **Final Release**: v1.1.0 공식 릴리즈 및 README 업데이트
+
+### [Phase 1.0.1] Library Metaphor Concept (Prototype) - Deprecated
+- [x] **Metaphor Shift**: "살아있는 도서관" 개념 도입 실험 및 구조화
+
+### [Phase 1.0] v1.0.0 마이그레이션 및 정교화
 - [x] **Update/Migration**: v1.0.0 마이그레이션 시뮬레이션 및 데이터 무결성 검증 <!-- 000_update_v1_0_0 -->
 - [x] **System**: 기존 3원칙을 신규 COA(Context/Order/Archive) 체계로 이관 <!-- 20251228_00_Migration_v1.0.0 -->
 - [x] **Standardization**: `odd-template` 정교화 및 ODD 폴더 표준화 (`.odd`) <!-- 20251229_00_Standardization_v1.0.0 -->

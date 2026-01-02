@@ -1,4 +1,4 @@
-# 🏗️ Specifications (v1.0.0)
+# 🏗️ Specifications (v1.1.0)
 > **Single Source of Truth for Requirements & Design**
 
 이 디렉토리는 프로젝트의 **기획, 디자인, 설계** 문서를 보관하는 곳입니다.

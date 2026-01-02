@@ -1,5 +1,5 @@
 #!/bin/bash
-# ODD Starter v1.0.0 Installer (The Context-Order-Archive System)
+# ODD Starter v1.1.0 Installer (Functional Architecture)
 
 # GitHub Repository Base URL
 REPO_URL="https://raw.githubusercontent.com/imincheol/odd-starter/main"
@@ -45,8 +45,8 @@ ODD_PROJECT_GOAL="$ODD_PROJECT_GOAL"
 ODD_DIR="$ODD_DIR"
 SPECS_DIR="$SPECS_DIR"
 INSTALL_TEMPLATES="$INSTALL_TEMPLATES"
-ODD_VERSION="v1.0.0"
-ATLAS_NAME="$ATLAS_NAME"
+ODD_VERSION="v1.1.0"
+ODD_PROMPT_NAME="$ODD_PROMPT_NAME"
 INSTALL_NAME="$INSTALL_NAME"
 EOF
 }
@@ -54,7 +54,8 @@ EOF
 # --- 2. [Interactive Setup] 사용자 입력 ---
 interactive_setup() {
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-    echo "   🚀 ODD (Order-Driven Development) System v1.0.0"
+    echo "   🚀 ODD (Order-Driven Development) System v1.1.0"
+    echo "   🔗 Architecture: Functional Prompt & Reference"
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
     [ -z "$ODD_PROJECT_NAME" ] && read -p "❓ 프로젝트명 (예: core, fe...): " ODD_PROJECT_NAME
@@ -63,11 +64,11 @@ interactive_setup() {
 
     if [ -n "$ODD_PROJECT_NAME" ] && [ "$ODD_PROJECT_NAME" != "odd" ]; then
         DEFAULT_ODD_DIR=".odd-$ODD_PROJECT_NAME"
-        ATLAS_NAME="atlas-$ODD_PROJECT_NAME.md"
+        ODD_PROMPT_NAME="ODD_PROMPT-$ODD_PROJECT_NAME.md"
         INSTALL_NAME="install-$ODD_PROJECT_NAME.sh"
     else
         DEFAULT_ODD_DIR=".odd"
-        ATLAS_NAME="ATLAS.md"
+        ODD_PROMPT_NAME="ODD_PROMPT.md"
         INSTALL_NAME="install.sh"
     fi
 
@@ -96,48 +97,47 @@ apply_placeholders() {
         sed -i.bak "s|{{PROJECT_GOAL}}|$ODD_PROJECT_GOAL|g" "$FILE_PATH"
         sed -i.bak "s|{{ODD_DIR}}|$ODD_DIR|g" "$FILE_PATH"
         sed -i.bak "s|{{SPECS_DIR}}|$SPECS_DIR|g" "$FILE_PATH"
-        sed -i.bak "s|{{ATLAS_NAME}}|$ATLAS_NAME|g" "$FILE_PATH"
+        sed -i.bak "s|{{ODD_PROMPT_NAME}}|$ODD_PROMPT_NAME|g" "$FILE_PATH"
         rm -f "${FILE_PATH}.bak"
     fi
 }
-
 
 load_config
 interactive_setup
 
 # Sync Files
-fetch_system_file "$ODD_DIR/$ATLAS_NAME" "$TEMPLATE_DIR/ATLAS_TEMPLATE.md" true
+fetch_system_file "$ODD_DIR/$ODD_PROMPT_NAME" "$TEMPLATE_DIR/ODD_PROMPT_TEMPLATE.md" true
 fetch_system_file "$ODD_DIR/tasks/_template/order_template.md" "$TEMPLATE_DIR/tasks/_template/order_template.md" true
 fetch_system_file "$ODD_DIR/tasks/_template/progress_template.md" "$TEMPLATE_DIR/tasks/_template/progress_template.md" true
 fetch_system_file "$ODD_DIR/tasks/_template/report_template.md" "$TEMPLATE_DIR/tasks/_template/report_template.md" true
 fetch_system_file "$ODD_DIR/tasks/roadmap.md" "$TEMPLATE_DIR/tasks/roadmap_template.md" false
-fetch_system_file "$ODD_DIR/context/README.md" "$TEMPLATE_DIR/context/README.md" true
-fetch_system_file "$ODD_DIR/context/_template/logic_template.md" "$TEMPLATE_DIR/context/_template/logic_template.md" true
-fetch_system_file "$ODD_DIR/context/_template/history_template.md" "$TEMPLATE_DIR/context/_template/history_template.md" true
-fetch_system_file "$ODD_DIR/context/protocols/odd-system.md" "$TEMPLATE_DIR/context/protocols/odd-system.md" true
+fetch_system_file "$ODD_DIR/reference/README.md" "$TEMPLATE_DIR/reference/README.md" true
+fetch_system_file "$ODD_DIR/reference/_template/summary_template.md" "$TEMPLATE_DIR/reference/_template/summary_template.md" true
+fetch_system_file "$ODD_DIR/reference/_template/history_template.md" "$TEMPLATE_DIR/reference/_template/history_template.md" true
+fetch_system_file "$ODD_DIR/reference/rules/odd-system.md" "$TEMPLATE_DIR/reference/rules/odd-system.md" true
 fetch_system_file "$ODD_DIR/setup/ODD_INIT.md" "$TEMPLATE_DIR/setup/ODD_INIT_TEMPLATE.md" true
 fetch_system_file "$ODD_DIR/setup/ODD_UPDATE.md" "$TEMPLATE_DIR/setup/ODD_UPDATE_TEMPLATE.md" true
 fetch_system_file "$ODD_DIR/setup/$INSTALL_NAME" "$TEMPLATE_DIR/setup/install.sh" true
 fetch_system_file "$SPECS_DIR/README.md" "$TEMPLATE_DIR/specs/README.md" false
 
 # Apply
-# Apply
-apply_placeholders "$ODD_DIR/$ATLAS_NAME"
+apply_placeholders "$ODD_DIR/$ODD_PROMPT_NAME"
 apply_placeholders "$ODD_DIR/tasks/_template/order_template.md"
 apply_placeholders "$ODD_DIR/tasks/_template/progress_template.md"
 apply_placeholders "$ODD_DIR/tasks/_template/report_template.md"
 apply_placeholders "$ODD_DIR/tasks/roadmap.md"
-apply_placeholders "$ODD_DIR/context/protocols/odd-system.md"
+apply_placeholders "$ODD_DIR/reference/rules/odd-system.md"
 apply_placeholders "$ODD_DIR/setup/ODD_INIT.md"
 apply_placeholders "$ODD_DIR/setup/ODD_UPDATE.md"
 
 # Directories
-mkdir -p "$ODD_DIR"/context/{general,history,protocols,logic/domain,logic/tech}
+mkdir -p "$ODD_DIR"/reference/{general,records,rules,summaries/domain,summaries/tech}
 mkdir -p "$ODD_DIR"/tasks/active
-mkdir -p "$ODD_DIR"/archive/tasks/$(date +"%Y/%m")
-mkdir -p "$ODD_DIR"/archive/context/revision
+mkdir -p "$ODD_DIR"/history/tasks/$(date +"%Y/%m")
+mkdir -p "$ODD_DIR"/history/reference/revision
 mkdir -p "$SPECS_DIR"/{1_planning,2_design,3_development}
 
 chmod +x "$ODD_DIR/setup/$INSTALL_NAME"
-echo "✅ ODD-$ODD_PROJECT_NAME 가동 준비 완료!"
+echo "✅ ODD-$ODD_PROJECT_NAME 가동 준비 완료! (Functional v1.1.0)"
+echo "👉 진입점: $ODD_DIR/$ODD_PROMPT_NAME"
 echo "👉 초기 가이드: $ODD_DIR/setup/$(if [ "$IS_UPDATE" = true ]; then echo "ODD_UPDATE.md"; else echo "ODD_INIT.md"; fi)"
