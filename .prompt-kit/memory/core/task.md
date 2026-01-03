@@ -17,3 +17,9 @@ Task는 더 이상 쪼개질 수 없는 논리적인 작업의 최소 단위입�
 ## 3. 연관성
 - **Active (0.90)**: 현재 수행 중인 태스크는 Active 디렉토리에서 관리됩니다.
 - **Progress (0.85)**: 태스크의 수행 결과는 프로그레스에 실시간으로 반영됩니다.
+
+## 4. Lifecycle (4-Turn)
+1. **Planning**: 작업 정의 (Order).
+2. **Execution**: 실행 (Checklist, Progress).
+3. **Micro-Update**: 완료 및 아카이빙 (Archive, Report).
+4. **Macro-Update**: 전체 메모리 동기화 (Optimization).
