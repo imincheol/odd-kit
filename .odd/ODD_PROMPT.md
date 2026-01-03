@@ -35,8 +35,8 @@ We have refactored the system to a **"Functional Reference"** architecture.
 
 ---
 
-## ⚙️ Operational Flow
+## ⚙️ Operational Flow (Turn-Based)
 
-1. **ODD_PROMPT.md**를 먼저 읽고 프로젝트 맥락을 이해합니다.
-2. 모든 작업은 **tasks/active/** 하위의 명시적인 오더를 통해 수행합니다.
-3. 작업 완료 시 지식을 요약하여 **reference/**를 갱신하고 원본을 **history/**에 보관합니다.
+1. **Turn 1 (Analysis & Order)**: `ODD_PROMPT.md`와 `reference/`를 분석하여 오더를 작성하고 승인을 받습니다.
+2. **Turn 2 (Execution)**: 승인된 오더에 따라 작업을 수행하고 `progress.md`를 기록합니다.
+3. **Turn 3 (Finalize & Archive)**: 작업 완료 후 지식을 요약하여 `reference/`를 갱신하고 원본을 `history/`에 보관합니다.
