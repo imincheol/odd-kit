@@ -49,3 +49,4 @@ ODD v1.1.1부터는 모든 기억 세포(Memory Cell)에 **`relatedness` (0.0 ~ 
 1. **Turn 1 (Analysis & Order)**: `ODD_PROMPT.md`와 `memory/`를 분석하여 오더를 작성하고 승인을 받습니다.
 2. **Turn 2 (Execution)**: 승인된 오더에 따라 작업을 수행하고 `progress.md`를 기록합니다.
 3. **Turn 3 (Finalize & Archive)**: 작업 완료 후 지식을 요약하여 `memory/`를 갱신하고 원본을 `history/`에 보관합니다.
+   - **중요**: 지식 세포화 시 [cell_granularity_guideline.md](./memory/core/cell_granularity_guideline.md)와 [cell_creation_protocol.md](./memory/rules/cell_creation_protocol.md)를 반드시 참조하여 적절한 입자도를 유지하십시오.
