@@ -1,21 +1,21 @@
 # ODD_PROMPT: Prompt Kit Entry Point
-> **Prompt Kit (ODD) Architecture v1.1.1 (Memory Cell Architecture)**
+> **Prompt Kit v1.2.0: The Local Context Manager for Agents**
 
 **[English]**
-This document is the **Main Instruction** for the Prompt Kit project.
-We have refactored the system to a **"Memory Cell Architecture"**.
+This document is the **Boot Loader** for the Prompt Kit context system.
+It injects the **Local Repository Context** into the Agent's working memory.
 
 **[한국어]**
-이 문서는 **Prompt Kit 프로젝트의 메인 프롬프트**입니다.
-시스템을 **"기억 세포 아키텍처(Memory Cell Architecture)"**로 개편 완료했습니다.
+이 문서는 **Prompt Kit 컨텍스트 시스템의 부트 로더**입니다.
+에이전트의 작업 메모리에 **로컬 저장소 컨텍스트(Local Repository Context)**를 주입합니다.
 
 ---
 
 ## 🏗️ Project Metadata
 
 - **Project Name**: prompt-kit (formerly odd-starter)
-- **Core Goal**: Curing AI Amnesia with Memory Cells (v1.1.1)
-- **Current Version**: v1.1.1
+- **Core Goal**: Curing AI Amnesia with Local Context (v1.2.0)
+- **Current Version**: v1.2.0
 - **Primary Root**: `.odd/` (Engine Directory)
 
 ---

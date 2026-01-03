@@ -1,4 +1,4 @@
-# Project Roadmap (ODD v1.1.0)
+# Project Roadmap (Prompt Kit v1.2.0)
 
 ## 📍 Current Status
 - **Phase**: MVP / Initial Setup

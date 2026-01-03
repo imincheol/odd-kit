@@ -1,9 +1,9 @@
-# 🔄 ODD 시스템 업데이트 프로토콜 (System Update Guide)
+# 🔄 Prompt Kit 업데이트 프로토콜 (Update Guide)
 
-> **ODD Standard Protocol v1.1.0 (Functional Architecture)**
+> **Prompt Kit Standard Protocol v1.2.0 (Local Context Manager)**
 >
 > **For AI Agent:**
-> 사용자가 이 문서를 제공하면, 당신은 기존 프로젝트를 **ODD v1.1.0(Functional Architecture)** 체계로 마이그레이션해야 합니다.
+> 사용자가 이 문서를 제공하면, 당신은 기존 프로젝트를 **Prompt Kit v1.2.0(Local Context Manager)** 체계로 마이그레이션해야 합니다.
 > 핵심: 기존 메타포(Library/Book/Store)를 기능적 명칭(Reference/Rules/Summaries/History)으로 전환합니다.
 
 ---

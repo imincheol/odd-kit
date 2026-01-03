@@ -1,20 +1,17 @@
 ---
 type: rule
-revision: "v1.1.0"
-odd_version: "v1.1.0"
+revision: "v1.2.0"
+odd_version: "v1.2.0"
 category: System
-last_updated: 2026-01-02
+last_updated: 2026-01-03
 ---
 
-# ⚖️ Rule: ODD Standard Operating Procedure (v1.1.0)
+# ⚖️ Rule: Prompt Kit Operating Protocol (v1.2.0)
 
-이 문서는 **ODD(Order-Driven Development) 시스템**의 핵심 운영 규칙입니다. 에이전트는 프로젝트의 무결성을 유지하기 위해 이 지침을 반드시 준수해야 합니다.
+이 문서는 **Prompt Kit (Local Context Manager)**의 핵심 운영 규칙입니다. 에이전트는 프로젝트의 컨텍스트 무결성을 유지하기 위해 이 지침을 반드시 준수해야 합니다.
 
----
-
-## 🏗️ 1. 핵심 아키텍처: 명시적 참조 시스템 (Functional Architecture)
-
-ODD는 AI의 기억 누수를 방지하고 연속성을 보장하기 위해 설계되었습니다.
+### 📌 핵심 원칙 (Core Principles)
+Prompt Kit은 AI가 프로젝트의 **로컬 컨텍스트(Local Context)**를 완벽하게 유지하도록 설계되었습니다.
 
 ### 🔍 참조 (Reference) -> `{{ODD_DIR}}/reference/`
 - **역할**: AI의 '현재 지식'. 시스템의 실제 상태와 지켜야 할 규칙.

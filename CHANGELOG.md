@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.0] - 2026-01-03
+### Rebranded: Prompt Kit (Local Context Manager)
+- **Identity**: System renamed from `ODD` to **`Prompt Kit`**.
+- **Concept**: Refined core concept to **"The Local Context Manager for Agents"**.
+- **Architecture**:
+    - `ODD_PROMPT.md` is now the **Boot Loader**.
+    - Emphasized **Local Repository Context** over generic "Memory".
+- **Documentation**:
+    - Added `AI_FRAMEWORKS.md`: Detailed comparison with Spec Kit and Claude Skills.
+    - Updated `README.md` and all templates to reflect the new branding.
+    - Versions bumped to `v1.2.0` across the board.
+
 ## [v1.0.0] - 2025-12-29
 
 ### Added

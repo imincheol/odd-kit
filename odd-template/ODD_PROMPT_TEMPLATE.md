@@ -1,15 +1,14 @@
-# ODD_PROMPT: The System Entry Point
-> **ODD Architecture v1.1.0: Functional Prompt & Reference**
+# ODD_PROMPT: Prompt Kit Entry Point
+> **Prompt Kit v1.2.0: The Local Context Manager for Agents**
 
 **[English]**
-This document is the **Main Instruction** for the ODD System.
-The core mission of ODD is **"To eliminate AI memory loss by providing a structured reference system."**
-AI Agents must load this prompt at the start of every session to align with the project's state and rules.
+This document is the **Boot Loader** for the Prompt Kit context system.
+It injects the **Local Repository Context** into the Agent's working memory.
 
 **[한국어]**
-이 문서는 **ODD(Order-Driven Development) 시스템의 메인 프롬프트**입니다.
-ODD의 핵심 임무는 **"구조화된 참조 시스템을 제공하여 AI의 기억 상실을 방지하고 연속성을 확보하는 것"**입니다.
-모든 에이전트는 세션 시작 시 이 파일을 읽고 프로젝트의 최신 상태와 규칙을 동기화해야 합니다.
+이 문서는 **Prompt Kit 컨텍스트 시스템의 부트 로더**입니다.
+에이전트의 작업 메모리에 **로컬 저장소 컨텍스트(Local Repository Context)**를 주입합니다.
+
 **시스템의 상세 운영 규칙은 `{{ODD_DIR}}/reference/rules/odd-system.md`를 반드시 확인하십시오.**
 
 ---
@@ -18,7 +17,7 @@ ODD의 핵심 임무는 **"구조화된 참조 시스템을 제공하여 AI의 �
 
 - **Project Name**: {{PROJECT_NAME}}
 - **Core Goal**: {{PROJECT_GOAL}}
-- **Current Version**: v1.1.0 (Functional Edition)
+- **Current Version**: v1.2.0 (Local Context Manager)
 - **Primary Root**: `{{ODD_DIR}}/`
 
 ---

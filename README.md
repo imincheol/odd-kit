@@ -1,8 +1,8 @@
-# 🚀 Prompt Kit (v1.1.1 Memory Cell)
+# 🚀 Prompt Kit (v1.2.0)
 
-> **"기억을 세포화하고 연관성으로 연결하는 AI 프롬프트 시스템."**
+> **"Prompt Kit: The Local Context Manager for Agents"**
 >
-> **Prompt Kit (Order Driven Development) v1.1.1: Memory Cell Architecture**
+> **로컬 저장소 기반의 에이전트 컨텍스트 매니저**
 
 ---
 
@@ -16,34 +16,33 @@ Run the command below in your terminal. The **Interactive Installer** will guide
 curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-template/setup/install.sh | bash
 ```
 
-### 🌟 Key Features in v1.1.1 (Memory Cell)
-- **Prompt-Kit**: The ultimate tool for generating context-aware prompts.
-- **Memory Cells**: Knowledge is broken down into granular, focused cells (like neurons).
-- **Relatedness System**: Cells are linked by a "Relatedness" score (0.0 to 1.0) representing synaptic strength.
-- **Session-Agnostic Memory**: Works seamlessly across any AI model or device.
+### 🌟 Key Features
+- **Local Context Manager**: Manages project context locally within the repository (Git-friendly).
+- **Prompt-Ready**: Instantly generates optimized prompts for any agent.
+- **Memory Cells**: Stores knowledge in granular "Memory Cells" for efficient retrieval.
+- **Session-Agnostic**: Preserves context across different AI sessions and models.
 
 ### 📂 System Architecture
-Prompt Kit v1.1.1 focuses on **Memory Cells** and **Synaptic Relatedness**.
+Prompt Kit manages the **Local Context** to ensure Agents always work with the full picture.
 
 ```mermaid
 graph TD
     Root[Project Root] --> Specs[Product Specs /docs/specs]
-    Root --> ODD[{{PROMPT_KIT_DIR}}]
+    Root --> PK[{{PROMPT_KIT_DIR}}]
     
-    subgraph "Knowledge (The Memory)"
-        ODD --> Prompt[ODD_PROMPT.md - Entry Point]
-        ODD --> Core[memory/core/ - Component Cells]
-        ODD --> Cells[memory/cells/ - Knowledge Cells]
-        Core -- Relatedness --> Cells
+    subgraph "Local Context (The Memory)"
+        PK --> Prompt[ODD_PROMPT.md - Boot Loader]
+        PK --> Core[memory/core/ - System Context]
+        PK --> Cells[memory/cells/ - Domain Context]
     end
     
-    subgraph "Action (The Tasks)"
-        ODD --> Orders[tasks/active/ - Orders & Progress]
-        ODD --> Roadmap[tasks/roadmap.md - Goals]
+    subgraph "Action (The Workflow)"
+        PK --> Orders[tasks/active/ - Active Tasks]
+        PK --> Roadmap[tasks/roadmap.md - Milestones]
     end
     
-    subgraph "Record (The History)"
-        ODD --> Storage[history/tasks/ - Evidence Log]
+    subgraph "Archive (The History)"
+        PK --> Storage[history/tasks/ - Execution Logs]
     end
 ```
 
@@ -59,15 +58,14 @@ graph TD
 curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-template/setup/install.sh | bash
 ```
 
-### 🧠 Prompt Kit 컨셉: "기억 세포 아키텍처 (Memory Cell Architecture)"
+### 🧠 Prompt Kit 컨셉: "로컬 컨텍스트 매니저 (Local Context Manager)"
 
-Prompt Kit v1.1.1은 지식을 최소 단위로 쪼개고, 그들 간의 **'연관성(Relatedness)'**을 정의하여 AI가 필요한 정보를 정밀하게 찾아내어 **최적의 프롬프트**를 구성하도록 돕습니다.
+Prompt Kit은 에이전트가 프로젝트를 이해하는 데 필요한 모든 **맥락(Context)**을 로컬 저장소 내에서 효율적으로 관리하는 도구입니다.
 
 | 구성 요소 | 명칭 | 기능 |
 | :--- | :--- | :--- |
-| **`ODD_PROMPT.md`** | **부트 로더** | Prompt Kit의 진입점으로, 현재 상태와 기억 지도를 로드합니다. |
-| **`memory/core/`** | **핵심 세포** | 시스템 자체의 구성 요소(Order, Progress 등)를 정의합니다. |
-| **`memory/cells/`** | **기억 세포** | 프로젝트의 도메인/기술 지식을 세포 단위로 저장합니다. |
+| **`ODD_PROMPT.md`** | **부트 로더** | 에이전트에게 현재 프로젝트의 맥락을 주입하는 진입점입니다. |
+| **`memory/`** | **컨텍스트 저장소** | 프로젝트의 지식과 상태를 작은 '세포(Cell)' 단위로 나누어 저장합니다. || **`memory/cells/`** | **기억 세포** | 프로젝트의 도메인/기술 지식을 세포 단위로 저장합니다. |
 | **`tasks/`** | **작업 기록** | 현재 실행 중인 오더와 태스크의 상태를 관리합니다. |
 
 ### 🌟 핵심 가치
