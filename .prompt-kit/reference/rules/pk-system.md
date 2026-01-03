@@ -38,19 +38,28 @@ Prompt Kit은 AI가 프로젝트의 **로컬 컨텍스트(Local Context)**를 �
 
 ---
 
-## 🔄 3. 작업 수행 사이클 (Execution Cycle)
+## 🔄 3. 작업 주기 (Turn-based Lifecycle)
 
-### ✅ 체크리스트 규칙 (Mandatory Checklist)
-복잡한 작업을 수행할 때는 **반드시** 별도의 체크리스트 파일을 생성하여 진행 상황을 추적해야 합니다.
-1. **생성 조건**: 오더가 3개 이상의 파일을 수정하거나, 작업 단계가 복잡할 경우.
-2. **파일명**: `checklist_{YYYYMMDD}_{NN}_{Title}.md` (오더 ID와 매칭)
-3. **운영**: 각 단계를 완료할 때마다 `[x]` 표시를 하고 다음 단계로 넘어간다.
+컨텍스트 효율성과 기억의 연속성을 위해 `4-Turn` 주기를 엄수하십시오.
 
-### Cycle Steps
-1.  **Initialize**: 세션 시작 시 메인 프롬프트를 로드합니다.
-2.  **Order**: 오더 파일을 작성하고, 필요 시 **체크리스트**를 생성합니다.
-3.  **Execute**: 체크리스트를 하나씩 지워가며 작업을 수행하고 `progress_...md`에 로그를 남깁니다.
-4.  **Finalize**: 리포트를 작성하고, 요약본을 갱신한 뒤 원본을 히스토리에 보관합니다.
+### Turn 1: Planning (계획)
+- **Action**: 오더(Order) 생성, 작업 범위 분석.
+- **Rules**: 복잡한 작업 시 `checklist.md` 생성 필수.
+
+### Turn 2: Execution (실행)
+- **Action**: 체크리스트 기반 작업 수행, `progress.md`에 로그 기록.
+- **Rules**: 진행 상황을 실시간으로 업데이트.
+
+### Turn 3: Completion & Micro-Update (완료 및 즉시 반영)
+- **Action**: 
+    1. **Report**: 결과 보고서 작성.
+    2. **Archive**: `active`의 파일들을 `history/tasks/YYYY/MM/DD/`로 이동.
+    3. **Micro-Memory**: 현재 작업과 직접 연관된 Memory Cell 즉시 업데이트.
+- **Goal**: `active` 폴더를 완전히 비우고, 관련 기억을 최신화한다.
+
+### Turn 4: Macro-Update (전역 동기화)
+- **Action**: 별도의 세션에서 전체 History와 Memory를 대조하여 정합성을 맞춤.
+- **When**: 마일스톤 완료 시 또는 Turn 3에서 놓친 맥락 보정 필요 시.
 
 ---
 
