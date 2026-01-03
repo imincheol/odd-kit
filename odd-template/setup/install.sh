@@ -54,7 +54,7 @@ EOF
 # --- 2. [Interactive Setup] 사용자 입력 ---
 interactive_setup() {
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-    echo "   🚀 ODD (Order-Driven Development) System v1.1.0"
+    echo "   🚀 Prompt Kit (Order-Driven Development) System v1.1.0"
     echo "   🔗 Architecture: Functional Prompt & Reference"
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
@@ -138,6 +138,6 @@ mkdir -p "$ODD_DIR"/history/reference/revision
 mkdir -p "$SPECS_DIR"/{1_planning,2_design,3_development}
 
 chmod +x "$ODD_DIR/setup/$INSTALL_NAME"
-echo "✅ ODD-$ODD_PROJECT_NAME 가동 준비 완료! (Functional v1.1.0)"
+echo "✅ Prompt Kit ($ODD_PROJECT_NAME) 가동 준비 완료! (Functional v1.1.0)"
 echo "👉 진입점: $ODD_DIR/$ODD_PROMPT_NAME"
 echo "👉 초기 가이드: $ODD_DIR/setup/$(if [ "$IS_UPDATE" = true ]; then echo "ODD_UPDATE.md"; else echo "ODD_INIT.md"; fi)"
