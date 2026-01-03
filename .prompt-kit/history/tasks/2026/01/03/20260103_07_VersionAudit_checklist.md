@@ -31,7 +31,7 @@ status: "active"
 
 ## 3. Local System Directory (`.prompt-kit/`)
 ### Boot Loader
-- [x] `PROMPT_KIT.md`: `v1.2.1` check
+- [x] `PROMPT_KIT-odd-starter.md`: `v1.2.1` check
 
 ### Reference Rules (Local)
 - [x] **Action**: Rename `reference/rules/odd-system.md` -> `pk-system.md` (Match template)

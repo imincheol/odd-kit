@@ -1,17 +1,21 @@
-# 프로젝트 로드맵 (ODD Starter Kit)
+# Project Roadmap (Prompt Kit v1.3.0)
 
-## 📍 현재 상태 (Current Status)
-- **단계**: v1.1.1 Memory Cell Architecture 구축 완료
-- **상태**: 대기 (Ready for New Tasks)
-- **최종 업데이트**: 2026-01-03
+## 📍 Current Status
+- **Phase**: System Stabilization
+- **State**: Stabilizing 
+- **Last Updated**: 2026-01-03
 
-## 📅 마일스톤 (Milestones)
+## 📅 Active Phases
 
-### [Phase 2.0] Memory Cell Architecture
-- [x] Memory Cell Architecture 구축 및 용어 통일 (reference → memory, summaries → cells)
-- [x] Memory Cell 입자도 가이드라인 및 생성 프로토콜 수립 (20260103_02)
-- [x] 신경망 구조(Neural Network) 기반 가이드라인 고도화 (20260103_03)
-- [x] GitHub 프로젝트명 변경 대응 (odd-starter -> prompt-kit) (20260103_04)
+### [Phase 0] System Bootstrap & Stabilization (v1.3.0)
+- [x] PK v1.3.0 Stabilization (Split-Turn, Pillar Sync) - `20260103_01`
+- [x] Memory Cell Atomization (6 Cells Created)
+- [x] All Pillars (Specs, Template, PK) Sync
 
-## 🧊 백로그 (Frozen Ideas)
-- (비어있음)
+### [Phase 1] Core Features
+- [x] Turn System 명시적 정의 및 가이드 구축 - `20260103_04`
+- [x] Turn-Memory 실행 (Archiving & Ingestion) - `20260103_05`
+- [ ] Feature 1 Development (TBD)
+
+## 🧊 Backlog (Frozen Ideas)
+- (Upcoming Ideas)
