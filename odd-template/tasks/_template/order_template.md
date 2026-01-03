@@ -1,6 +1,6 @@
 ---
 id: "{{YYYYMMDD}}_{{NN}}_{{CamelCaseTitle}}"
-odd_version: "v1.2.0"
+odd_version: "v1.2.1"
 type: "feat" # feat, fix, refactor, docs, chore, test
 status: "draft"
 priority: "medium" # high, medium, low

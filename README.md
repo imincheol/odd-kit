@@ -23,7 +23,7 @@ curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-templa
 - **Session-Agnostic**: Preserves context across different AI sessions and models.
 
 ### 📂 System Architecture
-Prompt Kit manages the **Local Context** to ensure Agents always work with the full picture.
+Prompt Kit manages the **Local Context** (`.prompt-kit/`) to ensure Agents always work with the full picture.
 
 ```mermaid
 graph TD
@@ -31,7 +31,7 @@ graph TD
     Root --> PK[{{PROMPT_KIT_DIR}}]
     
     subgraph "Local Context (The Memory)"
-        PK --> Prompt[ODD_PROMPT.md - Boot Loader]
+        PK --> Prompt[PROMPT_KIT.md - Boot Loader]
         PK --> Core[memory/core/ - System Context]
         PK --> Cells[memory/cells/ - Domain Context]
     end
@@ -46,6 +46,13 @@ graph TD
     end
 ```
 
+### 🧠 The Philosophy: "Kit, Engine, and Memory"
+Prompt Kit is not just a folder; it's a **cognitive architecture** for your project.
+
+*   **Prompt Kit (The Body)**: The physical container (`.prompt-kit/`) installed in your repo.
+*   **ODD Engine (The Mind)**: The methodology of "Order → Action → Memory Update".
+*   **Local Context (The Unconscious)**: The knowledge stored in `memory/cells`, always ready to be injected into the AI's active working memory.
+
 ---
 
 # 🇰🇷 한국어 가이드
@@ -58,13 +65,23 @@ graph TD
 curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-template/setup/install.sh | bash
 ```
 
-### 🧠 Prompt Kit 컨셉: "로컬 컨텍스트 매니저 (Local Context Manager)"
+### 🧠 Prompt Kit 철학: "도구, 엔진, 그리고 기억"
+
+우리는 이 시스템을 **'프롬프트 킷(Prompt Kit)'**이라 부르며, 그 내부는 **'ODD 엔진'**으로 구동됩니다.
+
+| 개념 | 역할 | 설명 |
+| :--- | :--- | :--- |
+| **Prompt Kit** | **Body (신체)** | 프로젝트에 설치되는 물리적 도구 모음 (`.prompt-kit/`) |
+| **ODD Engine** | **Mind (정신)** | "명령(Order) → 실행 → 기억 갱신"으로 이어지는 사고 방식 |
+| **Local Context** | **Memory (무의식)** | `memory/` 폴더에 세포 단위로 저장된 지식. 필요할 때만 AI의 활성 메모리(Active Memory)로 소환됩니다. |
+
+### 📂 시스템 구조 (System Architecture)
 
 Prompt Kit은 에이전트가 프로젝트를 이해하는 데 필요한 모든 **맥락(Context)**을 로컬 저장소 내에서 효율적으로 관리하는 도구입니다.
 
 | 구성 요소 | 명칭 | 기능 |
 | :--- | :--- | :--- |
-| **`ODD_PROMPT.md`** | **부트 로더** | 에이전트에게 현재 프로젝트의 맥락을 주입하는 진입점입니다. |
+| **`PROMPT_KIT.md`** | **부트 로더** | 에이전트에게 현재 프로젝트의 맥락을 주입하는 진입점입니다. |
 | **`memory/`** | **컨텍스트 저장소** | 프로젝트의 지식과 상태를 작은 '세포(Cell)' 단위로 나누어 저장합니다. || **`memory/cells/`** | **기억 세포** | 프로젝트의 도메인/기술 지식을 세포 단위로 저장합니다. |
 | **`tasks/`** | **작업 기록** | 현재 실행 중인 오더와 태스크의 상태를 관리합니다. |
 
