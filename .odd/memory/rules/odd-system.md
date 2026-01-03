@@ -12,13 +12,13 @@ last_updated: 2026-01-03
 
 ---
 
-## 🏗️ 1. 핵심 아키텍처: 명시적 참조 시스템 (Functional Architecture)
+## 🏗️ 1. 핵심 아키텍처: 기억 세포 시스템 (Memory Cell Architecture)
 
 ODD는 AI의 기억 누수를 방지하고 연속성을 보장하기 위해 설계되었습니다.
 
-### 🔍 참조 (Reference) -> `{{ODD_DIR}}/reference/`
+### 🧠 기억 (Memory) -> `{{ODD_DIR}}/memory/`
 - **역할**: AI의 '현재 지식'. 시스템의 실제 상태와 지켜야 할 규칙.
-- **원칙**: "확신이 없으면 참조하라. 참조가 없으면 작업을 중단하라."
+- **원칙**: "확신이 없으면 기억을 참조하라. 기억이 없으면 작업을 중단하라."
 
 ### ⚡ 작업 (Tasks) -> `{{ODD_DIR}}/tasks/`
 - **역할**: 변화를 일으키는 '행동 단위'.
@@ -50,7 +50,7 @@ ODD는 AI의 기억 누수를 방지하고 연속성을 보장하기 위해 설�
 - **에이전트 상태**: Librarian (사서 모드)
 - **필수 작업**: 
     1.  리포트(`report.md`) 작성.
-    2.  변경된 지식을 `reference/summaries/`에 반영 (지식 현행화).
+    2.  변경된 지식을 `memory/cells/`에 반영 (지식 현행화).
     3.  완료된 오더 관련 파일들을 `history/tasks/YYYY/MM/DD/`로 이동 (아카이빙).
 - **종료 조건**: 모든 기록이 정리되어 `active/` 폴더가 비워짐.
 
@@ -60,6 +60,6 @@ ODD는 AI의 기억 누수를 방지하고 연속성을 보장하기 위해 설�
 
 1.  **Evidence-Based**: 모든 결정은 데이터나 이전 기록에 근거해야 합니다.
 2.  **Agnostic Continuity**: 환경이나 도구, AI 모델이 바뀌어도 ODD 파일 시스템 만으로 작업이 이어져야 합니다.
-3.  **Single Source of Truth**: 기획은 `specs/`, 구현 상태는 `reference/summaries/`가 유일한 진실입니다.
+3.  **Single Source of Truth**: 기획은 `specs/`, 구현 상태는 `memory/cells/`가 유일한 진실입니다.
 4.  **No Cleanup, No Complete**: 기록 정리가 되지 않은 작업은 완료된 것으로 간주하지 않습니다.
 5.  **Mandatory Wait**: Turn 1 종료 시 반드시 수행을 멈추고 사용자의 승인을 기다려야 합니다. (물리적 턴 분리)

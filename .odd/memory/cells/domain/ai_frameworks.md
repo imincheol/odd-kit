@@ -1,8 +1,9 @@
 ---
 type: summary
 category: domain
-version: "v1.1.0"
+version: "v1.1.1"
 last_updated: "2026-01-03"
+relatedness: 0.75
 ---
 
 # ⚖️ AI Framework Comparison Summary

@@ -1,8 +1,8 @@
-# 🚀 ODD Starter Kit (v1.1.0 Functional)
+# 🚀 ODD Starter Kit (v1.1.1 Memory Cell)
 
-> **"AI의 기억 상실을 방지하는 명시적 프롬프트 & 참조 시스템."**
+> **"기억을 세포화하고 연관성으로 연결하는 AI 기억 시스템."**
 >
-> **Order Driven Development (ODD) v1.1.0: Functional Architecture**
+> **Order Driven Development (ODD) v1.1.1: Memory Cell Architecture**
 
 ---
 
@@ -16,24 +16,25 @@ Run the command below in your terminal. The **Interactive Installer** will guide
 curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-template/setup/install.sh | bash
 ```
 
-### 🌟 Key Features in v1.1.0 (Functional)
-- **ODD_PROMPT**: Explicit entry point for AI agents.
-- **Reference System**: Replaced metaphors with "Summaries" and "Rules" for better clarity.
-- **History Focus**: Dedicated storage for past tasks and logic snapshots.
+### 🌟 Key Features in v1.1.1 (Memory Cell)
+- **ODD_PROMPT**: Explicit entry point with enhanced memory mapping.
+- **Memory Cells**: Knowledge is broken down into granular, focused cells (like neurons).
+- **Relatedness System**: Cells are linked by a "Relatedness" score (0.0 to 1.0) representing synaptic strength.
 - **Session-Agnostic Memory**: Works seamlessly across any AI model or device.
 
 ### 📂 System Architecture
-ODD v1.1.0 separates "Knowledge" (Reference) from "Action" (Tasks).
+ODD v1.1.1 focuses on **Memory Cells** and **Synaptic Relatedness**.
 
 ```mermaid
 graph TD
     Root[Project Root] --> Specs[Product Specs /docs/specs]
     Root --> ODD[{{ODD_DIR}}]
     
-    subgraph "Knowledge (The Reference)"
+    subgraph "Knowledge (The Memory)"
         ODD --> Prompt[ODD_PROMPT.md - Entry Point]
-        ODD --> Summaries[reference/summaries/ - Current State]
-        ODD --> Rules[reference/rules/ - Protocols & Guidelines]
+        ODD --> Core[memory/core/ - ODD Component Cells]
+        ODD --> Cells[memory/cells/ - Knowledge Cells]
+        Core -- Relatedness --> Cells
     end
     
     subgraph "Action (The Tasks)"
@@ -58,47 +59,44 @@ graph TD
 curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-template/setup/install.sh | bash
 ```
 
-### 🧠 ODD 컨셉: "기능 중심 아키텍처 (Functional Architecture)"
+### 🧠 ODD 컨셉: "기억 세포 아키텍처 (Memory Cell Architecture)"
 
-ODD v1.1.0은 추상적인 메타포를 걷어내고, AI와 인간이 **'데이터'**와 **'명령'**으로 소통하는 실용적인 시스템을 지향합니다.
+ODD v1.1.1은 지식을 최소 단위로 조개고, 그들 간의 **'연관성(Relatedness)'**을 정의하여 AI가 필요한 정보를 정밀하게 찾아낼 수 있도록 합니다.
 
 | 구성 요소 | 명칭 | 기능 |
 | :--- | :--- | :--- |
-| **`ODD_PROMPT.md`** | **진입점** | AI 에이전트가 가장 먼저 읽어야 할 핵심 지침서입니다. |
-| **`reference/`** | **참조 정보** | 프로젝트의 **요약된 상태(Summaries)**와 **실행 규칙(Rules)**이 들어있습니다. |
-| **`tasks/`** | **작업 기록** | 실행 중인 명령(Order)과 실시간 진행 로그(Progress)를 관리합니다. |
-| **`history/`** | **히스토리** | 완료된 작업의 결과물과 증거 자료를 시간순으로 보관합니다. |
+| **`ODD_PROMPT.md`** | **진입점** | 시스템의 뇌와 같은 역할로, 현재 상태와 기억 지도를 관리합니다. |
+| **`memory/core/`** | **핵심 세포** | ODD 자체의 구성 요소(Order, Progress 등)를 정의합니다. |
+| **`memory/cells/`** | **기억 세포** | 프로젝트의 도메인/기술 지식을 세포 단위로 저장합니다. |
+| **`tasks/`** | **작업 기록** | 현재 실행 중인 오더와 태스크의 상태를 관리합니다. |
 
 ### 🌟 핵심 가치
 
-*   **명확한 프롬프트 주입**: `ODD_PROMPT.md` 파일을 통해 AI에게 프로젝트의 정체성과 현재 위치를 즉각 인식시킵니다.
-*   **요약 정보의 자산화**: 개별 작업 로그를 누적하는 데 그치지 않고, 시스템의 현재 로직을 `summaries/`에 압축하여 AI의 지능을 유지합니다.
-*   **세션 독립적 연속성**: 브라우저가 꺼지거나 기기가 바뀌어도, 파일 시스템에 기록된 오더와 요약 정보를 통해 즉시 작업을 재개합니다.
+*   **기억의 세포화**: 거대한 문서를 뉴런과 같이 작고 명확한 단위로 조개어 참조의 정확도를 높입니다.
+*   **연관성 기반 시냅스**: '언어의 거리' 개념을 활용해 세포 간 연관성 점수를 매기고, 연관된 기억을 유기적으로 연결합니다.
+*   **프롬프트 정밀도**: AI가 방대한 데이터 속에서 길을 잃지 않도록 `ODD_PROMPT`가 최적의 컨텍스트를 주입합니다.
 
 ### 📂 시스템 폴더 구조 (Structure Diagram)
 
 ```
 [Project Root]
  ├── docs/specs/          # 🏛️ Specs (무엇을 만드는가)
- │   ├── 1_planning/      #    - 요구사항 정의
- │   ├── 2_design/        #    - UI/UX 설계
- │   └── 3_development/   #    - 기술 아키텍처
  │
  └── {{ODD_DIR}}          # 🧠 ODD Engine (어떻게 기억하는가)
-     ├── ODD_PROMPT.md    #    - 시스템 진입점 (Entry Point)
-     ├── reference/       #    - 참조 정보 (Knowledge Base)
-     │   ├── summaries/   #    - 기능 및 로직 요약본 (Current State)
-     │   └── rules/       #    - 개발 규칙 및 지침 (Rules)
+     ├── ODD_PROMPT.md    #    - 시스템 진입점 (v1.1.1)
+     ├── memory/          #    - 기억 저장소 (Memory Bank)
+     │   ├── core/        #    - ODD 핵심 구성 요소 세포화 문서
+     │   ├── cells/       #    - 도메인/기술 지식 기억 세포
+     │   └── rules/       #    - 개발 규칙 및 지침
      ├── tasks/           #    - 작업 기록 (Active Board)
-     │   └── roadmap.md   #    - 전체 목표 및 현황
      └── history/         #    - 히스토리 (Record Stacks)
 ```
 
 ## 📖 2. 사용 가이드
 
 1.  **설치**: 명령어를 통해 ODD 환경을 구축합니다.
-2.  **부팅**: 생성된 `{{ODD_DIR}}/setup/ODD_INIT.md`를 AI에게 전달하여 프로젝트를 브리핑합니다.
-3.  **순환**: 매 오더 작업이 끝나면 **history/`**에 기록을 남기고 **reference/summaries/**를 갱신하도록 하세요.
+2.  **부팅**: `ODD_PROMPT.md`를 AI에게 전달하여 프로젝트의 기억 지도를 인식시킵니다.
+3.  **세포화**: 새로운 지식은 최대한 작게 조개어 `memory/`에 저장하고 `relatedness` 점수를 기록하세요.
 
 ---
 
@@ -108,7 +106,7 @@ ODD v1.1.0은 추상적인 메타포를 걷어내고, AI와 인간이 **'데이�
 | :--- | :--- | :--- |
 | **기획자 (Architect)** | 프로젝트의 의도와 설계 방향 정의 | `docs/specs/` |
 | **수행자 (Worker)** | 실제 코드 작성 및 작업 로그 기록 | `tasks/` |
-| **분석자 (Analyst)** | 지식 요약 및 히스토리 관리 | `reference/`, `history/` |
+| **세포화 전문가 (Cell Engineer)** | 지식을 조개고 연관성을 정의하여 `memory/` 관리 | `memory/` |
 
 ## 💡 유용한 팁
 
