@@ -114,3 +114,14 @@ ODD v1.1.0은 추상적인 메타포를 걷어내고, AI와 인간이 **'데이�
 
 *   **프롬프트 우선 호출**: 모든 대화 시작 시 "ODD_PROMPT.md 읽고 시작해"라고 말하세요.
 *   **문서 업데이트 자동화**: AI에게 "작업 끝나면 요약 정보(Summaries) 업데이트해"라고 명령하는 습관을 들이세요.
+
+---
+
+## ⚖️ ODD vs Others
+
+ODD는 다른 AI 프레임워크와 병행하여 시너지를 낼 수 있습니다.
+
+*   **vs Spec Kit (GitHub/Google)**: Spec Kit으로 **정교하게 설계**하고, ODD로 그 과정을 **지속적으로 기억**하세요.
+*   **vs Claude Skills**: **ODD 관리 규칙**을 Claude Skill로 등록하여 문서 업데이트를 자동화하세요.
+
+> 더 자세한 비교와 상호보완 전략은 [AI 프레임워크 비교 가이드](./odd-template/reference/rules/COMPARISON_AI_FRAMEWORKS.md)를 확인하세요.
