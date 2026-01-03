@@ -1,4 +1,27 @@
 #!/bin/bash
+
+# ------------------------------------------------------------------
+# [Self-Update Mechanism]
+# Always fetch and execute the latest version from the remote repository
+# to ensure the user is using the most up-to-date installer/migrator.
+# ------------------------------------------------------------------
+REMOTE_SCRIPT_URL="https://raw.githubusercontent.com/imincheol/odd-starter/main/pk-template/setup/install.sh"
+
+if [ "$PK_SELF_UPDATED" != "true" ]; then
+    echo "🔄 Checking for installer updates..."
+    TEMP_SCRIPT=$(mktemp)
+    
+    if curl -sL "$REMOTE_SCRIPT_URL" -o "$TEMP_SCRIPT"; then
+        chmod +x "$TEMP_SCRIPT"
+        export PK_SELF_UPDATED="true"
+        echo "🚀 Executing updated installer..."
+        exec bash "$TEMP_SCRIPT" "$@"
+    else
+        echo "⚠️ Failed to fetch latest installer. Proceeding with local version."
+    fi
+fi
+# ------------------------------------------------------------------
+
 # Prompt Kit v1.2.1 Installer (Local Context Manager)
 
 # GitHub Repository Base URL

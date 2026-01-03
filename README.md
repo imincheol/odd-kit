@@ -13,7 +13,7 @@
 Run the command below in your terminal. The **Interactive Installer** will guide you through the setup.
 
 ```bash
-curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-template/setup/install.sh | bash
+curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/pk-template/setup/install.sh | bash
 ```
 
 ### 🌟 Key Features
@@ -62,7 +62,7 @@ Prompt Kit is not just a folder; it's a **cognitive architecture** for your proj
 터미널에서 아래 명령어를 실행하세요. **인터랙티브 설치 프로그램**이 프로젝트 맞춤 설정을 가이드합니다.
 
 ```bash
-curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-template/setup/install.sh | bash
+curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/pk-template/setup/install.sh | bash
 ```
 
 ### 🧠 Prompt Kit 철학: "도구, 엔진, 그리고 기억"
