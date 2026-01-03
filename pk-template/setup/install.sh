@@ -5,7 +5,7 @@
 # Always fetch and execute the latest version from the remote repository
 # to ensure the user is using the most up-to-date installer/migrator.
 # ------------------------------------------------------------------
-REMOTE_SCRIPT_URL="https://raw.githubusercontent.com/imincheol/odd-starter/main/pk-template/setup/install.sh"
+REMOTE_SCRIPT_URL="https://raw.githubusercontent.com/imincheol/prompt-kit/main/pk-template/setup/install.sh"
 
 if [ "$PK_SELF_UPDATED" != "true" ]; then
     echo "🔄 Checking for installer updates..."
@@ -25,7 +25,7 @@ fi
 # Prompt Kit v1.2.1 Installer (Local Context Manager)
 
 # GitHub Repository Base URL
-REPO_URL="https://raw.githubusercontent.com/imincheol/odd-starter/main"
+REPO_URL="https://raw.githubusercontent.com/imincheol/prompt-kit/main"
 TEMPLATE_DIR="pk-template"
 CONFIG_FILENAME=".pk_config"
 

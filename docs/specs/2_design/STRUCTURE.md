@@ -7,7 +7,7 @@
 
 ### 📦 Root
 - `pk-template/`: **(Source)** 배포용 템플릿 원본. 사용자는 이 폴더를 복사하여 자신의 프로젝트에 `.prompt-kit`으로 설치합니다.
-- `.prompt-kit/`: **(Instance)** 현재 프로젝트(`odd-starter`)를 관리하는 Local Context 시스템.
+- `.prompt-kit/`: **(Instance)** 현재 프로젝트(`prompt-kit`)를 관리하는 Local Context 시스템.
 - `docs/`: 프로젝트 공식 문서 (Specs).
 
 ### ⚙️ System Directory (`.prompt-kit`)

@@ -11,6 +11,7 @@
 - [x] Memory Cell Architecture 구축 및 용어 통일 (reference → memory, summaries → cells)
 - [x] Memory Cell 입자도 가이드라인 및 생성 프로토콜 수립 (20260103_02)
 - [x] 신경망 구조(Neural Network) 기반 가이드라인 고도화 (20260103_03)
+- [x] GitHub 프로젝트명 변경 대응 (odd-starter -> prompt-kit) (20260103_04)
 
 ## 🧊 백로그 (Frozen Ideas)
 - (비어있음)
