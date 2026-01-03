@@ -1,4 +1,4 @@
-# 🚀 Prompt Kit (v1.2.0)
+# 🚀 Prompt Kit (v1.2.1)
 
 > **"Prompt Kit: The Local Context Manager for Agents"**
 >

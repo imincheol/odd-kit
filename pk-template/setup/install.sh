@@ -45,7 +45,7 @@ fetch_system_file "$PK_DIR/reference/_template/summary_template.md" "$TEMPLATE_D
 fetch_system_file "$PK_DIR/reference/_template/history_template.md" "$TEMPLATE_DIR/reference/_template/history_template.md" true
 fetch_system_file "$PK_DIR/reference/rules/pk-system.md" "$TEMPLATE_DIR/reference/rules/pk-system.md" true
 fetch_system_file "$PK_DIR/setup/PK_INIT.md" "$TEMPLATE_DIR/setup/PK_INIT_TEMPLATE.md" true
-fetch_system_file "$PK_DIR/setup/PK_UPDATE.md" "$TEMPLATE_DIR/setup/PK_UPDATE_TEMPLATE.md" true
+fetch_system_file "$PK_DIR/setup/PK_MIGRATION.md" "$TEMPLATE_DIR/setup/PK_MIGRATION_TEMPLATE.md" true
 fetch_system_file "$PK_DIR/setup/$INSTALL_NAME" "$TEMPLATE_DIR/setup/install.sh" true
 fetch_system_file "$SPECS_DIR/README.md" "$TEMPLATE_DIR/specs/README.md" false
 
@@ -57,7 +57,7 @@ apply_placeholders "$PK_DIR/tasks/_template/report_template.md"
 apply_placeholders "$PK_DIR/tasks/roadmap.md"
 apply_placeholders "$PK_DIR/reference/rules/pk-system.md"
 apply_placeholders "$PK_DIR/setup/PK_INIT.md"
-apply_placeholders "$PK_DIR/setup/PK_UPDATE.md"
+apply_placeholders "$PK_DIR/setup/PK_MIGRATION.md"
 
 # Directories
 mkdir -p "$PK_DIR"/reference/{general,records,rules,summaries/domain,summaries/tech}
@@ -69,4 +69,4 @@ mkdir -p "$SPECS_DIR"/{1_planning,2_design,3_development}
 chmod +x "$PK_DIR/setup/$INSTALL_NAME"
 echo "✅ Prompt Kit ($PK_PROJECT_NAME) 가동 준비 완료! (v1.2.1)"
 echo "👉 진입점: $PK_DIR/$PK_PROMPT_NAME"
-echo "👉 초기 가이드: $PK_DIR/setup/$(if [ "$IS_UPDATE" = true ]; then echo "PK_UPDATE.md"; else echo "PK_INIT.md"; fi)"
+echo "👉 초기 가이드: $PK_DIR/setup/$(if [ "$IS_UPDATE" = true ]; then echo "PK_MIGRATION.md"; else echo "PK_INIT.md"; fi)"

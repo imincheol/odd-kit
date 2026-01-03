@@ -10,7 +10,7 @@
 | :--- | :--- | :--- | :--- |
 | **핵심 목적** | **맥락 유지 및 프롬프트 최적화** | **작업 규격화 및 검증** | **반복 작업의 '능력'화** |
 | **동작 방식** | 파일 시스템 기반의 기억(Memory) 관리 | 단계별 승인 워크플로우 (Gates) | 재사용 가능한 능력 패키지 |
-| **주요 엔진** | `ODD_PROMPT.md` + Memory Cells | `Specification` → `Technical Plan` | `SKILL.md` + 실행 스크립트 |
+| **주요 엔진** | `PROMPT_KIT.md` + Memory Cells | `Specification` → `Technical Plan` | `SKILL.md` + 실행 스크립트 |
 | **사용 환경** | 도구 독립적 (모든 AI 가능) | 에이전트 독립적 (CLI 중심) | Claude 전용 (특화 기능) |
 
 ---

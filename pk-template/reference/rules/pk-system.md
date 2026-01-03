@@ -6,7 +6,7 @@ category: System
 last_updated: 2026-01-03
 ---
 
-# ⚖️ Rule: Prompt Kit Operating Protocol (v1.2.0)
+# ⚖️ Rule: Prompt Kit Operating Protocol (v1.2.1)
 
 이 문서는 **Prompt Kit (Local Context Manager)**의 핵심 운영 규칙입니다. 에이전트는 프로젝트의 컨텍스트 무결성을 유지하기 위해 이 지침을 반드시 준수해야 합니다.
 
