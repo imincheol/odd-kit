@@ -1,7 +1,7 @@
 ---
 type: logic
 revision: "v1.0.0"
-odd_version: "v1.0.0"
+pk_version: "v1.2.1"
 category: [System / Feature / Logic]
 last_updated: YYYY-MM-DD
 ---

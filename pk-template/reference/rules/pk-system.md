@@ -1,7 +1,7 @@
 ---
 type: rule
 revision: "v1.2.1"
-odd_version: "v1.2.1"
+pk_version: "v1.2.1"
 category: System
 last_updated: 2026-01-03
 ---

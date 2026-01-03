@@ -1,6 +1,6 @@
 # 🚀 Prompt Kit 초기설치 프로토콜 (Initial Setup Guide)
 
-> **Prompt Kit Standard Protocol v1.2.0 (Local Context Manager)**
+> **Prompt Kit Standard Protocol v1.2.1 (Local Context Manager)**
 >
 > **For AI Agent:**
 > 사용자가 이 문서를 제공하면, 당신은 이 프로젝트의 **"지능형 에이전트"**로서 다음 절차를 **순서대로** 수행해야 합니다.

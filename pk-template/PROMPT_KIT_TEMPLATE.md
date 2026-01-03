@@ -34,7 +34,7 @@ The project's "Active Working Memory".
 
 ### 3. 📚 Reference (The Knowledge) -> `{{PK_DIR}}/reference/`
 The project's "Encyclopedia".
-- **`rules/`**: Immutable laws (`odd-system.md`).
+- **`rules/`**: Immutable laws (`pk-system.md`).
 - **`summaries/`**: Current state snapshots.
 - **`records/`**: Meeting notes and decisions.
 
@@ -49,4 +49,4 @@ The project's "Past Records".
 2. **Turn 2 (Execution)**: 체크리스트를 하나씩 처리하며 작업을 수행하고 `progress.md`를 기록합니다.
 3. **Turn 3 (Finalize & Archive)**: 작업 완료 후 지식을 요약하여 `reference/` 및 `memory/`를 갱신하고 원본을 `history/`에 보관합니다.
 
-> **System Rules**: 상세 운영 규칙은 반드시 [odd-system.md](./reference/rules/odd-system.md)를 참조하십시오.
+> **System Rules**: 상세 운영 규칙은 반드시 [pk-system.md](./reference/rules/pk-system.md)를 참조하십시오.

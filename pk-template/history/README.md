@@ -26,4 +26,4 @@ category: History
 ## 👩‍🏫 관리 지침
 
 1.  **불변성**: 히스토리에 한 번 들어온 파일은 수정하지 않는 것이 원칙입니다.
-2.  **색인**: `ODD_PROMPT.md`나 `tasks/roadmap.md`를 통해 과거 기록을 쉽게 찾아볼 수 있도록 관리하십시오.
+2.  **색인**: `PROMPT_KIT.md`나 `tasks/roadmap.md`를 통해 과거 기록을 쉽게 찾아볼 수 있도록 관리하십시오.

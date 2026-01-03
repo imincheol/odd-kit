@@ -1,4 +1,4 @@
-# Project Roadmap (Prompt Kit v1.2.0)
+# Project Roadmap (Prompt Kit v1.2.1)
 
 ## 📍 Current Status
 - **Phase**: MVP / Initial Setup
@@ -7,7 +7,7 @@
 
 ## 📅 Active Phases
 
-### [Phase 0] ODD Bootstrap
+### [Phase 0] System Bootstrap
 - [ ] Initial Interview & Goal Definition
 - [ ] Technical Specification & Design
 - [ ] First Feature Order Implementation

@@ -4,7 +4,7 @@ version: "v1.1.0"
 category: Reference
 ---
 
-# 🔍 ODD Reference (참조 정보)
+# 🔍 Prompt Kit Reference (참조 정보)
 
 > **"지능은 명확한 근거(Reference) 위에서 작동합니다."**
 

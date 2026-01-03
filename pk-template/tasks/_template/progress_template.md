@@ -1,6 +1,6 @@
 ---
 id: "{{YYYYMMDD}}_{{NN}}_{{CamelCaseTitle}}"
-odd_version: "v1.2.1"
+pk_version: "v1.2.1"
 status: "inprogress"
 created_at: "{{YYYY-MM-DD}}"
 last_updated: "{{YYYY-MM-DD}}"
