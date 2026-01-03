@@ -1,0 +1,6 @@
+PK_PROJECT_NAME="odd-starter"
+PK_PROJECT_GOAL="Curing AI Amnesia with COA Architecture"
+PK_DIR=".prompt-kit"
+SPECS_DIR="docs/specs"
+PK_PROMPT_NAME="PROMPT_KIT-odd-starter.md"
+PK_VERSION="v1.2.1"

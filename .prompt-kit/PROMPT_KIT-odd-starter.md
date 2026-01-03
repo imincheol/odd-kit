@@ -13,32 +13,35 @@ It injects the **Local Repository Context** into the Agent's working memory.
 
 ## 🏗️ Project Metadata
 
-- **Project Name**: {{PROJECT_NAME}}
-- **Core Goal**: {{PROJECT_GOAL}}
+- **Project Name**: odd-starter
+- **Core Goal**: Curing AI Amnesia with COA Architecture
 - **Current Version**: v1.3.0
-- **Primary Root**: `{{PK_DIR}}/` (Engine Directory)
+- **Primary Root**: `.prompt-kit/` (Engine Directory)
 
 ---
 
 ## 🧭 Navigation (Context Map)
 
-### 1. 🧠 Local Context (The Memory) -> `{{PK_DIR}}/memory/`
+### 1. 🧠 Local Context (The Memory) -> `.prompt-kit/memory/`
 The project's "Long-term Memory" and "Unconscious Knowledge".
 - **`core/`**: System definitions (Role, Protocol).
 - **`cells/`**: Domain knowledge cells (Features, Rules).
+  - [PK Naming Spec](./memory/cells/tech/pk-naming-spec.md): 핵심 명명 및 자동화 규칙
+  - [PK Operational Protocol](./memory/cells/tech/pk-operational-protocol-v130.md): v1.3.0 분리턴 아키텍처
+  - [PK Philosophy](./memory/cells/tech/pk-philosophy.md): AI 건망증 치료 철학
 
-### 2. ⚡ Workflow (The Action) -> `{{PK_DIR}}/tasks/`
+### 2. ⚡ Workflow (The Action) -> `.prompt-kit/tasks/`
 The project's "Active Working Memory".
 - **`roadmap.md`**: Strategic milestones.
 - **`active/`**: Tasks currently in progress (Orders, Progress, Checklists).
 
-### 3. 📚 Reference (The Knowledge) -> `{{PK_DIR}}/reference/`
+### 3. 📚 Reference (The Knowledge) -> `.prompt-kit/reference/`
 The project's "Encyclopedia".
-- **`rules/`**: Immutable laws (`pk-system.md`).
+- **`rules/`**: Immutable laws ([pk-system.md](./reference/rules/pk-system.md)).
 - **`summaries/`**: Current state snapshots.
 - **`records/`**: Meeting notes and decisions.
 
-### 4. 🗄️ History (The Archive) -> `{{PK_DIR}}/history/`
+### 4. 🗄️ History (The Archive) -> `.prompt-kit/history/`
 The project's "Past Records".
 
 ---

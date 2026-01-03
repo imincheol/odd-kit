@@ -12,7 +12,7 @@
 ### 1단계: 명명 규칙 준수 (Identity Normalization)
 최신 스펙에 따라 진입점 파일명을 변경합니다.
 
-1. **Rename Boot Loader**: `PROMPT_KIT.md` 등 임의의 이름을 `PROMPT_KIT-{{PROJECT_NAME}}.md`로 변경합니다.
+1. **Rename Boot Loader**: `PROMPT_KIT.md` 등 임의의 이름을 `PROMPT_KIT-odd-starter.md`로 변경합니다.
 2. **Update Config**: `.pk_config` 내의 `PK_VERSION`을 `v1.3.0`으로 업데이트하고 `PK_PROMPT_NAME`을 새로운 파일명에 맞춥니다.
 
 ### 2단계: 지식 원자화 (Atomization)

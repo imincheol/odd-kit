@@ -30,7 +30,7 @@ context:
 - [x] `README.md`: 신규 설치 및 업데이트 시 '자동 오더' 활용법 안내 추가
 
 ### B. Template Synchronization
-- [x] `odd-template/ATLAS_TEMPLATE.md`: 메타데이터 자리표시자({{PROJECT_NAME}}) 반영
+- [x] `odd-template/ATLAS_TEMPLATE.md`: 메타데이터 자리표시자(odd-starter) 반영
 - [x] `odd-template/setup/install.sh`: (이전 단계 완료)
 
 ### C. Final Verification

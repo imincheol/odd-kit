@@ -1,71 +1,51 @@
 ---
 type: rule
-revision: "v1.2.1"
-pk_version: "v1.2.1"
+revision: "v1.3.0"
+pk_version: "v1.3.0"
 category: System
 last_updated: 2026-01-03
 ---
 
-# ⚖️ Rule: Prompt Kit Operating Protocol (v1.2.1)
+# ⚖️ Rule: Prompt Kit Operating Protocol (v1.3.0)
 
 이 문서는 **Prompt Kit (Local Context Manager)**의 핵심 운영 규칙입니다. 에이전트는 프로젝트의 컨텍스트 무결성을 유지하기 위해 이 지침을 반드시 준수해야 합니다.
 
 ### 📌 핵심 원칙 (Core Principles)
-Prompt Kit은 AI가 프로젝트의 **로컬 컨텍스트(Local Context)**를 완벽하게 유지하도록 설계되었습니다.
-
-### 🔍 참조 (Reference) -> `{{PK_DIR}}/reference/`
-- **역할**: AI의 '현재 지식'. 시스템의 실제 상태와 지켜야 할 규칙.
-- **원칙**: "확신이 없으면 참조하라. 참조가 없으면 작업을 중단하라."
-
-### ⚡ 작업 (Tasks) -> `{{PK_DIR}}/tasks/`
-- **역할**: 변화를 일으키는 '행동 단위'.
-- **구성**: 로드맵, 오더(Order), 로그(Progress), **체크리스트(Checklist)**.
-- **원칙**: "기록되지 않은 작업은 존재하지 않는 것이다."
-
-### 🗄️ 기록 (History) -> `{{PK_DIR}}/history/`
-- **역할**: 지나간 모든 데이터의 '최종 보관소'.
-- **원칙**: "과거는 보존되어야 하며, 현재를 이해하는 근거가 된다."
+Prompt Kit은 AI가 프로젝트의 **로컬 컨텍스트(Local Context)**를 완벽하게 유지하도록 설계되었습니다. 모든 지식은 원자화되어야 하며, 실행은 명시적 근거를 바탕으로 이루어집니다.
 
 ---
 
-## 🎭 2. 에이전트 행동 지침
+## 🔄 1. Turn-Memory (지식 동기화)
+지식의 정합성과 항성을 유지하기 위한 프로세스입니다.
 
-당신은 다음 세 가지 상태를 전환하며 작업합니다.
+### Turn-Memory-1 (Ingestion & Atomization)
+- **Action**: `docs/specs/`, `history/`, `memory/`를 전수조사.
+- **Rules**: 정보를 최소 단위의 **Memory Cell**로 분해하고 중복/충돌을 해결하여 메모리에 업데이트.
 
-1.  **Analyst (분석자)**: `PROMPT_KIT.md`와 `reference/`를 읽어 현재 상황을 완벽히 이해합니다.
-2.  **Executor (수행자)**: `tasks/active/`의 오더와 **체크리스트**에 따라 코드를 작성하고 실시간 진행 로그를 남깁니다.
-3.  **Librarian (사서)**: 작업 완료 후 결과물을 `history/`로 옮기고, 변경된 사항을 `reference/summaries/`에 동기화합니다.
-
----
-
-## 🔄 3. 작업 주기 (Turn-based Lifecycle)
-
-컨텍스트 효율성과 기억의 연속성을 위해 `4-Turn` 주기를 엄수하십시오.
-
-### Turn 1: Planning (계획)
-- **Action**: 오더(Order) 생성, 작업 범위 분석.
-- **Rules**: 복잡한 작업 시 `checklist.md` 생성 필수.
-
-### Turn 2: Execution (실행)
-- **Action**: 체크리스트 기반 작업 수행, `progress.md`에 로그 기록.
-- **Rules**: 진행 상황을 실시간으로 업데이트.
-
-### Turn 3: Completion & Micro-Update (완료 및 즉시 반영)
-- **Action**: 
-    1. **Report**: 결과 보고서 작성.
-    2. **Archive**: `active`의 파일들을 `history/tasks/YYYY/MM/DD/`로 이동.
-    3. **Micro-Memory**: 현재 작업과 직접 연관된 Memory Cell 즉시 업데이트.
-- **Goal**: `active` 폴더를 완전히 비우고, 관련 기억을 최신화한다.
-
-### Turn 4: Macro-Update (전역 동기화)
-- **Action**: 별도의 세션에서 전체 History와 Memory를 대조하여 정합성을 맞춤.
-- **When**: 마일스톤 완료 시 또는 Turn 3에서 놓친 맥락 보정 필요 시.
+### Turn-Memory-2 (Back-Sync)
+- **Action**: 업데이트된 메모리를 기반으로 `docs/specs/` 및 `pk-template/`를 역동기화.
+- **Rules**: "메모리 = 스펙" 상태를 100% 유지.
 
 ---
 
-## ⚖️ 4. 불변의 4원칙
+## ⚡ 2. Turn-Order (작업 실행)
+실제 변화를 일으키는 행동 주기입니다.
 
-1.  **Evidence-Based**: 모든 결정은 데이터나 이전 기록에 근거해야 합니다.
-2.  **Agnostic Continuity**: 환경이나 도구, AI 모델이 바뀌어도 Prompt Kit 파일 시스템 만으로 작업이 이어져야 합니다.
-3.  **Single Source of Truth**: 기획은 `specs/`, 구현 상태는 `reference/summaries/`가 유일한 진실입니다.
-4.  **Checklist-Driven**: 체크리스트 없이 복잡한 작업을 시작하지 않으며, 체크되지 않은 항목은 완료된 것이 아닙니다.
+### Turn-Order-1 (Active Phase)
+1. **1-1 (Planning)**: 오더 생성 및 분류. 참조할 메모리 셀 명시.
+2. **1-2 (Execution)**: 프로그레스/체크리스트 생성 및 작업 수행.
+3. **1-3 (Reporting)**: 결과 보고서(Report) 작성. 메모리 활용도 기록.
+
+### Turn-Order-2 (Stabilization Phase)
+1. **2-1 (Archiving)**: 작업을 `history/`로 이동.
+2. **2-2 (Micro-Update)**: 습득한 지식을 관련 메모리 셀과 스펙에 즉시 반영.
+
+---
+
+## ⚖️ 3. 핵심 운영 규칙 (Operational Laws)
+1. **Knowledge Zero-Amnesia**: 기록되지 않은 지식은 망각된 것이며, 동기화되지 않은 스펙은 거짓입니다.
+2. **Mandatory Turn-0**: 모든 에이전트는 세션 시작 시 **Turn-Memory-1**을 반드시 수행하여 자신의 뇌(Memory)를 최신화해야 합니다.
+3. **Order Immutability**: 활성화된 오더는 수정하지 않습니다. 모든 추가 사항은 **Progress**와 **Checklist**에 기록합니다.
+4. **Checklist Separation**: 가독성과 정밀함을 위해 복잡한 태스크는 별도의 `checklist.md`로 분리하여 관리합니다.
+5. **Accumulative Integration**: README 등 외부 노출용 문서는 기존 가치를 보존하고 내용을 '추가'하여 보강합니다.
+6. **Explicit-Based**: 모든 오더는 참조하는 메모리 셀을 명시하고, 행동의 근거를 물리적 파일로 남겨야 합니다.

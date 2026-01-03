@@ -1,16 +1,11 @@
 ---
-id: "{{YYYYMMDD}}_{{NN}}_{{CamelCaseTitle}}"
-odd_version: "v1.0.0"
-type: "feat" # feat, fix, refactor, docs, chore, test
+id: "{{YYYYMMDD}}_{{NN}}_{{Title}}"
+pk_version: "v1.3.0"
+type: "chore" # feat, fix, refactor, docs, chore, test, setup
 status: "draft"
-priority: "medium" # high, medium, low
+priority: "medium"
 created_at: "{{YYYY-MM-DD}}"
 summary: "{{One Line Summary}}"
-context:
-  - ".odd/atlas-odd-starter.md"
-  - ".odd/context/protocols/"
-  - ".odd/context/logic/"
-  - ".odd/tasks/roadmap.md"
 ---
 
 # 📋 Order: {{Title}}
@@ -18,18 +13,24 @@ context:
 ## 1. Context & Objective (배경 및 목표)
 
 ### 🧐 Issues & Insight
-1. 
-2. 
+- {{이 오더를 생성하게 된 배경과 분석 내용}}
 
 ### 🎯 Goal
-- 
-- 
+- {{달성하고자 하는 명확한 결과물}}
 
-## 2. Todo List (할 일)
+## 2. 🧠 Referenced Memory Cells (참조 메모리 셀)
+*이 오더를 기획할 때 분석한 메모리 셀 목록입니다.*
 
-### A. Task Group
+- [ ] [[Cell Path or Name]]: {{참조 이유 및 관련성}}
+
+## 3. Todo List (할 일)
+
+### A. Phase 1
 - [ ] Task 1
+
+### B. Phase 2
 - [ ] Task 2
 
-### B. Task Group
-- [ ] Task 3
+---
+## ⚖️ Approval
+- [ ] User Approved

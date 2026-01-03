@@ -1,27 +1,28 @@
-# 🛠️ Development: Installer Mechanism
+# 🛠️ Development: Installer Mechanism (v1.3.0)
 
-> **Prompt Kit v1.2.1**
-> "The installer is the gatekeeper."
+> **"The installer is the gatekeeper of project identity."**
 
 ## 1. Overview
-`pk-template/setup/install.sh`는 단순한 복사 스크립트가 아니라, **Self-Updating Bootstrapper**입니다.
-사용자가 구버전 스크립트를 실행하더라도, 항상 최신 로직을 보장합니다.
+`pk-template/setup/install.sh`는 단순한 복사 스크립트가 아니라, **Self-Updating Bootstrapper**이자 **Context Injector**입니다. 사용자가 구버전 스크립트를 실행하더라도 항상 최신 로직을 보장하며, 프로젝트 고유의 정체성을 부여합니다.
 
 ## 2. Self-Update Mechanism
 1. **Check**: `PK_SELF_UPDATED` 환경변수가 설정되어 있는지 확인.
-2. **Download**: `GitHub Raw Content`에서 최신 `install.sh`를 `mktemp`로 다운로드.
-3. **Exec**: `exec bash "$TEMP_SCRIPT" "$@"`를 통해 현재 프로세스를 새 스크립트로 **완전히 대체**함.
-4. **Loop Prevention**: 새 프로세스는 `PK_SELF_UPDATED=true`를 가지고 시작하므로 루프에 빠지지 않음.
+2. **Download**: GitHub 원격지에서 최신 `install.sh`를 `mktemp`로 다운로드.
+3. **Exec**: `exec bash`를 통해 현재 프로세스를 새 스크립트로 완전히 교체하여 최신 버전 설치 보장.
 
-## 3. Migration Flow
-설치 스크립트는 기존 `.odd` 폴더를 감지하면 **Migration Mode**로 동작합니다.
-이때 `PK_MIGRATION.md` (from `PK_MIGRATION_TEMPLATE.md`) 파일을 가이드로 제공합니다.
+## 3. Dynamic Identity Injection (Critical)
+v1.3.0부터 인스톨러는 프로젝트별 고유 컨텍스트를 주입합니다.
+- **Dynamic Entry Point**: `load_config`를 통해 프로젝트명을 입력받고, `PROMPT_KIT-{{PROJECT_NAME}}.md` 형태의 고유 진입점을 생성합니다.
+- **Placeholder Replacement**: `pk-template/`의 모든 문서를 복제할 때, 내부의 `{{PROJECT_NAME}}`, `{{PK_PROMPT_NAME}}` 등의 변수를 실제 값으로 치환하여 문맥적 무결성을 확보합니다.
 
-### Automatic Actions (in `PK_MIGRATION.md` Guide)
-1. **Rename**: `mv .odd .prompt-kit`
-2. **Rename Entry**: `ODD_PROMPT.md` -> `PROMPT_KIT.md`
-3. **Update Specs**: `odd-template` -> `pk-template`
+## 4. Pillar Sync (Structure Creation)
+설치 스크립트는 다음 세 가지 영역을 동기화하여 구축합니다.
+- **Docs/Specs**: 기본 설계 가이드(`docs/specs/`) 생성.
+- **Internal Engine**: `.prompt-kit/` 폴더 내부에 워크플로우(`tasks/`), 기억(`memory/`), 규칙(`reference/rules/`) 구조를 확립.
+- **History**: 최초 설치/업데이트 내역을 기록하기 위한 히스토리 경로를 확보.
 
-## 4. Configuration
-- `.pk_config` 파일을 생성하여 프로젝트 설정(이름, 날짜 등)을 유지합니다.
-- 재실행 시 기존 설정을 로드하여 입력을 건너뜁니다.
+## 5. Migration Mode
+기존 `.odd` 시스템이 감지될 경우 `PK_MIGRATION.md`를 통해 명칭 변경 및 데이터 마이그레이션 절차를 안내합니다.
+
+---
+**Verified by Memory Cell**: `pk-installer-spec.md`, `pk-naming-spec.md`

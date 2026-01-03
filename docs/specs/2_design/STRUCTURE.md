@@ -1,37 +1,39 @@
-# 🏗️ Structure: File System & Naming
+# 🏗️ Structure: File System & Naming (v1.3.0)
 
-> **Prompt Kit v1.2.1**
-> "Structure tells functionality."
+> **"Structure tells functionality."**
 
 ## 1. Directory Structure
 
-### 📦 Root
-- `pk-template/`: **(Source)** 배포용 템플릿 원본. 사용자는 이 폴더를 복사하여 자신의 프로젝트에 `.prompt-kit`으로 설치합니다.
-- `.prompt-kit/`: **(Instance)** 현재 프로젝트(`prompt-kit`)를 관리하는 Local Context 시스템.
-- `docs/`: 프로젝트 공식 문서 (Specs).
+### 📦 Root Structures (The 3 Pillars)
+1. **Docs Specs (`docs/specs/`)**: 프로젝트의 공식 가이드 및 설계서.
+2. **Product Template (`pk-template/`)**: 타 환경 설치를 위한 원형(Prototype).
+3. **Active Engine (`.prompt-kit/`)**: 현재 작업을 지휘하는 실제 인스턴스.
 
-### ⚙️ System Directory (`.prompt-kit`)
+### ⚙️ Engine Directory (`.prompt-kit`)
 ```text
 .prompt-kit/
-├── PROMPT_KIT.md       # Boot Loader (Entry Point)
-├── .pk_config          # Configuration
-├── memory/             # Persistent Context (Brain)
-│   ├── core/           # Active, History, Reference Indexes
-│   └── cells/          # Granular Knowledge Units
-├── tasks/              # Action Space
-│   ├── active/         # Running Tasks (Orders, Checklists)
-│   ├── roadmap.md      # Macroscopic Plan
-│   └── _template/      # Task Templates
-├── history/            # Archived Tasks (Immutable Record)
-└── reference/          # Rules & Summaries (SSOT)
+├── PROMPT_KIT-{{PROJECT_NAME}}.md  # Boot Loader (Dynamic Entry Point)
+├── .pk_config                      # System Configuration
+├── memory/                         # Atomic Context (Brain)
+│   ├── core/                       # Core system definitions
+│   └── cells/                      # Domain/Tech granular cells
+├── tasks/                          # Active Action Space
+│   ├── active/                     # Current Orders, Progress, Checklists
+│   ├── roadmap.md                  # Macroscopic Milestones
+│   └── _template/                  # Task Blueprints (Order, Progress)
+├── history/                        # Immutable Experience Archive
+└── reference/                      # Fixed Rules & SSOT summaries
 ```
 
 ## 2. Naming Convention
 
-### Tasks
-- **Order**: `{YYYYMMDD}_{NN}_{CamelCase}_order.md` (e.g., `20260103_01_InitProject_order.md`)
-- **Checklist**: `{YYYYMMDD}_{NN}_{CamelCase}_checklist.md`
-- **Report**: `{YYYYMMDD}_{NN}_{CamelCase}_report.md`
+### Tasks (Order Lifecycle)
+- **Order**: `YYYYMMDD_{NN}_{CamelCaseTitle}.md`
+- **Progress**: `YYYYMMDD_{NN}_{CamelCaseTitle}_progress.md`
+- **Report**: `YYYYMMDD_{NN}_{CamelCaseTitle}_report.md`
 
 ### Memory Cells
-- **Topic**: `snake_case.md` (e.g., `ai_frameworks.md`, `installer_mechanism.md`)
+- **Topic**: `pk-lowercase-topic.md` (e.g., `pk-naming-spec.md`)
+
+---
+**Verified by Memory Cell**: `pk-structure-spec.md`

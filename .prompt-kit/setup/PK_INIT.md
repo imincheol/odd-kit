@@ -11,9 +11,9 @@
 
 ## **Phase 1: 지식 동기화 (Turn-Memory-1)**
 
-1.  **전수조사 (Ingestion)**: `{{SPECS_DIR}}/`와 `{{PK_DIR}}/` 시스템 구조를 읽어 현재 상태를 파악하세요.
-2.  **원자화 (Atomization)**: 획득한 정보를 `{{PK_DIR}}/memory/cells/`에 단위 지식(Memory Cell)으로 등록하세요.
-3.  **오더 생성 (Turn-Order-1-1)**: `{{PK_DIR}}/tasks/active/000_bootstrap.md`를 생성하고, 참조 메모리 셀 섹션을 작성하세요.
+1.  **전수조사 (Ingestion)**: `docs/specs/`와 `.prompt-kit/` 시스템 구조를 읽어 현재 상태를 파악하세요.
+2.  **원자화 (Atomization)**: 획득한 정보를 `.prompt-kit/memory/cells/`에 단위 지식(Memory Cell)으로 등록하세요.
+3.  **오더 생성 (Turn-Order-1-1)**: `.prompt-kit/tasks/active/000_bootstrap.md`를 생성하고, 참조 메모리 셀 섹션을 작성하세요.
 
 ## **Phase 2: 기획 인터뷰 (Discovery)**
 
@@ -23,7 +23,7 @@
 
 ## **Phase 3: 설계 및 참조 지식 보강 (Stabilization)**
 
-1.  **Specs 업데이트**: 합의된 내용을 `{{SPECS_DIR}}/` 문서에 반영하세요.
+1.  **Specs 업데이트**: 합의된 내용을 `docs/specs/` 문서에 반영하세요.
 2.  **Back-Sync (Turn-Memory-2)**: 메모리 셀과 스펙 문서의 정합성이 100% 일치하도록 검증하세요.
 
 ## **Phase 4: 첫 명령 실행 (Execution)**
