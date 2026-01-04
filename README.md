@@ -1,8 +1,8 @@
 # 🚀 ODD Kit (v2.0.0)
 
-> **"ODD Kit: Order-Driven Development Kit for AI Agents"**
->
-> **로컬 저장소 기반의 에이전트 컨텍스트 관리 도구**
+> **"Assume Zero Trust, Ensure Total Clarity with Order-Driven Context Management."**
+> 
+> *Curing AI Amnesia by anchoring logical context in the file system.*
 
 ---
 
@@ -13,46 +13,51 @@
 Run the command below in your terminal. The **Interactive Installer** will guide you through the setup.
 
 ```bash
-curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-kit-prompt-template/setup/install.sh | bash
+curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-kit-template/setup/install.sh | bash
 ```
 
-### 🌟 Key Features
-- **Order-Driven**: Manages project context through structured orders and progress tracking.
-- **Local Context Manager**: Manages project context locally within the repository (Git-friendly).
-- **Memory Cells**: Stores knowledge in granular, atomic "Memory Cells" for zero-amnesia retrieval.
-- **Turn-Based Architecture**: Separates Knowledge Sync (Turn-Memory) from Action (Turn-Order).
-- **Session-Agnostic**: Preserves context across different AI sessions and models.
+## 🏗️ 2. Core Philosophy: The 3 Pillars
 
-### 📂 System Architecture
-ODD Kit manages the **Local Context** (`.odd-kit/`) to ensure Agents always work with the full picture.
+ODD Kit is structured into three main folders representing different temporal and functional states of the project.
+
+| Pillar | Importance | Temporal Focus | Role |
+| :--- | :--- | :--- | :--- |
+| **`docs/`** | **Highest (1)** | **Present (The Spec)** | Current active blueprint. "If it's not in the specs, it doesn't exist." |
+| **`odd-kit-template/`** | **High (2)** | **Future (The Frame)** | Distribution prototype used for installing ODD Kit in other projects. |
+| **`.odd-kit/`** | **Standard (3)** | **Past ~ Present (The Engine)** | Internal workspace for the project itself, documenting development history. |
+
+## 🛡️ 3. Trust-Free Protocol (OPR Lifecycle)
+
+We do not trust AI Agents by default. To counteract potential amnesia or hallucination, we follow the **Order-Progress-Report (OPR)** cycle.
+
+1.  **Order (Planning)**: The Agent proposes a plan. **User approval is mandatory** before execution. Once approved, the Order is immutable.
+2.  **Progress (Execution)**: Real-time logging of thoughts, actions, and bug fixes. Continues until the **User says "Done"**.
+3.  **Report (Knowledge Sync)**: Final outcome is summarized. New knowledge is distilled into **Specs** and **Memory Cells**.
+
+## 🔄 4. Turn-Based Lifecycle
+
+ODD Kit operates on a three-phase lifecycle to ensure context integrity across sessions.
+
+| Turn | Name | Role |
+| :--- | :--- | :--- |
+| **Turn-0** | **Bootstrap** | Agent self-loads context and establishes identity. |
+| **Turn-Memory** | **Sync** | Atomic knowledge sync between history and specs. |
+| **Turn-Order** | **Execution** | Active task execution based on approved orders. |
+
+## 📂 5. System Architecture
 
 ```mermaid
 graph TD
-    Root[Project Root] --> Specs[Product Specs /docs/specs]
-    Root --> OK[.odd-kit/]
+    Root[Project Root] --> Specs[Docs /docs/specs - Blueprint]
+    Root --> Template[Template /odd-kit-template - Future Frame]
+    Root --> Engine[.odd-kit/ - Development Engine]
     
-    subgraph "Local Context (The Memory)"
-        OK --> Prompt[ODD-KIT-{{PROJECT_NAME}}.md - Boot Loader]
-        OK --> Cells[memory/cells/ - Atomic Knowledge]
-        OK --> Rules[reference/rules/ - Protocols]
-    end
-    
-    subgraph "Action (The Workflow)"
-        OK --> Tasks[tasks/active/ - Orders & Progress]
-        OK --> Roadmap[tasks/roadmap.md - Milestones]
-    end
-    
-    subgraph "Archive (The History)"
-        OK --> Storage[history/tasks/ - Execution Logs]
+    subgraph "Engine Context"
+        Engine --> Boot[ODD-KIT-PROMPT-{{NAME}}.md]
+        Engine --> Cells[memory/cells/ - Atomic Knowledge]
+        Engine --> Tasks[tasks/active/ - Orders & Progress]
     end
 ```
-
-### 🧠 The Philosophy: "Kit, Engine, and Memory"
-ODD Kit is not just a folder; it's a **cognitive architecture** for your project.
-
-- **ODD Kit (The Body)**: The physical container (`.odd-kit/`) installed in your repo.
-- **Turn-Based Engine (The Mind)**: The logic of "Knowledge Sync (Turn-Memory) ↔ Action Execution (Turn-Order)".
-- **Local Context (The Memory)**: The knowledge stored in `memory/cells/`, atomic and persistent.
 
 ---
 
@@ -63,102 +68,54 @@ ODD Kit is not just a folder; it's a **cognitive architecture** for your project
 터미널에서 아래 명령어를 실행하세요. **인터랙티브 설치 프로그램**이 프로젝트 맞춤 설정을 가이드합니다.
 
 ```bash
-curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-kit-prompt-template/setup/install.sh | bash
+curl -sL https://raw.githubusercontent.com/imincheol/odd-starter/main/odd-kit-template/setup/install.sh | bash
 ```
 
-### 🧠 ODD Kit 철학: "도구, 엔진, 그리고 기억"
+## 🏗️ 2. 핵심 철학: 3대 기둥 (The 3 Pillars)
 
-| 개념 | 역할 | 설명 |
+ODD Kit은 프로젝트의 시간적, 기능적 상태를 대변하는 세 개의 핵심 폴더로 구성됩니다.
+
+| 폴더 | 중요도 | 시간적 관점 | 역할 |
+| :--- | :--- | :--- | :--- |
+| **`docs/`** | **최우선 (1)** | **현재 (Present)** | 프로젝트의 실체인 '현행 설계도'. 스펙에 없는 기능은 존재하지 않습니다. |
+| **`odd-kit-template/`** | **높음 (2)** | **미래 (Future)** | 타 프로젝트에 ODD Kit을 이식할 때 사용되는 '미래의 틀'이자 원형. |
+| **`.odd-kit/`** | **보통 (3)** | **과거 ~ 현재 (Past~Now)** | 프로젝트 자체를 ODD 방식으로 빌드해 나가는 과정의 기록과 엔진룸. |
+
+## 🛡️ 3. 불신 기반 프로토콜 (Trust-Free OPR)
+
+에이전트(AI)의 판단과 기억력을 신뢰하지 않는 것이 원칙입니다. 이를 위해 **오더-프로그레스-리포트(OPR)** 사이클을 강제합니다.
+
+1.  **오더 (Order)**: 에이전트가 이해한 작업을 제안하고 **사용자의 명시적 승인**을 받습니다. 시작된 오더는 수정하지 않습니다.
+2.  **프로그레스 (Progress)**: 작업의 모든 과정과 버그 수정을 기록합니다. **사용자가 승인할 때까지** 무한히 보완합니다.
+3.  **리포트 (Report)**: 최종 결과를 요약하고, 습득한 지식을 **Specs**와 **Memory Cell**에 즉시 환원합니다.
+
+## 🔄 4. 운영 생애주기 (Turn-Based Lifecycle)
+
+ODD Kit은 3단계의 턴(Turn) 체계를 통해 지식의 유실을 방지하고 작업의 생산성을 확보합니다.
+
+| 단계 | 명칭 | 기능 |
 | :--- | :--- | :--- |
-| **ODD Kit** | **Body (신체)** | 프로젝트에 설치되는 물리적 도구 모음 (`.odd-kit/`) |
-| **Turn-Based Engine** | **Mind (정신)** | 지식 동기화(Turn-Memory)와 작업 실행(Turn-Order)의 선순환 체계 |
-| **Local Context** | **Memory (기억)** | `memory/cells/`에 원자 단위로 저장된 지식. AI의 장기 기억 역할을 합니다. |
+| **Turn-0** | **Bootstrap** | 에이전트가 정보를 읽고 자신의 상태를 동기화하는 자아 로딩 단계 |
+| **Turn-Memory** | **Sync** | 스펙과 히스토리 간의 지식을 원자화(Cell)하여 동기화하는 단계 |
+| **Turn-Order** | **Execution** | 실제 승인된 오더를 바탕으로 작업을 수행하고 환원하는 단계 |
 
-### 📂 시스템 구조 (System Architecture)
-
-ODD Kit은 에이전트가 프로젝트를 이해하는 데 필요한 모든 **맥락(Context)**을 로컬 저장소 내에서 효율적으로 관리합니다.
-
-| 구성 요소 | 명칭 | 기능 |
-| :--- | :--- | :--- |
-| **`ODD-KIT-{{NAME}}.md`** | **부트 로더** | 에이전트에게 프로젝트의 지식 지도를 주입하는 진입점입니다. |
-| **`memory/cells/`** | **기억 세포** | 프로젝트의 모든 지식을 더 이상 쪼갤 수 없는 '원자(Atom)' 단위로 저장합니다. |
-| **`tasks/active/`** | **작업 공간** | 현재 실행 중인 오더(Order)와 진행 로그(Progress)를 관리합니다. |
-| **`docs/specs/`** | **제품 스펙** | 프로젝트의 공식 설계도이며, 메모리 셀과 항상 동기화됩니다. |
-
-### 🌟 핵심 가치 (Key Values)
-
-*   **기억의 원자화 (Atomization)**: 거대한 문서를 뉴런과 같이 작고 명확한 단위로 쪼개어 참조의 정확도를 높입니다.
-*   **지식의 선순환 (Turn-Based)**: 지식을 먼저 전수조사하여 동기화하고(Turn-Memory), 그 기반 위에서 작업을 실행합니다(Turn-Order).
-*   **무결성 유지 (Pillar Sync)**: Specs, Template, Engine 세 기둥이 항상 동일한 지식을 공유하도록 강제합니다.
-*   **명시적 참조 (Explicit-Based)**: 모든 행동의 근거가 되는 메모리 셀을 오더와 리포트에 명시하여 추적성을 보장합니다.
-
-### 📁 시스템 폴더 구조 (Structure Diagram)
+## 📁 5. 시스템 폴더 구조 (Structure Diagram)
 
 ```text
 [Project Root]
- ├── docs/specs/                     # 🏛️ Specs (무엇을 만드는가 - 기획/설계)
- │
- └── .odd-kit/                       # 🧠 ODD Kit Engine (어떻게 기억하는가)
-     ├── ODD-KIT-{{NAME}}.md         #    - 시스템 진입점 (Boot Loader)
-     ├── .odd-kit-config             #    - 로컬 설정 파일
-     ├── memory/                     #    - 기억 저장소 (Memory Bank)
-     │   ├── core/                   #    - 시스템 핵심 정의
-     │   └── cells/                  #    - 도메인/기술 지식 기억 세포 (Atomic Cells)
-     ├── tasks/                      #    - 작업 기록 (Active Board)
-     │   ├── active/                 #    - 현재 실행 중인 오더/로그/체크리스트
-     │   └── template/              #    - 태스크 템플릿
-     ├── history/                    #    - 히스토리 (Record Stacks - 불변의 기록)
-     └── reference/                  #    - 참조 지식 및 불변의 규칙 (Rules)
+ ├── docs/specs/                     # 🏛️ Specs (현재 - 무엇을 만드는가)
+ │   ├── 00-project-structure-spec.md
+ │   ├── 01-trust-free-protocol-spec.md
+ │   └── ...
+ ├── odd-kit-template/               # 📦 Template (미래 - 어떻게 배포되는가)
+ └── .odd-kit/                       # 🧠 Engine (과거~현재 - 어떻게 일하는가)
+     ├── ODD-KIT-PROMPT-{{NAME}}.md  #    - 시스템 진입점 (Boot Loader)
+     ├── memory/cells/               #    - 원자 단위 기억 (Atomic Cells)
+     └── tasks/active/               #    - 현재 실행 중인 오더/로그
 ```
-
-## 🔄 2. 운영 생애주기 (Turn-Based Lifecycle)
-
-ODD Kit은 **'턴(Turn)'** 단위를 통해 에이전트의 망각을 방지하고 지식의 무결성을 유지합니다.
-
-| 단계 | 명칭 | 기능 | 행동 |
-| :--- | :--- | :--- | :--- |
-| **Turn-0** | **Bootstrap** | **자아 로딩** | 진입점(`ODD-KIT-{{NAME}}.md`) 로딩 및 지식 흡수 |
-| **Turn-Memory** | **Sync** | **지식 동기화** | 메모리 셀 원자화(TM-1) 및 스펙 역동기화(TM-2) |
-| **Turn-Order** | **Execution** | **작업 실행** | 오더 수행(TO-1) 및 지식 환원/아카이빙(TO-2) |
-
-### 🟦 Step 0: 진입 및 초기화 (Turn-0)
-- 모든 대화 세션의 시작입니다. 에이전트 스스로 프로젝트의 현재 상태(로드맵, 활성 오더)를 파악합니다.
-- **필수 지시**: "부트로더 파일을 읽고 현재 맥락을 파악해줘."
-
-### 🟩 Step 1: 지식 정합성 유지 (Turn-Memory)
-- **TM-0 (Archiving)**: 완료된 오더를 `history/`로 이동하여 지식 조사 준비를 마칩니다.
-- **TM-1 (Ingestion)**: 최신 히스토리와 스펙을 원자 단위의 Memory Cell로 응축합니다.
-- **TM-2 (Back-Sync)**: 메모리 셀을 기반으로 설계 문서를 최신화합니다.
-
-### 🟧 Step 2: 실제 작업 및 기여 (Turn-Order)
-- **TO-1 (Active)**: 명시적 오더(Order)와 체크리스트에 따라 실제 코드나 문서를 수정합니다.
-- **TO-2 (Micro-Sync)**: 작업 중 습득한 파편화된 정보를 메모리와 스펙에 즉시 반영합니다.
-
-## 🧭 3. 에이전트 역할 (Roles)
-
-| Role | Responsibility | Location |
-| :--- | :--- | :--- |
-| **기획자 (Architect)** | 프로젝트의 의도와 설계 방향 정의 및 스펙 문서화 | `docs/specs/` |
-| **수행자 (Worker)** | 실제 코드 작성 및 오더/프로그레스 로그 기록 | `.odd-kit/tasks/` |
-| **사서 (Librarian)** | 지식을 원자화하여 세포(Cell)로 관리하고 동기화 수행 | `.odd-kit/memory/` |
-
-## 💡 유용한 팁
-
-*   **진입점 최우선 호출**: 모든 대화 시작 시 "ODD-KIT-프로젝트명.md 읽고 시작해"라고 지시하세요.
-*   **메모리 참조 명시**: 오더 생성 시 반드시 관련 메모리 셀 목록을 포함하여 에이전트의 사고를 가이드하세요.
-*   **연관성 강화**: 리포트 작성 시 참조된 메모리 간의 연관성을 기록하여 지식 지도를 두텁게 만드세요.
-
----
-
-## ⚖️ ODD Kit vs Others
-
-ODD Kit은 다른 AI 프레임워크와 병행하여 시너지를 낼 수 있습니다.
-- **vs Spec Kit (GitHub/Google)**: Spec Kit으로 설계하고, ODD Kit으로 실행/기억하세요.
-- **vs Claude Skills**: ODD Kit 관리 규칙을 Skill로 등록하여 자동화를 강화하세요.
-
-🔗 [AI-FRAMEWORKS.md](./AI-FRAMEWORKS.md) (상세 비교 확인)
 
 ---
 
 ## ⚖️ 상세 프로토콜
-더 자세한 운영 규칙은 **[.odd-kit/memory/cells/tech/odd-kit-system-v200.md](.odd-kit/memory/cells/tech/odd-kit-system-v200.md)**를 참조하십시오.
+더 자세한 운영 규칙은 **[docs/specs/README.md](docs/specs/README.md)**를 통해 각 세부 스펙을 참조하십시오.
+*Origin Spec: [docs/origin/01-project-structure-philosophy.md](docs/origin/01-project-structure-philosophy.md), [02-trust-free-opr-philosophy.md](docs/origin/02-trust-free-opr-philosophy.md)*

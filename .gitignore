@@ -1,0 +1,8 @@
+# ODD Kit System Files
+.odd-kit/.odd-kit-config
+.odd-kit/tasks/active/*.temp
+.odd-kit/history/tasks/**/*.temp
+
+# OS Files
+.DS_Store
+Thumbs.db

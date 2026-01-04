@@ -14,14 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Boot Loader: `PROMPT_KIT-*` → `ODD-KIT-*`
     - File Prefix: `odd-kit-*` → `odd-kit-*`
     - Config: `.odd-kit-config` → `.odd-kit-config`
-- **Turn-Based Lifecycle**: 
-    - Formalized Turn-0 (Bootstrap), Turn-Memory (Sync), Turn-Order (Execution)
-    - Added TM-0 (Archiving) as pre-step to Turn-Memory
-- **Memory Cells**: All core knowledge atomized into versioned cells (v2.0.0)
-- **Documentation**:
-    - Complete rewrite of README.md with ODD Kit branding
-    - Updated all specs, templates, and reference documents
-    - Version bumped to `v2.0.0` across all files
+- **Structural Audit & Organization**:
+    - **Philosophy**: Established 3-Pillar temporal hierarchy (**Present** - `docs/`, **Future** - `odd-kit-template/`, **Past~Now** - `.odd-kit/`).
+    - **Specs**: Flattened `docs/specs/` structure and established **README Mirroring Spec**.
+    - **Origin Spec**: Preservation of raw user instructions in `docs/origin/`.
+    - **Trust-Free Protocol**: Standardized **Order-Progress-Report (OPR)** as the core trust-less execution framework.
+    - **Boot Loader**: Redesigned as "One-Sheet Mind" to consolidate project identity, protocol, and navigation.
+- **Version Bump**: Finalized v2.0.0 structure across all pillars.
 
 ## [v1.3.0] - 2026-01-03
 ### Split-Turn Architecture & Protocol Stabilization
