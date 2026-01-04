@@ -1,5 +1,5 @@
 ---
-id: "{{YYYYMMDD}}-{{NN}}-{{Title}}"
+id: "{{YYYYMMDD}}-{{NN}}-{{Title}}-order"
 odd-kit-version: "v2.0.0"
 type: "chore" # feat, fix, refactor, docs, chore, test, setup
 status: "draft"

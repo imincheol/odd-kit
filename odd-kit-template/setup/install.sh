@@ -2,7 +2,7 @@
 
 # ODD-KIT v2.0.0 Installer
 REPO_URL="https://raw.githubusercontent.com/imincheol/odd-starter/main"
-TEMPLATE_DIR="odd-kit-prompt-template"
+TEMPLATE_DIR="odd-kit-template"
 CONFIG_FILENAME=".odd-kit-config"
 
 # --- 1. [Function] 기본 설정 및 사용자 입력 ---
@@ -46,6 +46,9 @@ EOF
 # --- 2. [Execution] 파일 동기화 및 구조 생성 ---
 fetch_system_file() {
     LOCAL_PATH=$1; REMOTE_REL_PATH=$2; FORCE_UPDATE=$3
+    # LOCAL_PATH의 디렉토리가 없으면 생성
+    mkdir -p "$(dirname "$LOCAL_PATH")"
+    
     # 로컬 템플릿이 있으면 우선 사용, 없으면 원격에서 가져옴
     if [ -d "$TEMPLATE_DIR" ]; then
         cp "$TEMPLATE_DIR/${REMOTE_REL_PATH#$TEMPLATE_DIR/}" "$LOCAL_PATH"
@@ -70,20 +73,21 @@ fetch_system_file "$ODDKIT_DIR/memory/cells/tech/odd-kit-system-v200.md" "$TEMPL
 fetch_system_file "$ODDKIT_DIR/setup/ODD-KIT-INIT.md" "$TEMPLATE_DIR/setup/ODD-KIT-INIT-TEMPLATE.md" true
 fetch_system_file "$ODDKIT_DIR/setup/ODD-KIT-MIGRATION.md" "$TEMPLATE_DIR/setup/ODD-KIT-MIGRATION-TEMPLATE.md" true
 fetch_system_file "$ODDKIT_DIR/setup/install.sh" "$TEMPLATE_DIR/setup/install.sh" true
-fetch_system_file "$ODDKIT_SPECS_DIR/README.md" "$TEMPLATE_DIR/specs/README.md" false
+fetch_system_file "$ODDKIT_SPECS_DIR/README.md" "$TEMPLATE_DIR/setup/SPECS-README-TEMPLATE.md" false
 
-# 플레이스홀더 치환 (내부 변수는 _ 사용, 템플릿의 플레이스홀더는 - 사용)
+# 플레이스홀더 치환
 find "$ODDKIT_DIR" -type f -name "*.md" -exec sed -i '' "s|{{PROJECT-NAME}}|$ODDKIT_PROJECT_NAME|g" {} +
 find "$ODDKIT_DIR" -type f -name "*.md" -exec sed -i '' "s|{{PROJECT-GOAL}}|$ODDKIT_PROJECT_GOAL|g" {} +
 find "$ODDKIT_DIR" -type f -name "*.md" -exec sed -i '' "s|{{ODD-KIT-PROMPT-NAME}}|$ODDKIT_PROMPT_NAME|g" {} +
 find "$ODDKIT_DIR" -type f -name "*.md" -exec sed -i '' "s|{{ODD-KIT-DIR}}|$ODDKIT_DIR|g" {} +
 find "$ODDKIT_DIR" -type f -name "*.md" -exec sed -i '' "s|{{SPECS-DIR}}|$ODDKIT_SPECS_DIR|g" {} +
+find "$ODDKIT_SPECS_DIR" -type f -name "*.md" -exec sed -i '' "s|{{ODD-KIT-DIR}}|$ODDKIT_DIR|g" {} +
 
-# 디렉토리 생성 (v2.0.0 정제된 구조)
+# 디렉토리 생성 (v2.0.0 정제 및 Flattened 구조)
 mkdir -p "$ODDKIT_DIR"/memory/{core,cells/{domain,tech},template}
 mkdir -p "$ODDKIT_DIR"/tasks/active
 mkdir -p "$ODDKIT_DIR"/history/tasks/$(date +"%Y/%m")
-mkdir -p "$ODDKIT_SPECS_DIR"/{1-planning,2-design,3-development}
+mkdir -p "$ODDKIT_SPECS_DIR"
 
 chmod +x "$ODDKIT_DIR/setup/install.sh"
 

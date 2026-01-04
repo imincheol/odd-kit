@@ -12,11 +12,11 @@
 ### 1단계: 디렉토리 및 파일명 변경 (Identity Normalization)
 
 1. **Rename Directory**: 
-   - `.odd/` 또는 `.prompt-kit/` → `.odd-kit/`
-   - `odd-kit-template/` → `odd-kit-prompt-template/`
+   - `.odd/`, `.prompt-kit/`, `.pk/` → `.odd-kit/`
+   - `odd-kit-prompt-template/` → `odd-kit-template/`
 
 2. **Rename Boot Loader**: 
-   - `ODD-KIT-PROMPT.md`, `PROMPT_KIT-*.md` → `ODD-KIT-{{PROJECT-NAME}}.md`
+   - `ODD-KIT-PROMPT.md`, `PROMPT_KIT-*.md` → `ODD-KIT-PROMPT-{{PROJECT-NAME}}.md`
 
 3. **Rename Config**: 
    - `.odd-config`, `.odd-kit-config` → `.odd-kit-config`
@@ -34,12 +34,12 @@
    ".prompt-kit" → ".odd-kit"
    "odd-kit-version" → "odd-kit-version"
    "v1.3.0" → "v2.0.0"
-   "odd-kit-template" → "odd-kit-prompt-template"
+   "odd-kit-template" → "odd-kit-template"
    ```
 
 2. **Setup Files**:
-   - `ODD-KIT-INIT.md` → `ODD-KIT_INIT.md`
-   - `ODD-KIT-MIGRATION.md` → `ODD-KIT_MIGRATION.md`
+   - `ODD-KIT_INIT.md` → `ODD-KIT-INIT-TEMPLATE.md`
+   - `ODD-KIT_MIGRATION.md` → `ODD-KIT-MIGRATION-TEMPLATE.md`
 
 ### 3단계: 지식 통합 및 레거시 정리 (Knowledge Refinement)
 
@@ -57,14 +57,14 @@
 1. **Check v2.0.0 Standard Structure**:
    ```
    .odd-kit/
-   ├── ODD-KIT-{{PROJECT}}.md
+   ├── ODD-KIT-PROMPT-{{PROJECT}}.md
    ├── .odd-kit-config
    ├── memory/
    │   ├── cells/tech/odd-kit-*-v200.md  (Rule 포함)
    │   └── core/
    ├── tasks/active/
    ├── history/tasks/
-   └── setup/ODD-KIT_*.md
+   └── setup/ODD-KIT-*-TEMPLATE.md
    ```
 
 2. **Verify Boot Loader**:
@@ -73,7 +73,7 @@
 
 ### 5단계: 삼대 구조 동기화 (Pillar Sync)
 
-- **Turn-Memory-2**를 수행하여 `docs/specs/`, `odd-kit-prompt-template/`, `.odd-kit/`을 일치시킵니다.
+- **Turn-Memory-2**를 수행하여 `docs/specs/`, `odd-kit-template/`, `.odd-kit/`을 일치시킵니다.
 
 ---
 
