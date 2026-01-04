@@ -1,0 +1,6 @@
+ODD-KIT_PROJECT_NAME="odd-starter"
+ODD-KIT_PROJECT-GOAL="Curing AI Amnesia with Order-Driven Context Management"
+ODD-KIT_DIR=".odd-kit"
+ODD-KIT_SPECS_DIR="docs/specs"
+ODD-KIT_PROMPT_NAME="ODD-KIT-PROMPT-odd-starter.md"
+ODD-KIT_VERSION="v2.0.0"
