@@ -12,14 +12,14 @@
 - [x] Memory Cell Atomization (6 Cells Created)
 - [x] All Pillars (Specs, Template, PK) Sync
 
-### [Phase 1] Core Refinement
-- [x] Turn System 명시적 정의 및 가이드 구축 - `20260103_04`
-- [x] Turn-Memory 실행 (Archiving & Ingestion) - `20260103_05`
-- [x] **ODD Kit v2.0.0 Rebranding** - `20260104_01`
-- [x] **Migration & Legacy Cleanup** - `20260104_02`
-- [x] **Knowledge SSOT Integration (Ref to Memory)** - `20260104_03`
+### [Phase 2] Structure Audit & Organization
+- [x] 3-Pillar Philosophy Definition (`docs/origin/01`)
+- [x] Trust-Free OPR Protocol Specification (`docs/specs/01`)
+- [x] Docs Specs Flattening & README Mirroring
+- [x] odd-kit-template Cleanup & "One-Sheet Mind" Bootloader
+- [ ] Final System Engine Audit (.odd-kit/)
 
-### [Phase 2] Expansion (Draft)
+### [Phase 3] Expansion (Draft)
 - [ ] Feature 1 Development (TBD)
 
 ## 🧊 Backlog (Frozen Ideas)

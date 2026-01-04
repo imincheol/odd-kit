@@ -2,28 +2,30 @@
 type: memory-cell
 category: tech
 subcategory: devops
-subject: Installer & Migration Protocol
+subject: Installer Mechanism (v2.0.0)
 status: active
 priority: medium
-last-updated: 2026-01-03
+last-updated: 2026-01-04
+revision: "v2.0.0"
 ---
 
-# 🛠️ Memory Cell: Installer & Migration Protocol
+# 🛠️ Memory Cell: Installer Mechanism
 
-## 1. Self-Update Mechanism
-`install.sh`는 실행 시 `ODD-KIT-SELF_UPDATED` 환경 변수를 체크하여, GitHub 원격지에서 최신 스크립트를 가져와(mktemp) 실행 프로세스를 교체한다. 이를 통해 사용자는 항상 최신 버전의 인스톨러/마이그레이터를 사용할 수 있다.
+## 1. Setup & Identity
+- **Template Source**: `odd-kit-template/` 폴더의 내용을 기반으로 배포.
+- **Identity Injection**: 사용자 입력을 받아 `.odd-kit-config`를 생성하고, 모든 템플릿의 플레이스홀더(`{{PROJECT-NAME}}` 등)를 물리적으로 치환.
+- **Bootloader Generation**: `ODD-KIT-PROMPT-{{PROJECT-NAME}}.md`를 자동 생성하여 프로젝트 고유 진입점 확보.
 
-## 2. Interactive Setup & Identity
-- **Project Identity**: `load_config`를 통해 기존 설정을 읽어오고, 없을 경우 프로젝트명과 목표를 입력받아 `.odd-kit-config`를 생성한다.
-- **Dynamic Entry Point**: 프로젝트명(ODD-KIT-PROJECT_NAME)을 기반으로 `PROMPT_KIT-odd-starter.md` 형태의 고유 진입점을 생성한다.
+## 2. Sync Logic
+- **Force Update**: 핵심 시스템 파일(`install.sh`, `system-v200.md` 등)은 강제 덮어쓰기 수행.
+- **Preserve User Data**: `roadmap.md`, `docs/specs/README.md` 등 사용자가 직접 작성하는 파일은 기존 내용 유지(Force Update=false).
 
-## 3. Propagation (Pillar Sync)
-인스톨러는 `odd-kit-prompt-template/`의 내용을 기반으로 로컬 프로젝트 구조를 구축하며, 모든 MD 파일 내의 플레이스홀더(`odd-starter`, `PROMPT_KIT-odd-starter.md` 등)를 실제 값으로 치환하여 문맥의 일관성을 확보한다.
-
-## 4. Migration Mode
-기존 시스템(ODD) 혹은 구버전 PK가 감지될 경우 `ODD-KIT-MIGRATION.md`를 안내하여 안전한 전환을 지원한다.
+## 3. Migration Mode
+기존 `.odd` 또는 구버전 PK 시스템이 감지될 경우 `ODD-KIT-MIGRATION.md` 프로토콜을 활성화하여 경로 및 지식 마이그레이션을 가이드함.
 
 ---
 **Related Cells:**
 - `odd-kit-naming-spec.md`
-- `odd-kit-architecture-v200.md`
+- `odd-kit-structure-spec-v200.md`
+---
+*Verified by Docs: [05-installer-mechanism-spec.md](../../../docs/specs/05-installer-mechanism-spec.md)*

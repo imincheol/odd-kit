@@ -3,57 +3,51 @@ type: rule
 revision: "v2.0.0"
 odd-kit-version: "v2.0.0"
 category: System
-last-updated: 2026-01-03
+last-updated: 2026-01-04
 ---
 
 # ⚖️ Rule: ODD Kit Operating Protocol (v2.0.0)
 
 이 문서는 **ODD Kit (Local Context Manager)**의 핵심 운영 규칙입니다. 에이전트는 프로젝트의 컨텍스트 무결성을 유지하기 위해 이 지침을 반드시 준수해야 합니다.
 
-### 📌 핵심 원칙 (Core Principles)
-ODD Kit은 AI가 프로젝트의 **로컬 컨텍스트(Local Context)**를 완벽하게 유지하도록 설계되었습니다. 모든 지식은 원자화되어야 하며, 실행은 명시적 근거를 바탕으로 이루어집니다.
+---
+
+## 🛡️ 1. Trust-Free Strategy (에이전트 불신 원칙)
+에이전트의 판단과 기억력을 신뢰하지 않습니다. 모든 사고 과정은 물리적 파일로 기록되어야 하며 사용자의 검증을 거쳐야 합니다.
+
+### 1.1 No Order, No Action
+- 승인된 오더(Order) 없이는 어떠한 코드나 문서 작업도 하지 않습니다.
+- 오더 작성 시 에이전트가 이해한 내용과 계획을 명시하고 사용자에게 승인을 요청합니다.
+
+### 1.2 Infinite Progress & Zero-Self-Completion
+- 사용자가 "완료"라고 할 때까지 프로그레스 단계에서 무한히 수정하고 기록합니다.
+- 에이전트 스스로 작업이 완료되었다고 판단하여 세션을 종료하거나 아카이빙하지 않습니다.
 
 ---
 
-## 🔄 1. Turn-Memory (지식 동기화)
-지식의 정합성과 항상성을 유지하기 위한 프로세스입니다.
+## 🔄 2. Turn-Based Lifecycle (턴 기반 생애주기)
 
-### 턴-초기화 (Turn-Memory-0: Cleanup)
-- **Action**: `tasks/active/`에 완료된 오더가 있다면 `history/`로 선행 이동.
-- **Rules**: 지식 업데이트 전, 모든 작업 기록을 최신 상태로 정리.
+### Turn-0: Bootstrap (자아 복원)
+- 세션 시작 시 부트로더(`ODD-KIT-PROMPT-odd-starter.md`)를 읽고 로드맵과 활성 태스크를 파악합니다.
 
-### 턴-전체-메모라이즈 (Turn-Memory-1: Knowledge Sync)
-- **Action**: `docs/specs/`, `history/`, `memory/`를 전수조사.
-- **Rules**: 정보를 최소 단위의 **Memory Cell**로 분해하고 중복/충돌을 해결하여 메모리에 업데이트.
+### Turn-Memory: Sync (지식 동기화)
+- **TM-0 (Archiving)**: 완료된 오더를 히스토리로 이동.
+- **TM-1 (Ingestion)**: 히스토리와 스펙을 전수조사하여 원자적 **Memory Cell**로 응축.
+- **TM-2 (Back-Sync)**: 메모리를 기반으로 `docs/specs/` 문서를 역동기화.
 
-### 턴-스펙반영 (Turn-Memory-2: Spec Update)
-- **Action**: 업데이트된 메모리를 기반으로 `docs/specs/` 및 `odd-kit-prompt-template/`를 역동기화.
-- **Rules**: "메모리 = 스펙" 상태를 100% 유지.
-
----
-
-## ⚡ 2. Turn-Order (작업 실행)
-실제 변화를 일으키는 행동 주기입니다.
-
-### 턴-태스크 (Turn-Order Cycle)
-1. **턴-태스크-오더 (Order)**: 오더 생성 및 분류. 참조할 메모리 셀 명시.
-2. **턴-태스크-프로그레스 (Progress)**: 프로그레스/체크리스트 생성 및 작업 수행.
-3. **턴-태스크-리포트 (Report)**: 결과 보고서 작성 및 오더 대비 차이(Gap) 분석.
-
-### 턴-태스크-메모라이즈 (Turn-Order-2: Micro-Sync)
-1. **Action**: 작업 중 습득한 지식을 관련 메모리 셀과 스펙에 즉시 반영.
+### Turn-Order: Execution (작업 실행)
+- **TO-1 (Active)**: 오더/프로그레스/체크리스트/리포트 작성 및 수행.
+- **TO-2 (Micro-Sync)**: 작업 중 습득한 파편화된 정보를 메모리 셀에 즉시 반영.
 
 ---
 
-## ⚖️ 3. 핵심 운영 규칙 (Operational Laws)
-1. **Knowledge Zero-Amnesia**: 기록되지 않은 지식은 망각된 것이며, 동기화되지 않은 스펙은 거짓입니다.
-2. **Mandatory Turn-0**: 모든 에이전트는 세션 시작 시 **Turn-0 (Bootstrap)**를 반드시 수행하여 자신의 뇌(Memory)를 최신화해야 합니다.
-3. **Order Immutability**: 활성화된 오더는 수정하지 않습니다. 모든 추가 사항은 **Progress**와 **Checklist**에 기록합니다.
-4. **Checklist Separation**: 가독성과 정밀함을 위해 복잡한 태스크는 별도의 `checklist.md`로 분리하여 관리합니다.
-5. **Accumulative Integration**: README 등 외부 노출용 문서는 기존 가치를 보존하고 내용을 '추가'하여 보강합니다.
-6. **Explicit-Based**: 모든 오더는 참조하는 메모리 셀을 명시하고, 행동의 근거를 물리적 파일로 남겨야 합니다.
-7. **Atomic Checklist Update**: 체크리스트의 각 항목은 해당 작업이 완료된 즉시 개별적으로 체크되어야 합니다. 여러 항목을 일괄적으로 처리한 후 한 번에 체크하는 행위는 작업의 투명성과 추적성을 저해하므로 엄격히 금지합니다.
-8. **Trust-Free Protocol**: 
-    - **No Order, No Action**: 오더 없이는 어떠한 행동도 하지 않는다.
-    - **Infinite Progress**: 사용자가 완료를 선언할 때까지 프로그레스에 로그를 무한히 기록한다. (임의 완료 금지)
-    - **Gap Analysis**: 최종 스펙은 Order와 Report의 차이(Gap)에서 도출한다.
+## 📜 3. Operational Rules (작업 수칙)
+1. **Order Immutability**: 시작된 오더는 수정하지 않습니다. 모든 추가 사항은 Progress에 기록합니다.
+2. **Gap Analysis**: 최종 스펙은 최초 오더와 리포트 간의 차이(Gap) 분석을 통해 도출합니다.
+3. **Checklist Separation**: 복잡한 작업은 별도의 `checklist.md`로 분리하여 원자적 추적성을 확보합니다.
+4. **Knowledge Atomization**: 하나의 리포트는 여러 개의 원자적 메모리 셀로 분해되어 저장되어야 합니다.
+5. **Atomic Checklist Update**: 체크리스트는 작업 즉시 하나씩 체크하며, 일괄 체크는 금지합니다.
+6. **Bilingual Principle**: 전용 문서와 리드미는 영어와 한국어를 동일한 내용으로 중복 기재하여 데이터 품질을 높입니다.
+
+---
+*Verified by Origin Spec: docs/origin/02-trust-free-opr-philosophy.md*
