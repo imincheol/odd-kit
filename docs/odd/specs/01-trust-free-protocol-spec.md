@@ -5,7 +5,7 @@
 ## 🛡️ 1. Core Principle: Agent Trust-Free Strategy
 에이전트(AI)의 판단과 기억력을 신뢰하지 않는 것이 이 프로토콜의 핵심입니다. 에이전트는 사용자의 의도를 왜곡하거나 과거의 결정을 망각할 가능성이 높다고 가정하며, 이를 방지하기 위해 모든 사고와 행동 과정을 **물리적인 파일(Order-Progress-Report)**로 기록하여 검증받아야 합니다.
 
-## 📋 2. Task Lifecycle: The OPR Framework
+## 📋 2. Task Lifecycle: The ORW Framework
 
 ### 2.1 Order (기획 및 명령 정의)
 - **목적**: 사용자의 요청을 에이전트가 어떻게 이해했는지 명시하고, 수행할 작업 목록을 사전에 승인받는 단계입니다.
