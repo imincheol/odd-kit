@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - **Philosophy**: Established 3-Pillar temporal hierarchy (**Present** - `docs/`, **Future** - `odd-kit-template/`, **Past~Now** - `.odd-kit/`).
     - **Specs**: Flattened `docs/specs/` structure and established **README Mirroring Spec**.
     - **Origin Spec**: Preservation of raw user instructions in `docs/origin/`.
-    - **Trust-Free Protocol**: Standardized **Order-Progress-Report (OPR)** as the core trust-less execution framework.
+    - **Trust-Free Protocol**: Standardized **Order-Report-WorkingLog (ORW)** as the core trust-less execution framework.
     - **Boot Loader**: Redesigned as "One-Sheet Mind" to consolidate project identity, protocol, and navigation.
 - **Version Bump**: Finalized v2.0.0 structure across all pillars.
 

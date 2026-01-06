@@ -14,7 +14,7 @@
 
 ### [Phase 2] Structure Audit & Organization
 - [x] 3-Pillar Philosophy Definition (`docs/origin/01`)
-- [x] Trust-Free OPR Protocol Specification (`docs/specs/01`)
+- [x] Trust-Free ORW Protocol Specification (`docs/specs/01`)
 - [x] Docs Specs Flattening & README Mirroring
 - [x] odd-kit-template Cleanup & "One-Sheet Mind" Bootloader
 - [ ] Final System Engine Audit (.odd-kit/)

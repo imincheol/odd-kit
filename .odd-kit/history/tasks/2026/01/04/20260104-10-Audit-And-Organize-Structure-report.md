@@ -20,7 +20,7 @@
     - `1-planning`, `2-design` 등 계층형 폴더를 제거하고 **Flattened Spec** 파일(00~07) 체계 도입.
     - 루트 `README.md`가 이 스펙들을 완벽히 복제(Mirroring)하도록 규격화.
 
-### 🛡️ Trust-Free OPR 프로토콜 정착
+### 🛡️ Trust-Free ORW 프로토콜 정착
 - 에이전트의 판단과 기억을 신뢰하지 않는 원칙을 `01-trust-free-protocol-spec.md`에 명문화.
 - **Order(승인) → Progress(기록) → Report(환원)** 사이클을 강제하여 작업의 정합성 확보.
 

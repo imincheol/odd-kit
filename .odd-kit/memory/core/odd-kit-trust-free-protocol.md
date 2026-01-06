@@ -5,7 +5,7 @@ priority: critical
 last-updated: 2026-01-04
 ---
 
-# 🛡️ Core Protocol: Trust-Free OPR Cycle
+# 🛡️ Core Protocol: Trust-Free ORW Cycle
 
 ## 1. 개요
 에이전트의 지능과 기억력을 신뢰하지 않는 '불신 기반(Trust-Free)' 운영 체계를 확립합니다. 모든 지식은 물리적 파일로 실재해야 합니다.

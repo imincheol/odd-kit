@@ -19,17 +19,19 @@
 
 ---
 
-## 🛡️ 2. Core Protocol: Trust-Free OPR Lifecycle
+## 🛡️ 2. Core Protocol: Trust-Free ORW Lifecycle
 에이전트의 판단과 기억력을 신뢰하지 않는 **'불신 기반(Trust-Free)'** 운영 체계를 확립합니다. 모든 지식은 물리적 파일로 실재해야 합니다.
 
 1.  **Order (오더) [계약]**: 작업 시작 전 에이전트의 계획을 제안하고 **사용자의 명시적 승인**을 받습니다. 승인된 오더는 수정하지 않습니다.
-2.  **Progress (프로그레스) [증명]**: 모든 작업 과정, 생각, 버그 수정 내역을 실시간으로 기록합니다. 사용자가 **"완료"를 선언할 때까지** 반복합니다.
-3.  **Report (리포트) [환원]**: 최종 결과를 요약하고, 습득한 지식을 **Docs Specs**와 **Memory Cells**에 즉시 환원합니다.
+2.  **Report (리포트) [결과]**: **작업 시작 시 WorkingLog와 함께 생성**됩니다. 초기 상태는 "대기 중"이며, 작업 완료 후 최종 결과를 기록합니다.
+3.  **WorkingLog (워킹로그) [증명]**: **작업 시작 시 Report와 함께 생성**됩니다. 모든 작업 과정, 생각, 결정, 버그 수정 내역을 시간순으로 기록합니다.
 
 ### ⚠️ 운영 황금률 (Golden Rules)
 - **No Order, No Action**: 승인된 오더 없이 어떠한 코드나 문서도 수정하지 않습니다.
-- **Infinite Progress**: 사용자가 만족할 때까지 모든 수정 과정은 프로그레스에 투명하게 남깁니다.
-- **Explicit-Based Reasoning**: 모든 판단 근거는 반드시 물리적인 파일(Progress/Cell)로 남겨야 합니다.
+- **Order First, Then Work**: Order는 항상 먼저 생성되며, 작업 시작 시 Report와 WorkingLog를 생성합니다.
+- **WorkingLog is Truth**: WorkingLog에 기록하지 않은 작업은 존재하지 않는 것으로 간주됩니다.
+- **Location is State**: 파일의 상태는 위치로 판단합니다. `active/` = 활성, `history/` = 완료/보류/실패 모두 포함.
+- **Explicit-Based Reasoning**: 모든 판단 근거는 반드시 물리적인 파일(WorkingLog/Cell)로 남겨야 합니다.
 
 ---
 
@@ -45,7 +47,7 @@
 - **TM-2 (Back-Sync)**: 메모리를 기반으로 `docs/specs/` 문서를 역동기화하여 항상성 유지.
 
 ### **[Turn-Order: Execution Cycle]**
-- **TO-1 (Active Phase)**: 턴-태스크-오더(기획) -> 프로그레스(수행) -> 리포트(결과 보고).
+- **TO-1 (Active Phase)**: 턴-태스크-오더(기획) → 승인 → 작업 시작 → 리포트+워킹로그(생성) → 워킹로그(수행 기록) → 리포트(결과 업데이트).
 - **TO-2 (Micro-Sync)**: 작업 중 습득한 정보를 메모리 셀과 스펙에 수시 업데이트.
 
 ---
@@ -67,10 +69,11 @@
 ---
 
 ## ⚠️ Cautions (지능적 사고 및 프로토콜 위반 방지)
-- **No Order Mutation**: 이미 승인되어 진행 중인 오더의 **본문(🎯 Goal)**을 절대 수정하지 마십시오. 모든 변화는 Progress에 남깁니다.
+- **No Order Mutation**: 이미 승인되어 진행 중인 오더의 **본문(🎯 Goal)**을 절대 수정하지 마십시오. 모든 변화는 WorkingLog에 남깁니다.
 - **No Premature Archiving**: 사용자의 명시적 승인 없이 파일을 History로 옮기거나 작업을 임의로 종료하지 마십시오.
 - **No Self-Completion**: 사용자가 "됐다" 혹은 "완료"라고 말하기 전에는 세션을 끝내지 마십시오.
 - **Atomic Checklist Update**: 체크리스트는 단위 작업 완료 즉시 하나씩 체크해야 하며, 일괄 체크는 엄격히 금지됩니다.
+- **Order First**: Order 생성 후 작업 시작 시 Report와 WorkingLog를 반드시 함께 생성해야 합니다.
 
 ---
 

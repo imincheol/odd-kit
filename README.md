@@ -28,7 +28,7 @@ ODD Kit is structured into three main folders representing different temporal an
 
 ## 🛡️ 3. Trust-Free Protocol (OPR Lifecycle)
 
-We do not trust AI Agents by default. To counteract potential amnesia or hallucination, we follow the **Order-Progress-Report (OPR)** cycle.
+We do not trust AI Agents by default. To counteract potential amnesia or hallucination, we follow the **Order-Report-WorkingLog (ORW)** cycle.
 
 1.  **Order (Planning)**: The Agent proposes a plan. **User approval is mandatory** before execution. Once approved, the Order is immutable.
 2.  **Progress (Execution)**: Real-time logging of thoughts, actions, and bug fixes. Continues until the **User says "Done"**.
@@ -81,9 +81,9 @@ ODD Kit은 프로젝트의 시간적, 기능적 상태를 대변하는 세 개�
 | **`odd-kit-template/`** | **높음 (2)** | **미래 (Future)** | 타 프로젝트에 ODD Kit을 이식할 때 사용되는 '미래의 틀'이자 원형. |
 | **`.odd-kit/`** | **보통 (3)** | **과거 ~ 현재 (Past~Now)** | 프로젝트 자체를 ODD 방식으로 빌드해 나가는 과정의 기록과 엔진룸. |
 
-## 🛡️ 3. 불신 기반 프로토콜 (Trust-Free OPR)
+## 🛡️ 3. 불신 기반 프로토콜 (Trust-Free ORW)
 
-에이전트(AI)의 판단과 기억력을 신뢰하지 않는 것이 원칙입니다. 이를 위해 **오더-프로그레스-리포트(OPR)** 사이클을 강제합니다.
+에이전트(AI)의 판단과 기억력을 신뢰하지 않는 것이 원칙입니다. 이를 위해 **오더-리포트-워킹로그(ORW)** 사이클을 강제합니다.
 
 1.  **오더 (Order)**: 에이전트가 이해한 작업을 제안하고 **사용자의 명시적 승인**을 받습니다. 시작된 오더는 수정하지 않습니다.
 2.  **프로그레스 (Progress)**: 작업의 모든 과정과 버그 수정을 기록합니다. **사용자가 승인할 때까지** 무한히 보완합니다.
